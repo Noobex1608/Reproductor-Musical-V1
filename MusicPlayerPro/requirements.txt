@@ -1,0 +1,52 @@
+# 🎵 MUSIC PLAYER PRO - DEPENDENCIES OPTIMIZADAS
+# ============================================
+# Instalación rápida: pip install -r requirements.txt
+
+# ==============================
+# � DEPENDENCIAS ESENCIALES
+# ==============================
+
+# �🎨 GUI Framework (REQUERIDO)
+customtkinter>=5.2.0
+
+# 🎵 Audio Engine (REQUERIDO)
+python-vlc>=3.0.16120
+
+# 📊 Visualización (REQUERIDO)
+matplotlib>=3.7.0
+numpy>=1.24.0
+
+# 📁 Base de Datos (Built-in con Python - sqlite3)
+# Metadatos de archivos
+mutagen>=1.47.0
+
+# ==============================
+# 🚀 DEPENDENCIAS OPCIONALES
+# ==============================
+
+# 🎵 Análisis de Espectro Avanzado (Opcional - mejora la visualización)
+librosa>=0.10.1
+scipy>=1.10.0
+resampy>=0.4.0
+
+# 🤖 Machine Learning para IA Musical (Opcional - funciones de IA)
+scikit-learn>=1.3.0
+
+# 🎛️ Compatibilidad Adicional (Opcional - mejores efectos visuales)
+pillow>=10.0.0
+
+# ==============================
+# � NOTAS DE INSTALACIÓN
+# ==============================
+# 
+# INSTALACIÓN BÁSICA (funcionalidad completa):
+# pip install customtkinter python-vlc matplotlib numpy mutagen
+#
+# INSTALACIÓN COMPLETA (con todas las características):
+# pip install -r requirements.txt
+#
+# ⚠️  IMPORTANTE: VLC Media Player debe estar instalado en el sistema
+# Descargar desde: https://www.videolan.org/vlc/
+#
+# ✅ Las dependencias opcionales mejorarán la experiencia pero no son críticas
+# ✅ El reproductor funcionará sin ellas con funcionalidad reducida

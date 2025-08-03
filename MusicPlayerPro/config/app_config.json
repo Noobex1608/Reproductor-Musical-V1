@@ -1,0 +1,92 @@
+{
+  "audio": {
+    "volume": 70,
+    "crossfade_duration": 3.0,
+    "gapless_playback": true,
+    "auto_gain_control": true,
+    "equalizer_preset": "flat",
+    "equalizer_bands": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "output_device": "default",
+    "buffer_size": 1024,
+    "sample_rate": 44100
+  },
+  "ui": {
+    "theme": "cyberpunk",
+    "window_width": 1280,
+    "window_height": 820,
+    "window_maximized": false,
+    "window_x": 100,
+    "window_y": 100,
+    "show_spectrum": true,
+    "show_lyrics": true,
+    "show_album_art": true,
+    "animation_speed": 1.0,
+    "transparency": 0.95,
+    "font_family": "Segoe UI",
+    "font_size": 12
+  },
+  "visualization": {
+    "enabled": true,
+    "type": "spectrum_3d",
+    "fps": 60,
+    "quality": "high",
+    "particles_count": 500,
+    "color_scheme": "rainbow",
+    "reactive_intensity": 1.0,
+    "blur_effect": true,
+    "glow_effect": true
+  },
+  "ai": {
+    "recommendations_enabled": true,
+    "auto_genre_detection": true,
+    "mood_analysis": true,
+    "smart_playlists": true,
+    "learning_enabled": true,
+    "api_keys": {
+      "spotify": "",
+      "lastfm": "",
+      "musicbrainz": ""
+    }
+  },
+  "library": {
+    "auto_scan_folders": [],
+    "watch_folders": true,
+    "auto_organize": false,
+    "organize_pattern": "{artist}/{album}/{track} - {title}",
+    "cover_art_size": 300,
+    "cache_metadata": true,
+    "cache_duration": 3600,
+    "supported_formats": [
+      "mp3",
+      "flac",
+      "wav",
+      "ogg",
+      "m4a",
+      "aac",
+      "wma"
+    ]
+  },
+  "network": {
+    "enable_remote_control": false,
+    "remote_port": 8080,
+    "allow_external_connections": false,
+    "sync_with_devices": false,
+    "streaming_quality": "high",
+    "download_covers": true,
+    "proxy_enabled": false,
+    "proxy_host": "",
+    "proxy_port": 8080
+  },
+  "last_updated": "2025-08-03T12:21:01.958116"
+}
