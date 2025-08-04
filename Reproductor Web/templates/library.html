@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵 Mi Biblioteca Musical - Music Player Pro</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/library.css') }}">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+</head>
+<body class="library-page">
+
+    <!-- Header -->
+    <header class="library-header">
+        <div class="header-content">
+            <div class="header-left">
+                <button class="back-btn" onclick="window.location.href='/'">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Volver al Player</span>
+                </button>
+                <div class="header-title">
+                    <h1><i class="fas fa-music"></i> Mi Biblioteca Musical</h1>
+                    <div class="library-stats">
+                        <span id="total-songs">0 canciones</span> • 
+                        <span id="total-duration">0:00</span> • 
+                        <span id="total-size">0 MB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="library-search" placeholder="Buscar en tu biblioteca...">
+                    <button class="clear-search" id="clear-search-btn" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="library-main">
+        <!-- Filters and Controls -->
+        <section class="library-controls">
+            <div class="controls-left">
+                <div class="view-modes">
+                    <button class="view-mode-btn active" data-view="list">
+                        <i class="fas fa-list"></i>
+                        <span>Lista</span>
+                    </button>
+                    <button class="view-mode-btn" data-view="grid">
+                        <i class="fas fa-th"></i>
+                        <span>Grilla</span>
+                    </button>
+                    <button class="view-mode-btn" data-view="compact">
+                        <i class="fas fa-bars"></i>
+                        <span>Compacto</span>
+                    </button>
+                </div>
+                
+                <div class="sort-controls">
+                    <label for="sort-select">Ordenar por:</label>
+                    <select id="sort-select">
+                        <option value="title">Título</option>
+                        <option value="artist">Artista</option>
+                        <option value="album">Álbum</option>
+                        <option value="year">Año</option>
+                        <option value="duration">Duración</option>
+                        <option value="date-added">Fecha agregada</option>
+                    </select>
+                    <button class="sort-order-btn" id="sort-order-btn" data-order="asc">
+                        <i class="fas fa-sort-amount-up"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="controls-right">
+                <div class="filter-controls">
+                    <button class="filter-btn" data-filter="all">
+                        <i class="fas fa-music"></i>
+                        <span>Todas</span>
+                    </button>
+                    <button class="filter-btn" data-filter="favorites">
+                        <i class="fas fa-heart"></i>
+                        <span>Favoritas</span>
+                    </button>
+                    <button class="filter-btn" data-filter="recent">
+                        <i class="fas fa-clock"></i>
+                        <span>Recientes</span>
+                    </button>
+                </div>
+                
+                <button class="shuffle-all-btn" id="shuffle-all-btn">
+                    <i class="fas fa-random"></i>
+                    <span>Reproducir todo</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Library Content -->
+        <section class="library-content">
+            <!-- Loading State -->
+            <div class="library-loading" id="library-loading">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+                <p>Cargando tu biblioteca musical...</p>
+            </div>
+
+            <!-- Empty State -->
+            <div class="library-empty" id="library-empty" style="display: none;">
+                <div class="empty-icon">
+                    <i class="fas fa-music-slash"></i>
+                </div>
+                <h3>No se encontraron canciones</h3>
+                <p>Tu biblioteca musical está vacía o no coincide con los filtros aplicados.</p>
+                <button class="btn-primary" onclick="window.location.reload()">
+                    <i class="fas fa-refresh"></i>
+                    Actualizar biblioteca
+                </button>
+            </div>
+
+            <!-- Songs List -->
+            <div class="library-songs" id="library-songs" style="display: none;">
+                <div class="songs-header">
+                    <div class="song-number">#</div>
+                    <div class="song-title">Título</div>
+                    <div class="song-artist">Artista</div>
+                    <div class="song-album">Álbum</div>
+                    <div class="song-duration">Duración</div>
+                    <div class="song-actions">Acciones</div>
+                </div>
+                <div class="songs-list" id="songs-list">
+                    <!-- Songs will be populated here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Context Menu -->
+    <div class="context-menu" id="context-menu" style="display: none;">
+        <ul class="context-menu-list">
+            <li class="context-menu-item" data-action="play">
+                <i class="fas fa-play"></i>
+                <span>Reproducir</span>
+            </li>
+            <li class="context-menu-item" data-action="play-next">
+                <i class="fas fa-step-forward"></i>
+                <span>Reproducir siguiente</span>
+            </li>
+            <li class="context-menu-separator"></li>
+            <li class="context-menu-item" data-action="favorite">
+                <i class="fas fa-heart"></i>
+                <span>Agregar a favoritos</span>
+            </li>
+            <li class="context-menu-item" data-action="playlist">
+                <i class="fas fa-plus"></i>
+                <span>Agregar a playlist</span>
+            </li>
+            <li class="context-menu-separator"></li>
+            <li class="context-menu-item" data-action="info">
+                <i class="fas fa-info-circle"></i>
+                <span>Información de la canción</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Mini Player (when a song is playing) -->
+    <div class="mini-player" id="mini-player" style="display: none;">
+        <div class="mini-player-content">
+            <div class="mini-track-info">
+                <img class="mini-cover" id="mini-cover" src="{{ url_for('static', filename='images/default-cover.png') }}" alt="Cover">
+                <div class="mini-track-details">
+                    <div class="mini-track-title" id="mini-track-title">Sin reproducción</div>
+                    <div class="mini-track-artist" id="mini-track-artist">Artista</div>
+                </div>
+            </div>
+            <div class="mini-player-controls">
+                <button class="mini-control-btn" id="mini-prev-btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="mini-control-btn primary" id="mini-play-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="mini-control-btn" id="mini-next-btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/websocket.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/library-page.js') }}"></script>
+
+</body>
+</html>

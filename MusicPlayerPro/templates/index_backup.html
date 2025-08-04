@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵 Music Player Pro - Web Edition</title>
+    
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/visualizer.css') }}">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Cache buster: Updated 2025-08-03 21:00 FINAL CLEAN -->
+</head>
+<body>
+    <div id="app">
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="loading-screen">
+            <div class="loading-content">
+                <div class="loading-logo">🎵</div>
+                <h2>Music Player Pro</h2>
+                <div class="loading-spinner"></div>
+                <p>Cargando tu experiencia musical...</p>
+            </div>
+        </div>
+
+        <!-- Main App Container -->
+        <div id="main-app" class="main-app" style="display: none;">
+            
+            <!-- Header -->
+            <header class="app-header">
+                <div class="header-left">
+                    <h1 class="app-title">
+                        <i class="fas fa-music"></i>
+                        Music Player Pro
+                    </h1>
+                    <div class="connection-status">
+                        <div id="connection-indicator" class="connection-indicator connecting">
+                            <div class="status-dot"></div>
+                            <span id="connection-text">Conectando...</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <div class="header-controls">
+                        <!-- Volume Control -->
+                        <div class="volume-control">
+                            <i class="fas fa-volume-up volume-icon" id="volume-icon"></i>
+                            <input type="range" id="volume-slider" class="volume-slider" 
+                                   min="0" max="100" value="70">
+                            <span id="volume-display" class="volume-display">70%</span>
+                        </div>
+                        
+                        <!-- Settings Button -->
+                        <button class="header-btn" id="settings-btn" title="Configuración">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        
+                        <!-- Fullscreen Button -->
+                        <button class="header-btn" id="fullscreen-btn" title="Pantalla completa">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-content">
+                        
+                        <!-- Search Bar -->
+                        <div class="search-section">
+                            <div class="search-bar">
+                                <i class="fas fa-search search-icon"></i>
+                                <input type="text" id="search-input" placeholder="Buscar música..." 
+                                       class="search-input">
+                                <button id="search-clear" class="search-clear" style="display: none;">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <nav class="sidebar-nav">
+                            <ul class="nav-list">
+                                <li class="nav-item">
+                                    <a href="/library" class="nav-link library-full-page" title="Ver biblioteca completa">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Ver biblioteca completa</span>
+                                    </a>
+                                </li>
+                        </nav>
+
+                        <!-- Library Stats -->
+                        <div class="sidebar-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Tiempo total:</span>
+                                <span id="total-duration">0:00</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-database"></i>
+                                <span>Tamaño:</span>
+                                <span id="library-size">0 MB</span>
+                            </div>
+                            
+                            <!-- Additional Library Stats for JavaScript -->
+                            <div id="library-stats" class="library-stats-extra">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Content Area -->
+                <div class="content-area">                    
+                    <!-- Music Library -->
+                    <div class="library-section" id="library-section">
+                        <div class="section-header">
+                            <h3 class="section-title">
+                                <i class="fas fa-music"></i>
+                                Biblioteca Musical
+                            </h3>
+                            <div class="section-controls">
+                                <button class="control-btn play-all-btn" id="play-all-btn" title="Reproducir toda la biblioteca">
+                                    <i class="fas fa-play"></i>
+                                    <span>Reproducir todo</span>
+                                </button>
+                                <button class="control-btn add-music-btn" id="add-music-btn" title="Cargar música desde carpeta">
+                                    <i class="fas fa-folder-plus"></i>
+                                    <span>Cargar música</span>
+                                </button>
+                                <button class="control-btn" id="refresh-library" title="Actualizar biblioteca">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                                <select id="sort-select" class="sort-select">
+                                    <option value="title">Título</option>
+                                    <option value="artist">Artista</option>
+                                    <option value="album">Álbum</option>
+                                    <option value="year">Año</option>
+                                    <option value="duration">Duración</option>
+                                </select>
+                                <button class="control-btn" id="view-toggle" title="Cambiar vista">
+                                    <i class="fas fa-th-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Instrucciones de uso -->
+                        <div class="library-instructions">
+                            <p>
+                                <i class="fas fa-info-circle"></i>
+                                <strong>Haz clic en cualquier canción</strong> para reproducirla o usa el botón <i class="fas fa-play"></i> que aparece al pasar el mouse
+                            </p>
+                        </div>
+
+                        <!-- Current Song Display -->
+                        <div class="songs-container">
+                            <div id="songs-loading" class="songs-loading">
+                                <div class="loading-spinner-small"></div>
+                                <p>Cargando biblioteca musical...</p>
+                            </div>
+                            
+                            <!-- Current Playing Song Container -->
+                            <div id="current-song-container" class="current-song-container" style="display: none;">
+                                <div class="current-song-header">
+                                    <h4><i class="fas fa-play-circle"></i> Reproduciendo ahora</h4>
+                                    <div class="song-counter">
+                                        <span id="current-song-number">1</span> de <span id="total-songs-count">0</span>
+                                    </div>
+                                </div>
+                                <div id="current-song-item" class="current-song-item">
+                                    <!-- Current song will be populated by JavaScript -->
+                                </div>
+                                <div class="song-navigation">
+                                    <button class="nav-song-btn" id="prev-song-btn" title="Canción anterior">
+                                        <i class="fas fa-step-backward"></i>
+                                        <span>Anterior</span>
+                                    </button>
+                                    <button class="nav-song-btn primary" id="next-song-btn" title="Siguiente canción">
+                                        <span>Siguiente</span>
+                                        <i class="fas fa-step-forward"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div id="no-songs" class="no-songs" style="display: none;">
+                                <i class="fas fa-music"></i>
+                                <h3>No se encontraron canciones</h3>
+                                <p>Tu biblioteca musical está vacía o no se pudieron cargar las canciones.</p>
+                                <button id="scan-library" class="btn btn-primary">
+                                    <i class="fas fa-sync"></i>
+                                    Escanear Biblioteca
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visualizer Panel -->
+                <div class="visualizer-panel">
+                    <div class="visualizer-header">
+                        <h4 class="visualizer-title">
+                            <i class="fas fa-chart-bar"></i>
+                            Espectro de Frecuencias
+                        </h4>
+                        <div class="visualizer-controls">
+                            <button class="viz-btn" id="viz-mode-btn" title="Cambiar modo">
+                                <i class="fas fa-waveform-lines"></i>
+                            </button>
+                            <button class="viz-btn" id="viz-toggle" title="Mostrar/Ocultar">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="visualizer-container">
+                        <canvas id="visualizer-canvas" class="visualizer-canvas"></canvas>
+                        <div id="visualizer-fallback" class="visualizer-fallback" style="display: none;">
+                            <div class="spectrum-bars">
+                                <!-- Bars will be generated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="visualizer-info">
+                        <span id="viz-fps" class="viz-stat">FPS: 0</span>
+                        <span id="viz-mode" class="viz-stat">Modo: Espectro</span>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Player Controls Footer -->
+            <footer class="player-footer">
+                <div class="player-controls">
+                    
+                    <!-- Playback Controls -->
+                    <div class="playback-controls">
+                        <button class="control-btn-large" id="shuffle-btn" title="Aleatorio">
+                            <i class="fas fa-random"></i>
+                        </button>
+                        
+                        <button class="control-btn-large" id="prev-btn" title="Anterior">
+                            <i class="fas fa-step-backward"></i>
+                        </button>
+                        
+                        <button class="control-btn-main" id="play-pause-btn" title="Reproducir">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        
+                        <button class="control-btn-large" id="next-btn" title="Siguiente">
+                            <i class="fas fa-step-forward"></i>
+                        </button>
+                        
+                        <button class="control-btn-large" id="repeat-btn" title="Repetir">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="progress-section">
+                        <span id="current-time" class="time-display">0:00</span>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div id="progress-fill" class="progress-fill"></div>
+                                <div id="progress-handle" class="progress-handle"></div>
+                            </div>
+                        </div>
+                        <span id="total-time" class="time-display">0:00</span>
+                    </div>
+
+                    <!-- Additional Controls -->
+                    <div class="additional-controls">
+                        <button class="control-btn-small" id="equalizer-btn" title="Ecualizador">
+                            <i class="fas fa-sliders-h"></i>
+                        </button>
+                        
+                        <button class="control-btn-small" id="queue-btn" title="Cola de reproducción">
+                            <i class="fas fa-list-ol"></i>
+                        </button>
+                        
+                        <button class="control-btn-small" id="lyrics-btn" title="Letras">
+                            <i class="fas fa-microphone-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Modals and Overlays -->
+        <div id="modal-overlay" class="modal-overlay" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-title">Modal</h3>
+                    <button class="modal-close" id="modal-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!-- Modal content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div id="toast-container" class="toast-container">
+            <!-- Toast notifications will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    
+    <!-- Custom JavaScript - Order matters! -->
+    <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/websocket.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/visualizer.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/player-controls.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/library.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ui.js') }}"></script>
+</body>
+</html>
+        setTimeout(function() {
+            console.log('� SCRIPT SIMPLE EJECUTANDOSE');
+            
+            // Forzar main-app visible
+            var mainApp = document.getElementById('main-app');
+            if (mainApp) {
+                mainApp.style.display = 'flex';
+                mainApp.style.visibility = 'visible';
+                console.log('main-app forzado');
+            }
+            
+            // Forzar section-controls visible con borde rojo
+            var controls = document.querySelector('.section-controls');
+            if (controls) {
+                controls.style.display = 'flex';
+                controls.style.visibility = 'visible';
+                controls.style.border = '3px solid red';
+                controls.style.background = 'rgba(255,0,0,0.1)';
+                controls.style.padding = '10px';
+                console.log('section-controls forzado con borde rojo');
+            }
+            
+            // Forzar botón add-music visible
+            var btn = document.getElementById('add-music-btn');
+            if (btn) {
+                btn.style.display = 'inline-flex';
+                btn.style.visibility = 'visible';
+                btn.style.background = '#4CAF50';
+                btn.style.color = 'white';
+                btn.style.padding = '10px 15px';
+                btn.style.border = '2px solid #4CAF50';
+                btn.style.borderRadius = '6px';
+                console.log('add-music-btn forzado');
+            }
+            
+            // Crear botón de emergencia en esquina
+            var emergency = document.createElement('div');
+            emergency.style.position = 'fixed';
+            emergency.style.top = '20px';
+            emergency.style.right = '20px';
+            emergency.style.zIndex = '99999';
+            emergency.style.background = '#FF5722';
+            emergency.style.color = 'white';
+            emergency.style.padding = '15px';
+            emergency.style.borderRadius = '8px';
+            emergency.style.cursor = 'pointer';
+            emergency.innerHTML = 'BOTON EMERGENCIA';
+            emergency.onclick = function() { alert('Botón emergencia funciona!'); };
+            document.body.appendChild(emergency);
+            console.log('Boton emergencia creado');
+            
+        }, 2000);
+        
+        // También ejecutar inmediatamente
+        setTimeout(function() {
+            console.log('Ejecucion inmediata');
+            var mainApp = document.getElementById('main-app');
+            if (mainApp) {
+                mainApp.style.display = 'flex';
+                mainApp.style.visibility = 'visible';
+            }
+        }, 100);
+    </script>
+    
+    <script>
+        console.log('CLEAN SCRIPT LOADED');
+        setTimeout(function() {
+            console.log('Executing visibility fix');
+            var app = document.getElementById('main-app');
+            if (app) {
+                app.style.display = 'flex';
+                app.style.visibility = 'visible';
+                console.log('main-app visible');
+            }
+            var controls = document.querySelector('.section-controls');
+            if (controls) {
+                controls.style.border = '3px solid red';
+                controls.style.background = 'rgba(255,0,0,0.3)';
+                controls.style.padding = '10px';
+                console.log('section-controls highlighted');
+            }
+            var btn = document.getElementById('add-music-btn');
+            if (btn) {
+                btn.style.display = 'inline-flex';
+                btn.style.visibility = 'visible';
+                btn.style.background = '#4CAF50';
+                btn.style.color = 'white';
+                btn.style.padding = '12px 20px';
+                btn.style.border = '2px solid #4CAF50';
+                btn.style.borderRadius = '6px';
+                console.log('add-music-btn visible');
+            }
+        }, 3000);
+    </script>
+</body>
+</html>

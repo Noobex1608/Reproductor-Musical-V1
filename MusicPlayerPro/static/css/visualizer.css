@@ -1,0 +1,438 @@
+/* 🎵 MUSIC PLAYER PRO - VISUALIZER STYLES
+==========================================
+Estilos específicos para el visualizador de espectro
+- Canvas para visualización avanzada
+- Fallback bars para compatibilidad
+- Controles del visualizador
+- Animaciones de frecuencia
+*/
+
+/* ===========================
+   📊 VISUALIZER PANEL
+   =========================== */
+.visualizer-panel {
+  width: var(--visualizer-width);
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 50;
+}
+
+.visualizer-header {
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-tertiary);
+}
+
+.visualizer-title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.visualizer-title i {
+  color: var(--accent-secondary);
+}
+
+.visualizer-controls {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.viz-btn {
+  width: 32px;
+  height: 32px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  font-size: var(--font-size-xs);
+}
+
+.viz-btn:hover {
+  background: var(--bg-accent);
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+}
+
+.viz-btn.active {
+  background: rgba(78, 205, 196, 0.1);
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+}
+
+/* ===========================
+   🎨 VISUALIZER CONTAINER
+   =========================== */
+.visualizer-container {
+  flex: 1;
+  padding: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.visualizer-canvas {
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  border-radius: var(--border-radius-md);
+  background: rgba(10, 10, 11, 0.8);
+  border: 1px solid var(--border-color);
+}
+
+/* ===========================
+   📊 FALLBACK SPECTRUM BARS
+   =========================== */
+.visualizer-fallback {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 2px;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  background: rgba(10, 10, 11, 0.8);
+  border: 1px solid var(--border-color);
+}
+
+.spectrum-bars {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 2px;
+  height: 100%;
+  width: 100%;
+}
+
+.spectrum-bar {
+  background: var(--accent-gradient);
+  border-radius: 2px 2px 0 0;
+  width: 100%;
+  max-width: 12px;
+  min-height: 4px;
+  transition: height 0.1s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.spectrum-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4), transparent);
+  border-radius: 2px 2px 0 0;
+}
+
+/* Animación de las barras */
+.spectrum-bar:nth-child(odd) {
+  animation: spectrumPulse 2s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.spectrum-bar:nth-child(even) {
+  animation: spectrumPulse 2s ease-in-out infinite;
+  animation-delay: 0.1s;
+}
+
+.spectrum-bar:nth-child(3n) {
+  animation-delay: 0.2s;
+}
+
+.spectrum-bar:nth-child(4n) {
+  animation-delay: 0.3s;
+}
+
+.spectrum-bar:nth-child(5n) {
+  animation-delay: 0.4s;
+}
+
+@keyframes spectrumPulse {
+  0%, 100% {
+    height: 20%;
+    opacity: 0.7;
+  }
+  25% {
+    height: 60%;
+    opacity: 1;
+  }
+  50% {
+    height: 85%;
+    opacity: 0.9;
+  }
+  75% {
+    height: 40%;
+    opacity: 0.8;
+  }
+}
+
+/* ===========================
+   ℹ️ VISUALIZER INFO
+   =========================== */
+.visualizer-info {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  background: var(--bg-tertiary);
+}
+
+.viz-stat {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.viz-stat:first-child {
+  color: var(--accent-secondary);
+}
+
+/* ===========================
+   🎭 VISUALIZER MODES
+   =========================== */
+
+/* Modo Espectro (default) */
+.visualizer-container.mode-spectrum .visualizer-canvas {
+  background: radial-gradient(circle at center, rgba(255, 107, 107, 0.1), transparent);
+}
+
+/* Modo Ondas */
+.visualizer-container.mode-waveform .visualizer-canvas {
+  background: radial-gradient(circle at center, rgba(78, 205, 196, 0.1), transparent);
+}
+
+.visualizer-container.mode-waveform .spectrum-bar {
+  background: linear-gradient(180deg, var(--accent-secondary), #2dd4bf);
+  border-radius: 6px;
+  animation: waveformPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes waveformPulse {
+  0%, 100% {
+    height: 15%;
+    transform: scaleX(1);
+  }
+  50% {
+    height: 75%;
+    transform: scaleX(1.1);
+  }
+}
+
+/* Modo Circular */
+.visualizer-container.mode-circular .visualizer-fallback {
+  display: none;
+}
+
+.visualizer-container.mode-circular .visualizer-canvas {
+  background: radial-gradient(circle at center, 
+    rgba(255, 107, 107, 0.2) 0%, 
+    rgba(78, 205, 196, 0.1) 50%, 
+    transparent 100%);
+}
+
+/* ===========================
+   🎯 VISUALIZER STATES
+   =========================== */
+
+/* Estado inactivo */
+.visualizer-container.inactive {
+  opacity: 0.5;
+}
+
+.visualizer-container.inactive .spectrum-bar {
+  height: 10% !important;
+  animation: none;
+  background: var(--bg-accent);
+}
+
+.visualizer-container.inactive::before {
+  content: '🎵';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: var(--text-muted);
+  z-index: 1;
+}
+
+/* Estado de carga */
+.visualizer-container.loading::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--bg-accent);
+  border-top: 3px solid var(--accent-secondary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 1;
+}
+
+/* Estado de error */
+.visualizer-container.error::before {
+  content: '⚠️';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  z-index: 1;
+}
+
+.visualizer-container.error .spectrum-bar {
+  background: var(--error);
+  animation: errorPulse 1s ease-in-out infinite;
+}
+
+@keyframes errorPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+/* ===========================
+   🌟 VISUALIZER EFFECTS
+   =========================== */
+
+/* Efecto glow cuando está reproduciéndose */
+.visualizer-container.playing {
+  box-shadow: inset 0 0 20px rgba(255, 107, 107, 0.1);
+}
+
+.visualizer-container.playing .visualizer-canvas {
+  box-shadow: 
+    0 0 20px rgba(255, 107, 107, 0.2),
+    inset 0 0 20px rgba(78, 205, 196, 0.1);
+}
+
+/* Partículas flotantes de fondo */
+.visualizer-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 107, 107, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 80% 70%, rgba(78, 205, 196, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgba(255, 107, 107, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px, 80px 80px, 60px 60px;
+  animation: particleFloat 20s linear infinite;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@keyframes particleFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-100px) rotate(360deg); }
+}
+
+/* ===========================
+   📱 RESPONSIVE VISUALIZER
+   =========================== */
+@media (max-width: 1200px) {
+  .visualizer-panel {
+    width: var(--visualizer-width);
+  }
+  
+  .visualizer-fallback {
+    height: 150px;
+  }
+  
+  .spectrum-bars {
+    gap: 1px;
+  }
+  
+  .spectrum-bar {
+    max-width: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .visualizer-panel {
+    display: none; /* Ocultar en tablets */
+  }
+}
+
+/* Visualizer compacto para móvil */
+@media (max-width: 480px) {
+  .visualizer-panel {
+    position: fixed;
+    bottom: var(--footer-height);
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 80px;
+    flex-direction: row;
+    z-index: 200;
+    display: none; /* Por defecto oculto, se puede mostrar con toggle */
+  }
+  
+  .visualizer-header {
+    display: none;
+  }
+  
+  .visualizer-container {
+    padding: var(--spacing-sm);
+  }
+  
+  .visualizer-fallback {
+    height: 60px;
+  }
+  
+  .visualizer-info {
+    display: none;
+  }
+}
+
+/* ===========================
+   🎨 VISUALIZER THEMES
+   =========================== */
+
+/* Tema Neón */
+.visualizer-panel.theme-neon .spectrum-bar {
+  background: linear-gradient(180deg, #ff0080, #00ff80);
+  box-shadow: 0 0 10px currentColor;
+}
+
+/* Tema Retro */
+.visualizer-panel.theme-retro .spectrum-bar {
+  background: linear-gradient(180deg, #ff6b35, #f7931e);
+  border-radius: 0;
+}
+
+/* Tema Minimal */
+.visualizer-panel.theme-minimal .spectrum-bar {
+  background: var(--text-primary);
+  border-radius: 0;
+}
+
+.visualizer-panel.theme-minimal .spectrum-bar::after {
+  display: none;
+}
