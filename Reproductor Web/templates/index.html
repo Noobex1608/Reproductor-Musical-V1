@@ -101,22 +101,24 @@
                                 </li>
                         </nav>
 
-                        <!-- Library Stats -->
-                        <div class="sidebar-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-clock"></i>
-                                <span>Tiempo total:</span>
-                                <span id="total-duration">0:00</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-database"></i>
-                                <span>Tamaño:</span>
-                                <span id="library-size">0 MB</span>
+                        <!-- Nuevo contenedor de Recomendaciones -->
+                        <div class="recommendations-section">
+                            <div class="section-header">
+                                <h4 class="section-title">
+                                    <i class="fas fa-star"></i>
+                                    Recomendaciones
+                                </h4>
+                                <button class="refresh-btn" id="refresh-recommendations" title="Actualizar recomendaciones">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
                             </div>
                             
-                            <!-- Additional Library Stats for JavaScript -->
-                            <div id="library-stats" class="library-stats-extra">
-                                <!-- Will be populated by JavaScript -->
+                            <div id="recommendations-list" class="recommendations-list">
+                                <div class="recommendations-placeholder">
+                                    <i class="fas fa-music"></i>
+                                    <p>Analizando tus gustos musicales...</p>
+                                    <div class="loading-spinner-small"></div>
+                                </div>
                             </div>
                         </div>
                     </div>

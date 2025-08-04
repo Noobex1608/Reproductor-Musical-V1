@@ -700,3 +700,100 @@ document.addEventListener('DOMContentLoaded', function() {
     
     setTimeout(initUIUtils, 1000);
 });
+
+// Función mejorada para obtener recomendaciones basadas en tu biblioteca
+async function loadDynamicRecommendations() {
+    const recommendationsList = document.getElementById('recommendations-list');
+    
+    // Mostrar estado de carga
+    recommendationsList.innerHTML = `
+        <div class="recommendations-placeholder">
+            <i class="fas fa-music"></i>
+            <p>Analizando tu biblioteca...</p>
+            <center><div class="loading-spinner-small"></div></center>
+        </div>
+    `;
+
+    try {
+        // 1. Obtener las canciones más escuchadas (de tu historial)
+        const mostPlayed = await fetch('/api/user/most-played').then(res => res.json());
+        
+        // 2. Obtener canciones similares (del mismo género/artista)
+        const similarSongs = await fetch('/api/recommendations', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                seed_tracks: mostPlayed.slice(0, 3).map(song => song.id) 
+            })
+        }).then(res => res.json());
+
+        // 3. Combinar y mostrar resultados
+        renderRecommendations(similarSongs.recommendations);
+        
+    } catch (error) {
+        console.error("Error al cargar recomendaciones:", error);
+        recommendationsList.innerHTML = `
+            <div class="recommendations-placeholder error">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Error al cargar recomendaciones</p>
+                <button onclick="loadDynamicRecommendations()" class="btn-retry">
+                    Reintentar
+                </button>
+            </div>
+        `;
+    }
+}
+
+// Renderizado dinámico
+function renderRecommendations(recommendations) {
+    const recommendationsList = document.getElementById('recommendations-list');
+    
+    if (!recommendations || recommendations.length === 0) {
+        recommendationsList.innerHTML = `
+            <div class="recommendations-placeholder">
+                <i class="fas fa-info-circle"></i>
+                <p>No hay suficientes datos</p>
+                <small>Sube más música para obtener recomendaciones</small>
+            </div>
+        `;
+        return;
+    }
+
+    recommendationsList.innerHTML = recommendations.map(song => `
+        <div class="recommendation-item" data-song-id="${song.id}">
+            <img src="${song.cover_url || '/static/img/default-cover.jpg'}" 
+                 alt="${song.title}" 
+                 onerror="this.src='/static/img/default-cover.jpg'">
+            <div class="recommendation-info">
+                <div class="recommendation-title">${song.title}</div>
+                <div class="recommendation-artist">${song.artist}</div>
+                <div class="recommendation-meta">
+                    <span>${song.genre || 'Género desconocido'}</span>
+                    • 
+                    <span>${formatDuration(song.duration)}</span>
+                </div>
+            </div>
+            <i class="fas fa-play play-icon" 
+               onclick="playRecommendedSong('${song.id}')"></i>
+        </div>
+    `).join('');
+}
+
+// Función para reproducir la canción recomendada
+function playRecommendedSong(songId) {
+    fetch(`/api/play/${songId}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showToast(`Reproduciendo: ${data.song.title}`, 'success');
+                updatePlayerState(data.song);
+            }
+        });
+}
+
+// Inicializar al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    loadDynamicRecommendations();
+    document.getElementById('refresh-recommendations')
+        .addEventListener('click', loadDynamicRecommendations);
+});

@@ -1279,3 +1279,159 @@ body {
 .notification-info i {
     color: var(--accent-primary);
 }
+
+
+/* Estilos para la sección de recomendaciones */
+.recommendations-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: var(--sidebar-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.recommendations-section .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.recommendations-section .section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.recommendations-section .section-title i {
+    color: var(--primary-color);
+}
+
+.recommendations-section .refresh-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+.recommendations-section .refresh-btn:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+.recommendations-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.recommendations-placeholder {
+    text-align: center;
+    padding: 20px 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.recommendations-placeholder i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* Estilos para los elementos de recomendación (se añadirán dinámicamente) */
+.recommendation-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    background: var(--item-bg);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.recommendation-item:hover {
+    background: var(--hover-bg-color);
+}
+
+.recommendation-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+.recommendation-item .recommendation-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.recommendation-item .recommendation-title {
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.recommendation-item .recommendation-artist {
+    font-size: 11px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.recommendation-item .play-icon {
+    margin-left: 10px;
+    color: var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.recommendation-item:hover .play-icon {
+    opacity: 1;
+}
+
+/* Estilos para recomendaciones dinámicas */
+.recommendation-meta {
+    font-size: 10px;
+    color: var(--text-secondary);
+    margin-top: 3px;
+    display: flex;
+    gap: 5px;
+}
+
+.recommendation-item .play-icon {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.recommendation-item .play-icon:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.btn-retry {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.error i {
+    color: #ff4757;
+}
