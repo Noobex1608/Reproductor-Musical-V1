@@ -701,99 +701,205 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(initUIUtils, 1000);
 });
 
-// Función mejorada para obtener recomendaciones basadas en tu biblioteca
-async function loadDynamicRecommendations() {
+
+// Configura tu API Key de ChatGPT (guárdala de forma segura)
+//QUITAR AL MOMENTO DE PROBAR
+// const CHATGPT_API_KEY = 'AQUI VA LA API KEY';
+
+// Renderizar las recomendaciones
+function renderRecommendations(data) {
     const recommendationsList = document.getElementById('recommendations-list');
     
-    // Mostrar estado de carga
-    recommendationsList.innerHTML = `
-        <div class="recommendations-placeholder">
-            <i class="fas fa-music"></i>
-            <p>Analizando tu biblioteca...</p>
-            <center><div class="loading-spinner-small"></div></center>
-        </div>
-    `;
-
-    try {
-        // 1. Obtener las canciones más escuchadas (de tu historial)
-        const mostPlayed = await fetch('/api/user/most-played').then(res => res.json());
-        
-        // 2. Obtener canciones similares (del mismo género/artista)
-        const similarSongs = await fetch('/api/recommendations', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 
-                seed_tracks: mostPlayed.slice(0, 3).map(song => song.id) 
-            })
-        }).then(res => res.json());
-
-        // 3. Combinar y mostrar resultados
-        renderRecommendations(similarSongs.recommendations);
-        
-    } catch (error) {
-        console.error("Error al cargar recomendaciones:", error);
-        recommendationsList.innerHTML = `
-            <div class="recommendations-placeholder error">
-                <i class="fas fa-exclamation-triangle"></i>
-                <p>Error al cargar recomendaciones</p>
-                <button onclick="loadDynamicRecommendations()" class="btn-retry">
-                    Reintentar
-                </button>
-            </div>
-        `;
-    }
-}
-
-// Renderizado dinámico
-function renderRecommendations(recommendations) {
-    const recommendationsList = document.getElementById('recommendations-list');
-    
-    if (!recommendations || recommendations.length === 0) {
+    if (!data || !data.recommendations || data.recommendations.length === 0) {
         recommendationsList.innerHTML = `
             <div class="recommendations-placeholder">
                 <i class="fas fa-info-circle"></i>
-                <p>No hay suficientes datos</p>
-                <small>Sube más música para obtener recomendaciones</small>
+                <p>No hay recomendaciones disponibles</p>
+                <small>Intenta reproducir una canción primero</small>
             </div>
         `;
         return;
     }
 
-    recommendationsList.innerHTML = recommendations.map(song => `
-        <div class="recommendation-item" data-song-id="${song.id}">
-            <img src="${song.cover_url || '/static/img/default-cover.jpg'}" 
-                 alt="${song.title}" 
-                 onerror="this.src='/static/img/default-cover.jpg'">
+    recommendationsList.innerHTML = data.recommendations.map(song => `
+        <div class="recommendation-item">
+            <div class="recommendation-artwork">
+                <i class="fas fa-music"></i>
+            </div>
             <div class="recommendation-info">
                 <div class="recommendation-title">${song.title}</div>
                 <div class="recommendation-artist">${song.artist}</div>
                 <div class="recommendation-meta">
                     <span>${song.genre || 'Género desconocido'}</span>
-                    • 
-                    <span>${formatDuration(song.duration)}</span>
+                    ${song.year ? `• <span>${song.year}</span>` : ''}
+                    <span class="recommendation-reason" title="${song.reason}">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
                 </div>
             </div>
-            <i class="fas fa-play play-icon" 
-               onclick="playRecommendedSong('${song.id}')"></i>
+            <button class="recommendation-play" onclick="searchAndPlay('${song.title}', '${song.artist}')">
+                <i class="fas fa-play"></i>
+            </button>
         </div>
     `).join('');
 }
 
-// Función para reproducir la canción recomendada
-function playRecommendedSong(songId) {
-    fetch(`/api/play/${songId}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                showToast(`Reproduciendo: ${data.song.title}`, 'success');
-                updatePlayerState(data.song);
-            }
-        });
+// Función para buscar y reproducir una canción recomendada
+function searchAndPlay(title, artist) {
+    // Implementar la búsqueda en tu biblioteca o servicios externos
+    window.musicPlayerApp.showToast('info', 'Buscando', `Buscando "${title}"...`);
+    
+    // Aquí iría tu lógica para encontrar y reproducir la canción
+    console.log(`Intentando reproducir: ${title} - ${artist}`);
+}
+
+// Mostrar errores
+function showRecommendationsError(error) {
+    const recommendationsList = document.getElementById('recommendations-list');
+    recommendationsList.innerHTML = `
+        <div class="recommendations-placeholder error">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p>Error al cargar recomendaciones</p>
+            <small>${error.message || 'Intenta de nuevo más tarde'}</small>
+            <button onclick="loadDynamicRecommendations()" class="btn-retry">
+                Reintentar
+            </button>
+        </div>
+    `;
+}
+
+// Variable para llevar un conteo de recargas
+let recommendationRefreshCount = 0;
+
+// Función principal para cargar recomendaciones
+async function loadDynamicRecommendations() {
+    const recommendationsList = document.getElementById('recommendations-list');
+    let currentSong = { title: 'Aleatorio', artist: 'Aleatorio' };
+    if (window.musicPlayerApp && typeof window.musicPlayerApp.getCurrentSong === 'function') {
+        const song = window.musicPlayerApp.getCurrentSong();
+        if (song && song.title) {
+            currentSong = song;
+        }
+    }
+
+    // Aumentar el contador de recargas
+    recommendationRefreshCount++;
+    
+    // Mostrar estado de carga
+    recommendationsList.innerHTML = `
+        <div class="recommendations-placeholder">
+            <i class="fas fa-music"></i>
+            <p>Buscando nuevas recomendaciones</p>
+            <center><div class="loading-spinner-small"></div></center>
+        </div>
+    `;
+
+    try {
+        let recommendations;
+        let prompt;
+        const randomSeed = Math.floor(Math.random() * 1000);
+        
+        if (currentSong) {
+            // Incluir el contador y semilla en el prompt para variar las respuestas
+            prompt = `Como experto en música, recomienda 3 diferentes canciones populares a "${currentSong.title}" de ${currentSong.artist}. 
+            Esta es la solicitud número ${recommendationRefreshCount}, por favor varía las recomendaciones.
+            Varía completamente las recomendaciones.
+            No repitas canciones que ya hayas recomendado anteriormente en esta sesión.
+            
+            Devuelve solo un JSON con este formato:
+            {
+                "recommendations": [
+                    {
+                        "title": "Nombre canción",
+                        "artist": "Artista",
+                        "genre": "Género",
+                        "reason": "Por qué es similar"
+                    }
+                ]
+            }`;
+            
+            recommendations = await getChatGPTRecommendations(prompt);
+        } else {
+            prompt = `Recomienda 3 diferentes canciones populares de diferentes géneros (solicitud #${recommendationRefreshCount}). 
+            Varía las recomendaciones cada vez.
+            Varía completamente las recomendaciones.
+            No repitas canciones que ya hayas recomendado anteriormente en esta sesión.
+
+            Devuelve solo un JSON con este formato:
+            {
+                "recommendations": [
+                    {
+                        "title": "Nombre canción",
+                        "artist": "Artista",
+                        "genre": "Género",
+                        "reason": "Por qué es buena recomendación"
+                    }
+                ]
+            }`;
+            
+            recommendations = await getChatGPTRecommendations(prompt);
+        }
+        
+        renderRecommendations(recommendations);
+        
+    } catch (error) {
+        console.error("Error al cargar recomendaciones:", error);
+        showRecommendationsError(error);
+    }
+    console.log("🔄 Recomendaciones recibidas:", recommendationsList);
+}
+
+// Función modificada para aceptar prompt personalizado
+async function getChatGPTRecommendations(prompt) {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${CHATGPT_API_KEY}`
+        },
+        body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{
+                role: "user",
+                content: prompt
+            }],
+            temperature: 0.8, // Aumentamos temperatura para más variedad
+            max_tokens: 500
+        })
+    });
+    
+    if (!response.ok) {
+        throw new Error(`Error de API: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    try {
+        return JSON.parse(data.choices[0].message.content);
+    } catch (e) {
+        console.error("Error parsing response:", e);
+        throw new Error("Formato de respuesta inválido");
+    }
 }
 
 // Inicializar al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     loadDynamicRecommendations();
-    document.getElementById('refresh-recommendations')
-        .addEventListener('click', loadDynamicRecommendations);
+    // Opcional: Actualizar cuando cambia la canción
+    if (window.musicPlayerApp) {
+        window.musicPlayerApp.on('songChanged', loadDynamicRecommendations);
+    }
+});
+
+document.getElementById('refresh-recommendations').addEventListener('click', function(e) {
+    e.preventDefault();
+    loadDynamicRecommendations();
+    
+    // Efecto visual de rotación al hacer clic
+    const icon = this.querySelector('i');
+    icon.style.transform = 'rotate(360deg)';
+    icon.style.transition = 'transform 0.5s ease';
+    
+    setTimeout(() => {
+        icon.style.transform = 'rotate(0deg)';
+    }, 500);
 });
