@@ -23,6 +23,8 @@ Music Player Pro ahora incluye una **interfaz web completamente nueva** desarrol
 - **Endpoints Completos**: Control total vía HTTP API
 - **WebSocket Events**: Comunicación bidireccional en tiempo real
 - **CORS Habilitado**: Acceso desde diferentes dominios
+- **Gestión de Biblioteca**: Verificación automática de integridad
+- **Auto-limpieza**: Elimina archivos inválidos automáticamente
 
 ## 🛠️ Instalación y Uso
 
@@ -38,14 +40,23 @@ pip install -r requirements.txt
 
 ### 2. Ejecutar Versión Web
 
-#### Opción A: Lanzador Web Dedicado (Recomendado)
+#### 🚀 Opción A: Launcher Inteligente (Recomendado)
 ```bash
-python web_launcher.py
+python smart_launcher.py
 ```
+- ✅ Verificación automática de dependencias
+- 🔍 Chequeo de salud de biblioteca
+- 🧹 Limpieza automática de archivos inválidos
+- 💡 Guía para nuevos usuarios
 
-#### Opción B: Main.py (Migrado a Web)
+#### Opción B: Main.py Directo
 ```bash
 python main.py
+```
+
+#### Opción C: Herramienta de Migración (Para problemas)
+```bash
+python migration_helper.py
 ```
 
 ### 3. Acceder a la Interfaz
@@ -103,6 +114,9 @@ src/web/
 - `GET /api/library/songs` - Obtener canciones
 - `POST /api/library/scan` - Escanear biblioteca
 - `GET /api/library/search` - Buscar música
+- `GET /api/library/health` - Reporte de salud de biblioteca
+- `POST /api/library/cleanup` - Limpiar archivos inválidos
+- `POST /api/library/clear` - Limpiar biblioteca completa
 
 ### 📡 WebSocket Events
 - `player_state` - Estado del reproductor
@@ -154,10 +168,40 @@ La versión web **reemplaza completamente** la interfaz CustomTkinter manteniend
 
 ## 🚨 Troubleshooting
 
+### 📁 Biblioteca Musical Vacía al Compartir Proyecto
+
+Si recibes este proyecto de otra persona y la biblioteca musical aparece vacía:
+
+#### 🔍 Problema
+Los metadatos están en la base de datos pero las rutas de archivos ya no son válidas en tu máquina.
+
+#### ✅ Solución Automática
+```bash
+# Ejecutar herramienta de migración
+python migration_helper.py
+```
+
+Esta herramienta:
+- 📊 Analiza el estado de la biblioteca
+- 🧹 Limpia automáticamente archivos inválidos
+- 💡 Proporciona guía paso a paso
+
+#### 🛠️ Solución Manual
+1. **Verificar estado**: Ve a `http://localhost:5000/api/library/health`
+2. **Limpiar archivos inválidos**: POST a `/api/library/cleanup`
+3. **Agregar tu música**: Usa el botón "Agregar Carpeta" en la interfaz
+
+#### 🗑️ Empezar Limpio (Opcional)
+```bash
+# Solo si quieres eliminar todo y empezar de cero
+python migration_helper.py
+# Luego selecciona opción 3
+```
+
 ### Puerto en Uso
 Si el puerto 5000 está ocupado:
 ```bash
-python web_launcher.py --port 8080
+python main.py --port 8080
 ```
 
 ### VLC No Encontrado

@@ -33599,3 +33599,1199 @@ AssertionError: write() before start_response
 2025-08-04 02:04:01,176 - src.audio.vlc_engine - INFO - ⏸️ Reproducción pausada
 2025-08-04 02:04:01,177 - src.effects.visual_manager - INFO - 🎨 Visualización detenida
 2025-08-04 02:07:20,379 - src.core.database - ERROR - Error limpiando biblioteca musical: 'NoneType' object has no attribute 'cursor'
+2025-08-04 11:42:18,903 - __main__ - INFO - Inicializando componentes del sistema...
+2025-08-04 11:42:18,904 - src.core.config_manager - INFO - ✅ Configuración cargada desde archivo
+2025-08-04 11:42:18,904 - src.core.database - INFO - Inicializando base de datos musical...
+2025-08-04 11:42:18,915 - src.core.database - INFO - ✅ Base de datos inicializada correctamente
+2025-08-04 11:42:18,915 - src.audio.vlc_engine - INFO - Inicializando motor de audio VLC...
+2025-08-04 11:42:18,988 - src.audio.vlc_engine - INFO - ✅ Ecualizador inicializado
+2025-08-04 11:42:18,989 - src.audio.vlc_engine - INFO - ✅ Motor de audio VLC inicializado
+2025-08-04 11:42:18,989 - src.effects.visual_manager - INFO - Inicializando gestor de efectos visuales...
+2025-08-04 11:42:19,275 - src.effects.visual_manager - INFO - ✅ Gestor de efectos visuales inicializado
+2025-08-04 11:42:19,275 - src.ai.music_ai - INFO - Inicializando sistema de IA musical...
+2025-08-04 11:42:19,276 - src.ai.music_ai - INFO - ✅ Sistema de IA musical inicializado
+2025-08-04 11:42:19,276 - src.core.app - INFO - Aplicación MusicPlayerPro inicializada
+2025-08-04 11:42:19,323 - src.web.flask_app - INFO - Aplicación web Flask inicializada
+2025-08-04 11:42:19,324 - __main__ - INFO - Todos los componentes inicializados correctamente
+2025-08-04 11:42:19,325 - src.core.app - INFO - Iniciando aplicación MusicPlayerPro...
+2025-08-04 11:42:19,325 - src.core.app - INFO - Cargando biblioteca musical...
+2025-08-04 11:42:19,325 - src.web.flask_app - INFO - Iniciando servidor web en http://0.0.0.0:5000
+2025-08-04 11:42:19,326 - src.web.flask_app - INFO - Bucle de actualizaciones en segundo plano iniciado
+2025-08-04 11:42:19,329 - src.core.app - INFO - ✅ 327 pistas cargadas
+2025-08-04 11:42:19,329 - src.core.app - INFO - ✅ Aplicación iniciada correctamente
+2025-08-04 11:42:20,646 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.196:5000
+2025-08-04 11:42:20,647 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-04 11:42:21,866 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:21] "GET / HTTP/1.1" 200 -
+2025-08-04 11:42:22,174 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:22] "GET /static/css/main.css HTTP/1.1" 200 -
+2025-08-04 11:42:22,218 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:22] "GET /static/js/websocket.js HTTP/1.1" 200 -
+2025-08-04 11:42:22,218 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:22] "GET /static/js/visualizer.js HTTP/1.1" 200 -
+2025-08-04 11:42:22,218 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:22] "GET /static/css/components.css HTTP/1.1" 200 -
+2025-08-04 11:42:22,218 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:22] "GET /static/css/visualizer.css HTTP/1.1" 200 -
+2025-08-04 11:42:22,218 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:22] "GET /static/js/config.js HTTP/1.1" 200 -
+2025-08-04 11:42:22,480 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:22] "GET /static/js/player-controls.js HTTP/1.1" 200 -
+2025-08-04 11:42:22,533 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:22] "GET /static/js/api.js HTTP/1.1" 200 -
+2025-08-04 11:42:22,533 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:22] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-08-04 11:42:22,534 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:22] "GET /static/js/ui.js HTTP/1.1" 200 -
+2025-08-04 11:42:22,535 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:22] "GET /static/js/library.js HTTP/1.1" 200 -
+2025-08-04 11:42:22,856 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:22] "GET / HTTP/1.1" 200 -
+2025-08-04 11:42:23,442 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:23] "OPTIONS /health HTTP/1.1" 200 -
+2025-08-04 11:42:23,448 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:23] "GET /health HTTP/1.1" 200 -
+2025-08-04 11:42:23,719 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:23] "OPTIONS /api/player/state HTTP/1.1" 200 -
+2025-08-04 11:42:23,725 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:23] "GET /api/player/state HTTP/1.1" 200 -
+2025-08-04 11:42:23,795 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:23] "OPTIONS /api/library/songs HTTP/1.1" 200 -
+2025-08-04 11:42:23,802 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:23] "GET /api/library/songs HTTP/1.1" 200 -
+2025-08-04 11:42:23,991 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:23] "OPTIONS /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:42:24,000 - src.web.flask_app - INFO - Volumen establecido a: 53
+2025-08-04 11:42:24,001 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:24] "POST /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:42:24,008 - src.audio.vlc_engine - INFO - 🔊 Volumen: 53%
+2025-08-04 11:42:24,096 - src.web.flask_app - INFO - Volumen establecido a: 53
+2025-08-04 11:42:24,097 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:24] "POST /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:42:24,098 - src.audio.vlc_engine - INFO - 🔊 Volumen: 53%
+2025-08-04 11:42:24,211 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:42:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-04 11:57:11,829 - src.core.database - ERROR - Error limpiando biblioteca musical: 'NoneType' object has no attribute 'cursor'
+2025-08-04 11:57:28,561 - main - ERROR - Error critico en la aplicacion: Cannot run the event loop while another loop is running
+2025-08-04 11:58:02,322 - __main__ - INFO - Inicializando componentes del sistema...
+2025-08-04 11:58:02,323 - src.core.config_manager - INFO - ✅ Configuración cargada desde archivo
+2025-08-04 11:58:02,323 - src.core.database - INFO - Inicializando base de datos musical...
+2025-08-04 11:58:02,325 - src.core.database - INFO - ✅ Base de datos inicializada correctamente
+2025-08-04 11:58:02,326 - src.audio.vlc_engine - INFO - Inicializando motor de audio VLC...
+2025-08-04 11:58:02,395 - src.audio.vlc_engine - INFO - ✅ Ecualizador inicializado
+2025-08-04 11:58:02,395 - src.audio.vlc_engine - INFO - ✅ Motor de audio VLC inicializado
+2025-08-04 11:58:02,395 - src.effects.visual_manager - INFO - Inicializando gestor de efectos visuales...
+2025-08-04 11:58:02,691 - src.effects.visual_manager - INFO - ✅ Gestor de efectos visuales inicializado
+2025-08-04 11:58:02,692 - src.ai.music_ai - INFO - Inicializando sistema de IA musical...
+2025-08-04 11:58:02,692 - src.ai.music_ai - INFO - ✅ Sistema de IA musical inicializado
+2025-08-04 11:58:02,693 - src.core.app - INFO - Aplicación MusicPlayerPro inicializada
+2025-08-04 11:58:02,748 - src.web.flask_app - INFO - Aplicación web Flask inicializada
+2025-08-04 11:58:02,748 - __main__ - INFO - Todos los componentes inicializados correctamente
+2025-08-04 11:58:02,749 - src.core.app - INFO - Iniciando aplicación MusicPlayerPro...
+2025-08-04 11:58:02,749 - src.core.app - INFO - 🔍 Verificando integridad de la biblioteca musical...
+2025-08-04 11:58:02,749 - src.web.flask_app - INFO - Iniciando servidor web en http://0.0.0.0:5000
+2025-08-04 11:58:02,749 - src.core.app - INFO - ✅ Biblioteca musical en buen estado
+2025-08-04 11:58:02,750 - src.core.app - INFO - Cargando biblioteca musical...
+2025-08-04 11:58:02,750 - src.web.flask_app - INFO - Bucle de actualizaciones en segundo plano iniciado
+2025-08-04 11:58:02,750 - src.core.app - INFO - ✅ 0 pistas válidas cargadas
+2025-08-04 11:58:02,751 - src.core.app - INFO - ✅ Aplicación iniciada correctamente
+2025-08-04 11:58:05,065 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.196:5000
+2025-08-04 11:58:05,065 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-04 11:58:05,289 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:05] "GET / HTTP/1.1" 200 -
+2025-08-04 11:58:05,582 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:05] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-08-04 11:58:05,648 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:05] "[36mGET /static/css/components.css HTTP/1.1[0m" 304 -
+2025-08-04 11:58:05,654 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:05] "[36mGET /static/js/config.js HTTP/1.1[0m" 304 -
+2025-08-04 11:58:05,655 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:05] "[36mGET /static/js/websocket.js HTTP/1.1[0m" 304 -
+2025-08-04 11:58:05,656 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:05] "[36mGET /static/css/visualizer.css HTTP/1.1[0m" 304 -
+2025-08-04 11:58:05,658 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:05] "[36mGET /static/js/visualizer.js HTTP/1.1[0m" 304 -
+2025-08-04 11:58:05,897 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:05] "[36mGET /static/js/player-controls.js HTTP/1.1[0m" 304 -
+2025-08-04 11:58:05,958 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:05] "[36mGET /static/js/library.js HTTP/1.1[0m" 304 -
+2025-08-04 11:58:05,959 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:05] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-08-04 11:58:05,962 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:05] "[36mGET /static/js/api.js HTTP/1.1[0m" 304 -
+2025-08-04 11:58:05,962 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:05] "[36mGET /static/js/ui.js HTTP/1.1[0m" 304 -
+2025-08-04 11:58:06,359 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:06] "GET / HTTP/1.1" 200 -
+2025-08-04 11:58:07,276 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:07] "OPTIONS /health HTTP/1.1" 200 -
+2025-08-04 11:58:07,284 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:07] "GET /health HTTP/1.1" 200 -
+2025-08-04 11:58:07,735 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:07] "OPTIONS /api/player/state HTTP/1.1" 200 -
+2025-08-04 11:58:07,742 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:07] "GET /api/player/state HTTP/1.1" 200 -
+2025-08-04 11:58:07,898 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:07] "OPTIONS /api/library/songs HTTP/1.1" 200 -
+2025-08-04 11:58:07,912 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:07] "GET /api/library/songs HTTP/1.1" 200 -
+2025-08-04 11:58:08,196 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:08] "OPTIONS /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:58:08,206 - src.web.flask_app - INFO - Volumen establecido a: 53
+2025-08-04 11:58:08,208 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:08] "POST /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:58:08,216 - src.audio.vlc_engine - INFO - 🔊 Volumen: 53%
+2025-08-04 11:58:08,302 - src.web.flask_app - INFO - Volumen establecido a: 53
+2025-08-04 11:58:08,304 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:08] "POST /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:58:08,308 - src.audio.vlc_engine - INFO - 🔊 Volumen: 53%
+2025-08-04 11:58:30,165 - src.web.flask_app - INFO - 🚀 INICIO: Endpoint add-folder llamado
+2025-08-04 11:58:30,165 - src.web.flask_app - INFO - 📡 Content-Type: application/json
+2025-08-04 11:58:30,166 - src.web.flask_app - INFO - 📡 Method: POST
+2025-08-04 11:58:30,166 - src.web.flask_app - INFO - 📥 Datos recibidos: {'folderPath': '"C:\\Users\\Steven\\Pictures\\prueba musica\\Electronica"'}
+2025-08-04 11:58:30,166 - src.web.flask_app - INFO - 📂 Ruta extraída: '"C:\Users\Steven\Pictures\prueba musica\Electronica"'
+2025-08-04 11:58:30,167 - src.web.flask_app - INFO - 📂 Ruta limpia: 'C:\Users\Steven\Pictures\prueba musica\Electronica'
+2025-08-04 11:58:30,167 - src.web.flask_app - INFO - ✅ Carpeta válida: C:\Users\Steven\Pictures\prueba musica\Electronica
+2025-08-04 11:58:30,167 - src.web.flask_app - INFO - 🔍 Iniciando escaneo de archivos en: C:\Users\Steven\Pictures\prueba musica\Electronica
+2025-08-04 11:58:30,168 - src.web.flask_app - INFO - 📊 Canciones antes: 0
+2025-08-04 11:58:30,185 - src.web.flask_app - INFO - 🎵 Archivos de audio encontrados: 292
+2025-08-04 11:58:30,187 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:58:30,294 - src.core.database - INFO - ✅ Canción añadida: ACRAZE - Believe ft. Goodboys (ID: 328)
+2025-08-04 11:58:30,295 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:58:30,295 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Acraze - Do It To It (Extended Mix).mp3
+2025-08-04 11:58:30,299 - src.core.database - INFO - ✅ Canción añadida: Acraze - Do It To It (Extended Mix) (ID: 329)
+2025-08-04 11:58:30,300 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Acraze - Do It To It (Extended Mix).mp3
+2025-08-04 11:58:30,300 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Afrojack - Ten Feet Tall (Official Lyric Video) ft. Wrabel.mp3
+2025-08-04 11:58:30,303 - src.core.database - INFO - ✅ Canción añadida: Afrojack - Ten Feet Tall (Official Lyric Video) ft. Wrabel (ID: 330)
+2025-08-04 11:58:30,303 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Afrojack - Ten Feet Tall (Official Lyric Video) ft. Wrabel.mp3
+2025-08-04 11:58:30,304 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Alesso - Heroes (we could be) ft. Tove Lo.mp3
+2025-08-04 11:58:30,306 - src.core.database - INFO - ✅ Canción añadida: Alesso - Heroes (we could be) ft. Tove Lo (ID: 331)
+2025-08-04 11:58:30,307 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Alesso - Heroes (we could be) ft. Tove Lo.mp3
+2025-08-04 11:58:30,307 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Alex Gaudino feat. Crystal Waters - Destination Calabria [Explicit Version] [Official Video].mp3
+2025-08-04 11:58:30,310 - src.core.database - INFO - ✅ Canción añadida: Alex Gaudino feat. Crystal Waters - Destination Calabria [Explicit Version] [Official Video] (ID: 332)
+2025-08-04 11:58:30,310 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Alex Gaudino feat. Crystal Waters - Destination Calabria [Explicit Version] [Official Video].mp3
+2025-08-04 11:58:30,310 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Archie - Back Again.mp3
+2025-08-04 11:58:30,313 - src.core.database - INFO - ✅ Canción añadida: Archie - Back Again (ID: 333)
+2025-08-04 11:58:30,313 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Archie - Back Again.mp3
+2025-08-04 11:58:30,314 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\AronChupa, Little Sis Nora - Im an Albatraoz  OFFICIAL VIDEO.mp3
+2025-08-04 11:58:30,317 - src.core.database - INFO - ✅ Canción añadida: AronChupa, Little Sis Nora - Im an Albatraoz  OFFICIAL VIDEO (ID: 334)
+2025-08-04 11:58:30,318 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\AronChupa, Little Sis Nora - Im an Albatraoz  OFFICIAL VIDEO.mp3
+2025-08-04 11:58:30,318 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Ava Max - Million Dollar Baby (Official Video).mp3
+2025-08-04 11:58:30,321 - src.core.database - INFO - ✅ Canción añadida: Ava Max - Million Dollar Baby (Official Video) (ID: 335)
+2025-08-04 11:58:30,321 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Ava Max - Million Dollar Baby (Official Video).mp3
+2025-08-04 11:58:30,322 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Avicii - Addicted To You.mp3
+2025-08-04 11:58:30,325 - src.core.database - INFO - ✅ Canción añadida: Avicii - Addicted To You (ID: 336)
+2025-08-04 11:58:30,326 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Avicii - Addicted To You.mp3
+2025-08-04 11:58:30,326 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Avicii - Levels.mp3
+2025-08-04 11:58:30,329 - src.core.database - INFO - ✅ Canción añadida: Avicii - Levels (ID: 337)
+2025-08-04 11:58:30,329 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Avicii - Levels.mp3
+2025-08-04 11:58:30,330 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Avicii - Waiting For Love.mp3
+2025-08-04 11:58:30,332 - src.core.database - INFO - ✅ Canción añadida: Avicii - Waiting For Love (ID: 338)
+2025-08-04 11:58:30,333 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Avicii - Waiting For Love.mp3
+2025-08-04 11:58:30,333 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Bakermat - Baianá (Official Video).mp3
+2025-08-04 11:58:30,335 - src.core.database - INFO - ✅ Canción añadida: Bakermat - Baianá (Official Video) (ID: 339)
+2025-08-04 11:58:30,335 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Bakermat - Baianá (Official Video).mp3
+2025-08-04 11:58:30,336 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Belocca & Nusha - Serenity (Original Mix).mp3
+2025-08-04 11:58:30,339 - src.core.database - INFO - ✅ Canción añadida: Belocca & Nusha - Serenity (Original Mix) (ID: 340)
+2025-08-04 11:58:30,339 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Belocca & Nusha - Serenity (Original Mix).mp3
+2025-08-04 11:58:30,340 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Benny Benassi - Satisfaction.mp3
+2025-08-04 11:58:30,342 - src.core.database - INFO - ✅ Canción añadida: Benny Benassi - Satisfaction (ID: 341)
+2025-08-04 11:58:30,342 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Benny Benassi - Satisfaction.mp3
+2025-08-04 11:58:30,342 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Big And Chunky.mp3
+2025-08-04 11:58:30,345 - src.core.database - INFO - ✅ Canción añadida: Big And Chunky (ID: 342)
+2025-08-04 11:58:30,345 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Big And Chunky.mp3
+2025-08-04 11:58:30,346 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Black Eyed Peas, Shakira, David Guetta - DONT YOU WORRY (Official Music Video).mp3
+2025-08-04 11:58:30,349 - src.core.database - INFO - ✅ Canción añadida: Black Eyed Peas, Shakira, David Guetta - DONT YOU WORRY (Official Music Video) (ID: 343)
+2025-08-04 11:58:30,349 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Black Eyed Peas, Shakira, David Guetta - DONT YOU WORRY (Official Music Video).mp3
+2025-08-04 11:58:30,350 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Blue Dreams - Mr. Pig, Bzars & Sapir Amar.mp3
+2025-08-04 11:58:30,352 - src.core.database - INFO - ✅ Canción añadida: Blue Dreams - Mr. Pig, Bzars & Sapir Amar (ID: 344)
+2025-08-04 11:58:30,353 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Blue Dreams - Mr. Pig, Bzars & Sapir Amar.mp3
+2025-08-04 11:58:30,353 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\BORGORE & SIKDOPE - Unicorn Zombie Apocalypse (Original Mix).mp3
+2025-08-04 11:58:30,355 - src.core.database - INFO - ✅ Canción añadida: BORGORE & SIKDOPE - Unicorn Zombie Apocalypse (Original Mix) (ID: 345)
+2025-08-04 11:58:30,356 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\BORGORE & SIKDOPE - Unicorn Zombie Apocalypse (Original Mix).mp3
+2025-08-04 11:58:30,356 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\BZARS - The Sun.mp3
+2025-08-04 11:58:30,360 - src.core.database - INFO - ✅ Canción añadida: BZARS - The Sun (ID: 346)
+2025-08-04 11:58:30,360 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\BZARS - The Sun.mp3
+2025-08-04 11:58:30,361 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris & Alesso - Under Control (Official Video) ft. Hurts.mp3
+2025-08-04 11:58:30,365 - src.core.database - INFO - ✅ Canción añadida: Calvin Harris & Alesso - Under Control (Official Video) ft. Hurts (ID: 347)
+2025-08-04 11:58:30,366 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris & Alesso - Under Control (Official Video) ft. Hurts.mp3
+2025-08-04 11:58:30,366 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Blame ft. John Newman.mp3
+2025-08-04 11:58:30,369 - src.core.database - INFO - ✅ Canción añadida: Calvin Harris - Blame ft. John Newman (ID: 348)
+2025-08-04 11:58:30,369 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Blame ft. John Newman.mp3
+2025-08-04 11:58:30,370 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Outside (Official Video) ft. Ellie Goulding.mp3
+2025-08-04 11:58:30,372 - src.core.database - INFO - ✅ Canción añadida: Calvin Harris - Outside (Official Video) ft. Ellie Goulding (ID: 349)
+2025-08-04 11:58:30,373 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Outside (Official Video) ft. Ellie Goulding.mp3
+2025-08-04 11:58:30,373 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Summer (Official Video).mp3
+2025-08-04 11:58:30,375 - src.core.database - INFO - ✅ Canción añadida: Calvin Harris - Summer (Official Video) (ID: 350)
+2025-08-04 11:58:30,376 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Summer (Official Video).mp3
+2025-08-04 11:58:30,376 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Sweet Nothing (Official Video) ft. Florence Welch.mp3
+2025-08-04 11:58:30,396 - src.core.database - INFO - ✅ Canción añadida: Calvin Harris - Sweet Nothing (Official Video) ft. Florence Welch (ID: 351)
+2025-08-04 11:58:30,397 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Sweet Nothing (Official Video) ft. Florence Welch.mp3
+2025-08-04 11:58:30,398 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris, RagnBone Man - Giant (Official Video).mp3
+2025-08-04 11:58:30,424 - src.core.database - INFO - ✅ Canción añadida: Calvin Harris, RagnBone Man - Giant (Official Video) (ID: 352)
+2025-08-04 11:58:30,425 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris, RagnBone Man - Giant (Official Video).mp3
+2025-08-04 11:58:30,425 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Catching Eyes.mp3
+2025-08-04 11:58:30,442 - src.core.database - INFO - ✅ Canción añadida: Catching Eyes (ID: 353)
+2025-08-04 11:58:30,443 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Catching Eyes.mp3
+2025-08-04 11:58:30,443 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\CAZZETTE - She Wants Me Dead ft. The High (CAZZETTE vs. AronChupa) [Official Video].mp3
+2025-08-04 11:58:30,457 - src.core.database - INFO - ✅ Canción añadida: CAZZETTE - She Wants Me Dead ft. The High (CAZZETTE vs. AronChupa) [Official Video] (ID: 354)
+2025-08-04 11:58:30,457 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\CAZZETTE - She Wants Me Dead ft. The High (CAZZETTE vs. AronChupa) [Official Video].mp3
+2025-08-04 11:58:30,458 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Charlotte de Witte - Apollo (Original Mix) [KNTXT017].mp3
+2025-08-04 11:58:30,474 - src.core.database - INFO - ✅ Canción añadida: Charlotte de Witte - Apollo (Original Mix) [KNTXT017] (ID: 355)
+2025-08-04 11:58:30,475 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Charlotte de Witte - Apollo (Original Mix) [KNTXT017].mp3
+2025-08-04 11:58:30,475 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Chico Rose x 71 Digits – Somebody’s Watching Me (Official Lyric Video).mp3
+2025-08-04 11:58:30,490 - src.core.database - INFO - ✅ Canción añadida: Chico Rose x 71 Digits – Somebody’s Watching Me (Official Lyric Video) (ID: 356)
+2025-08-04 11:58:30,491 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Chico Rose x 71 Digits – Somebody’s Watching Me (Official Lyric Video).mp3
+2025-08-04 11:58:30,491 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Clean Bandit - Rather Be ft. Jess Glynne [Official Video].mp3
+2025-08-04 11:58:30,508 - src.core.database - INFO - ✅ Canción añadida: Clean Bandit - Rather Be ft. Jess Glynne [Official Video] (ID: 357)
+2025-08-04 11:58:30,508 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Clean Bandit - Rather Be ft. Jess Glynne [Official Video].mp3
+2025-08-04 11:58:30,508 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Contiez Feat. Treyy G - Trumpsta (Djuro Remix) [Safari Music].mp3
+2025-08-04 11:58:30,522 - src.core.database - INFO - ✅ Canción añadida: Contiez Feat. Treyy G - Trumpsta (Djuro Remix) [Safari Music] (ID: 358)
+2025-08-04 11:58:30,523 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Contiez Feat. Treyy G - Trumpsta (Djuro Remix) [Safari Music].mp3
+2025-08-04 11:58:30,523 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Cutting Shapes.mp3
+2025-08-04 11:58:30,540 - src.core.database - INFO - ✅ Canción añadida: Cutting Shapes (ID: 359)
+2025-08-04 11:58:30,541 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Cutting Shapes.mp3
+2025-08-04 11:58:30,541 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Daft Punk - One More Time (Official Video).mp3
+2025-08-04 11:58:30,555 - src.core.database - INFO - ✅ Canción añadida: Daft Punk - One More Time (Official Video) (ID: 360)
+2025-08-04 11:58:30,555 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Daft Punk - One More Time (Official Video).mp3
+2025-08-04 11:58:30,556 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta & Bebe Rexha - Im Good (Blue) [Official Music Video].mp3
+2025-08-04 11:58:30,559 - src.core.database - INFO - ✅ Canción añadida: David Guetta & Bebe Rexha - Im Good (Blue) [Official Music Video] (ID: 361)
+2025-08-04 11:58:30,559 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta & Bebe Rexha - Im Good (Blue) [Official Music Video].mp3
+2025-08-04 11:58:30,560 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta & Showtek - Bad ft.Vassy (Lyrics Video).mp3
+2025-08-04 11:58:30,563 - src.core.database - INFO - ✅ Canción añadida: David Guetta & Showtek - Bad ft.Vassy (Lyrics Video) (ID: 362)
+2025-08-04 11:58:30,563 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta & Showtek - Bad ft.Vassy (Lyrics Video).mp3
+2025-08-04 11:58:30,563 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta - Play Hard ft. Ne-Yo, Akon (Official Video).mp3
+2025-08-04 11:58:30,576 - src.core.database - INFO - ✅ Canción añadida: David Guetta - Play Hard ft. Ne-Yo, Akon (Official Video) (ID: 363)
+2025-08-04 11:58:30,576 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta - Play Hard ft. Ne-Yo, Akon (Official Video).mp3
+2025-08-04 11:58:30,576 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta - Shot Me Down ft. Skylar Grey (Lyric Video).mp3
+2025-08-04 11:58:30,591 - src.core.database - INFO - ✅ Canción añadida: David Guetta - Shot Me Down ft. Skylar Grey (Lyric Video) (ID: 364)
+2025-08-04 11:58:30,592 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta - Shot Me Down ft. Skylar Grey (Lyric Video).mp3
+2025-08-04 11:58:30,593 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta Feat. Kid Cudi - Memories (Official Video).mp3
+2025-08-04 11:58:30,605 - src.core.database - INFO - ✅ Canción añadida: David Guetta Feat. Kid Cudi - Memories (Official Video) (ID: 365)
+2025-08-04 11:58:30,606 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta Feat. Kid Cudi - Memories (Official Video).mp3
+2025-08-04 11:58:30,606 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\deadmau5 & Kaskade - I Remember (HQ).mp3
+2025-08-04 11:58:30,622 - src.core.database - INFO - ✅ Canción añadida: deadmau5 & Kaskade - I Remember (HQ) (ID: 366)
+2025-08-04 11:58:30,622 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\deadmau5 & Kaskade - I Remember (HQ).mp3
+2025-08-04 11:58:30,623 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Dimitri Vegas & Like Mike vs Hardwell - Unity (Official Music Video).mp3
+2025-08-04 11:58:30,637 - src.core.database - INFO - ✅ Canción añadida: Dimitri Vegas & Like Mike vs Hardwell - Unity (Official Music Video) (ID: 367)
+2025-08-04 11:58:30,637 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Dimitri Vegas & Like Mike vs Hardwell - Unity (Official Music Video).mp3
+2025-08-04 11:58:30,637 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Dimitri Vegas & Like Mike vs Ummet Ozcan - The Hum ( Official Music Video ).mp3
+2025-08-04 11:58:30,653 - src.core.database - INFO - ✅ Canción añadida: Dimitri Vegas & Like Mike vs Ummet Ozcan - The Hum ( Official Music Video ) (ID: 368)
+2025-08-04 11:58:30,653 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Dimitri Vegas & Like Mike vs Ummet Ozcan - The Hum ( Official Music Video ).mp3
+2025-08-04 11:58:30,653 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Dimitri Vegas, Martin Garrix, Like Mike - Tremor (Official Music Video).mp3
+2025-08-04 11:58:30,669 - src.core.database - INFO - ✅ Canción añadida: Dimitri Vegas, Martin Garrix, Like Mike - Tremor (Official Music Video) (ID: 369)
+2025-08-04 11:58:30,669 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Dimitri Vegas, Martin Garrix, Like Mike - Tremor (Official Music Video).mp3
+2025-08-04 11:58:30,670 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Diplo & Miguel - Dont Forget My Love (Official Music Video).mp3
+2025-08-04 11:58:30,685 - src.core.database - INFO - ✅ Canción añadida: Diplo & Miguel - Dont Forget My Love (Official Music Video) (ID: 370)
+2025-08-04 11:58:30,685 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Diplo & Miguel - Dont Forget My Love (Official Music Video).mp3
+2025-08-04 11:58:30,685 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Diplo & SIDEPIECE - On My Mind (Official Audio).mp3
+2025-08-04 11:58:30,702 - src.core.database - INFO - ✅ Canción añadida: Diplo & SIDEPIECE - On My Mind (Official Audio) (ID: 371)
+2025-08-04 11:58:30,703 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Diplo & SIDEPIECE - On My Mind (Official Audio).mp3
+2025-08-04 11:58:30,704 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - Momentum  Official Music Video.mp3
+2025-08-04 11:58:30,720 - src.core.database - INFO - ✅ Canción añadida: Don Diablo - Momentum  Official Music Video (ID: 372)
+2025-08-04 11:58:30,720 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - Momentum  Official Music Video.mp3
+2025-08-04 11:58:30,720 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - On My Mind (Official Music Video).mp3
+2025-08-04 11:58:30,736 - src.core.database - INFO - ✅ Canción añadida: Don Diablo - On My Mind (Official Music Video) (ID: 373)
+2025-08-04 11:58:30,737 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - On My Mind (Official Music Video).mp3
+2025-08-04 11:58:30,737 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - Save A Little Love  Official Music Video.mp3
+2025-08-04 11:58:30,754 - src.core.database - INFO - ✅ Canción añadida: Don Diablo - Save A Little Love  Official Music Video (ID: 374)
+2025-08-04 11:58:30,755 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - Save A Little Love  Official Music Video.mp3
+2025-08-04 11:58:30,755 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - Survive (Lyric Video) ft. Emeli Sandé, Gucci Mane.mp3
+2025-08-04 11:58:30,771 - src.core.database - INFO - ✅ Canción añadida: Don Diablo - Survive (Lyric Video) ft. Emeli Sandé, Gucci Mane (ID: 375)
+2025-08-04 11:58:30,771 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - Survive (Lyric Video) ft. Emeli Sandé, Gucci Mane.mp3
+2025-08-04 11:58:30,772 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Toliver - No Idea [Official Music Video].mp3
+2025-08-04 11:58:30,877 - src.core.database - INFO - ✅ Canción añadida: Don Toliver - No Idea [Official Music Video] (ID: 376)
+2025-08-04 11:58:30,878 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Toliver - No Idea [Official Music Video].mp3
+2025-08-04 11:58:30,878 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\DownFlex - Connectivity.mp3
+2025-08-04 11:58:30,892 - src.core.database - INFO - ✅ Canción añadida: DownFlex - Connectivity (ID: 377)
+2025-08-04 11:58:30,892 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\DownFlex - Connectivity.mp3
+2025-08-04 11:58:30,892 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\DVBBS - Pyramids (Fatho Remix).mp3
+2025-08-04 11:58:30,906 - src.core.database - INFO - ✅ Canción añadida: DVBBS - Pyramids (Fatho Remix) (ID: 378)
+2025-08-04 11:58:30,907 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\DVBBS - Pyramids (Fatho Remix).mp3
+2025-08-04 11:58:30,907 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Eliza Rose - B.O.T.A. (Baddest Of Them All) [Official Video].mp3
+2025-08-04 11:58:30,924 - src.core.database - INFO - ✅ Canción añadida: Eliza Rose - B.O.T.A. (Baddest Of Them All) [Official Video] (ID: 379)
+2025-08-04 11:58:30,925 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Eliza Rose - B.O.T.A. (Baddest Of Them All) [Official Video].mp3
+2025-08-04 11:58:30,926 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Enrico Sangiuliano - The Sound Of Space (Original Mix) [NINETOZERO].mp3
+2025-08-04 11:58:30,940 - src.core.database - INFO - ✅ Canción añadida: Enrico Sangiuliano - The Sound Of Space (Original Mix) [NINETOZERO] (ID: 380)
+2025-08-04 11:58:30,941 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Enrico Sangiuliano - The Sound Of Space (Original Mix) [NINETOZERO].mp3
+2025-08-04 11:58:30,941 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Eva Shaw - Space Jungle (Showtek Edit) [Official Music Video].mp3
+2025-08-04 11:58:30,956 - src.core.database - INFO - ✅ Canción añadida: Eva Shaw - Space Jungle (Showtek Edit) [Official Music Video] (ID: 381)
+2025-08-04 11:58:30,956 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Eva Shaw - Space Jungle (Showtek Edit) [Official Music Video].mp3
+2025-08-04 11:58:30,957 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\FISHER - Losing It.mp3
+2025-08-04 11:58:30,972 - src.core.database - INFO - ✅ Canción añadida: FISHER - Losing It (ID: 382)
+2025-08-04 11:58:30,973 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\FISHER - Losing It.mp3
+2025-08-04 11:58:30,973 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\FJAAK - Plan Of Escape.mp3
+2025-08-04 11:58:30,990 - src.core.database - INFO - ✅ Canción añadida: FJAAK - Plan Of Escape (ID: 383)
+2025-08-04 11:58:30,991 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\FJAAK - Plan Of Escape.mp3
+2025-08-04 11:58:30,991 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Franck - Hear The Sound [RF1].mp3
+2025-08-04 11:58:31,007 - src.core.database - INFO - ✅ Canción añadida: Franck - Hear The Sound [RF1] (ID: 384)
+2025-08-04 11:58:31,008 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Franck - Hear The Sound [RF1].mp3
+2025-08-04 11:58:31,008 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Fred again.. - Jungle.mp3
+2025-08-04 11:58:31,024 - src.core.database - INFO - ✅ Canción añadida: Fred again.. - Jungle (ID: 385)
+2025-08-04 11:58:31,025 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Fred again.. - Jungle.mp3
+2025-08-04 11:58:31,025 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\GAB ft. Jex - Endlessly.mp3
+2025-08-04 11:58:31,040 - src.core.database - INFO - ✅ Canción añadida: GAB ft. Jex - Endlessly (ID: 386)
+2025-08-04 11:58:31,040 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\GAB ft. Jex - Endlessly.mp3
+2025-08-04 11:58:31,041 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Galantis - No Money (Official Video).mp3
+2025-08-04 11:58:31,055 - src.core.database - INFO - ✅ Canción añadida: Galantis - No Money (Official Video) (ID: 387)
+2025-08-04 11:58:31,055 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Galantis - No Money (Official Video).mp3
+2025-08-04 11:58:31,056 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Galantis - Runaway (U & I) (Official Video).mp3
+2025-08-04 11:58:31,070 - src.core.database - INFO - ✅ Canción añadida: Galantis - Runaway (U & I) (Official Video) (ID: 388)
+2025-08-04 11:58:31,071 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Galantis - Runaway (U & I) (Official Video).mp3
+2025-08-04 11:58:31,071 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Gigi DAgostino Bla Bla Bla.mp3
+2025-08-04 11:58:31,087 - src.core.database - INFO - ✅ Canción añadida: Gigi DAgostino Bla Bla Bla (ID: 389)
+2025-08-04 11:58:31,087 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Gigi DAgostino Bla Bla Bla.mp3
+2025-08-04 11:58:31,087 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Gotez - Talking Head.mp3
+2025-08-04 11:58:31,193 - src.core.database - INFO - ✅ Canción añadida: Gotez - Talking Head (ID: 390)
+2025-08-04 11:58:31,193 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Gotez - Talking Head.mp3
+2025-08-04 11:58:31,194 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\GRLS - DYSTOPIA (OFFICIAL MUSIC VIDEO).mp3
+2025-08-04 11:58:31,208 - src.core.database - INFO - ✅ Canción añadida: GRLS - DYSTOPIA (OFFICIAL MUSIC VIDEO) (ID: 391)
+2025-08-04 11:58:31,209 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\GRLS - DYSTOPIA (OFFICIAL MUSIC VIDEO).mp3
+2025-08-04 11:58:31,209 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Heads Will Roll (A-Trak Remix).mp3
+2025-08-04 11:58:31,226 - src.core.database - INFO - ✅ Canción añadida: Heads Will Roll (A-Trak Remix) (ID: 392)
+2025-08-04 11:58:31,226 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Heads Will Roll (A-Trak Remix).mp3
+2025-08-04 11:58:31,227 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\HIJCKD - The Captain.mp3
+2025-08-04 11:58:31,241 - src.core.database - INFO - ✅ Canción añadida: HIJCKD - The Captain (ID: 393)
+2025-08-04 11:58:31,242 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\HIJCKD - The Captain.mp3
+2025-08-04 11:58:31,242 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\I Know (Extended Mix).mp3
+2025-08-04 11:58:31,255 - src.core.database - INFO - ✅ Canción añadida: I Know (Extended Mix) (ID: 394)
+2025-08-04 11:58:31,256 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\I Know (Extended Mix).mp3
+2025-08-04 11:58:31,256 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Intelligency - August  Official Lyric Video.mp3
+2025-08-04 11:58:31,272 - src.core.database - INFO - ✅ Canción añadida: Intelligency - August  Official Lyric Video (ID: 395)
+2025-08-04 11:58:31,273 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Intelligency - August  Official Lyric Video.mp3
+2025-08-04 11:58:31,273 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Isabel LaRosa - HEAVEN.mp3
+2025-08-04 11:58:31,289 - src.core.database - INFO - ✅ Canción añadida: Isabel LaRosa - HEAVEN (ID: 396)
+2025-08-04 11:58:31,290 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Isabel LaRosa - HEAVEN.mp3
+2025-08-04 11:58:31,290 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Joel Corry x MNEK - Head & Heart [Official Video].mp3
+2025-08-04 11:58:31,307 - src.core.database - INFO - ✅ Canción añadida: Joel Corry x MNEK - Head & Heart [Official Video] (ID: 397)
+2025-08-04 11:58:31,308 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Joel Corry x MNEK - Head & Heart [Official Video].mp3
+2025-08-04 11:58:31,309 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Jonas Blue - Perfect Strangers ft. JP Cooper (Official Video).mp3
+2025-08-04 11:58:31,323 - src.core.database - INFO - ✅ Canción añadida: Jonas Blue - Perfect Strangers ft. JP Cooper (Official Video) (ID: 398)
+2025-08-04 11:58:31,325 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Jonas Blue - Perfect Strangers ft. JP Cooper (Official Video).mp3
+2025-08-04 11:58:31,325 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Knife Party & Pegboard Nerds - Harpoon.mp3
+2025-08-04 11:58:31,444 - src.core.database - INFO - ✅ Canción añadida: Knife Party & Pegboard Nerds - Harpoon (ID: 399)
+2025-08-04 11:58:31,444 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Knife Party & Pegboard Nerds - Harpoon.mp3
+2025-08-04 11:58:31,444 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Kobosil - Luzifer (Feat. UFO361) [RK5].mp3
+2025-08-04 11:58:31,457 - src.core.database - INFO - ✅ Canción añadida: Kobosil - Luzifer (Feat. UFO361) [RK5] (ID: 400)
+2025-08-04 11:58:31,457 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Kobosil - Luzifer (Feat. UFO361) [RK5].mp3
+2025-08-04 11:58:31,457 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Kungs - I FEEL SO BAD (Lyrics Video) ft. Ephemerals.mp3
+2025-08-04 11:58:31,472 - src.core.database - INFO - ✅ Canción añadida: Kungs - I FEEL SO BAD (Lyrics Video) ft. Ephemerals (ID: 401)
+2025-08-04 11:58:31,473 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Kungs - I FEEL SO BAD (Lyrics Video) ft. Ephemerals.mp3
+2025-08-04 11:58:31,473 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Kungs vs Cookin’ on 3 Burners - This Girl (Official Music Video).mp3
+2025-08-04 11:58:31,492 - src.core.database - INFO - ✅ Canción añadida: Kungs vs Cookin’ on 3 Burners - This Girl (Official Music Video) (ID: 402)
+2025-08-04 11:58:31,492 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Kungs vs Cookin’ on 3 Burners - This Girl (Official Music Video).mp3
+2025-08-04 11:58:31,493 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\KVSH & Schillist - Sicko Drop.mp3
+2025-08-04 11:58:31,513 - src.core.database - INFO - ✅ Canción añadida: KVSH & Schillist - Sicko Drop (ID: 403)
+2025-08-04 11:58:31,514 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\KVSH & Schillist - Sicko Drop.mp3
+2025-08-04 11:58:31,514 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Kygo - Stole The Show feat. Parson James [Official Music Video - YTMAs].mp3
+2025-08-04 11:58:31,526 - src.core.database - INFO - ✅ Canción añadida: Kygo - Stole The Show feat. Parson James [Official Music Video - YTMAs] (ID: 404)
+2025-08-04 11:58:31,527 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Kygo - Stole The Show feat. Parson James [Official Music Video - YTMAs].mp3
+2025-08-04 11:58:31,527 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Lilly Wood & The Prick and Robin Schulz - Prayer In C (Robin Schulz Remix) (Official).mp3
+2025-08-04 11:58:31,682 - src.core.database - INFO - ✅ Canción añadida: Lilly Wood & The Prick and Robin Schulz - Prayer In C (Robin Schulz Remix) (Official) (ID: 405)
+2025-08-04 11:58:31,683 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Lilly Wood & The Prick and Robin Schulz - Prayer In C (Robin Schulz Remix) (Official).mp3
+2025-08-04 11:58:31,683 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\LMFAO - Sorry For Party Rocking.mp3
+2025-08-04 11:58:31,708 - src.core.database - INFO - ✅ Canción añadida: LMFAO - Sorry For Party Rocking (ID: 406)
+2025-08-04 11:58:31,708 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\LMFAO - Sorry For Party Rocking.mp3
+2025-08-04 11:58:31,709 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\LMFAO ft. Lauren Bennett, GoonRock - Party Rock Anthem (Official Video).mp3
+2025-08-04 11:58:31,734 - src.core.database - INFO - ✅ Canción añadida: LMFAO ft. Lauren Bennett, GoonRock - Party Rock Anthem (Official Video) (ID: 407)
+2025-08-04 11:58:31,735 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\LMFAO ft. Lauren Bennett, GoonRock - Party Rock Anthem (Official Video).mp3
+2025-08-04 11:58:31,735 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Love Like That  Kaskade  Redux 004.mp3
+2025-08-04 11:58:31,757 - src.core.database - INFO - ✅ Canción añadida: Love Like That  Kaskade  Redux 004 (ID: 408)
+2025-08-04 11:58:31,758 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Love Like That  Kaskade  Redux 004.mp3
+2025-08-04 11:58:31,759 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Maddix - Heute Nacht (Big Room  Techno).mp3
+2025-08-04 11:58:31,782 - src.core.database - INFO - ✅ Canción añadida: Maddix - Heute Nacht (Big Room  Techno) (ID: 409)
+2025-08-04 11:58:31,783 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Maddix - Heute Nacht (Big Room  Techno).mp3
+2025-08-04 11:58:31,783 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Major Lazer & DJ Snake - Lean On (feat. MØ) (Official Music Video).mp3
+2025-08-04 11:58:31,810 - src.core.database - INFO - ✅ Canción añadida: Major Lazer & DJ Snake - Lean On (feat. MØ) (Official Music Video) (ID: 410)
+2025-08-04 11:58:31,813 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Major Lazer & DJ Snake - Lean On (feat. MØ) (Official Music Video).mp3
+2025-08-04 11:58:31,816 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Major Lazer – Light it Up Remix (feat. Nyla & Fuse ODG) (Music Video) by Method Studios.mp3
+2025-08-04 11:58:31,856 - src.core.database - INFO - ✅ Canción añadida: Major Lazer – Light it Up Remix (feat. Nyla & Fuse ODG) (Music Video) by Method Studios (ID: 411)
+2025-08-04 11:58:31,858 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Major Lazer – Light it Up Remix (feat. Nyla & Fuse ODG) (Music Video) by Method Studios.mp3
+2025-08-04 11:58:31,859 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Maone - Hold On.mp3
+2025-08-04 11:58:31,886 - src.core.database - INFO - ✅ Canción añadida: Maone - Hold On (ID: 412)
+2025-08-04 11:58:31,888 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Maone - Hold On.mp3
+2025-08-04 11:58:31,888 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Garrix & Tiësto - The Only Way Is Up (Official Music Video).mp3
+2025-08-04 11:58:31,928 - src.core.database - INFO - ✅ Canción añadida: Martin Garrix & Tiësto - The Only Way Is Up (Official Music Video) (ID: 413)
+2025-08-04 11:58:31,930 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Garrix & Tiësto - The Only Way Is Up (Official Music Video).mp3
+2025-08-04 11:58:31,931 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Garrix - Animals (Official Video).mp3
+2025-08-04 11:58:31,959 - src.core.database - INFO - ✅ Canción añadida: Martin Garrix - Animals (Official Video) (ID: 414)
+2025-08-04 11:58:31,960 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Garrix - Animals (Official Video).mp3
+2025-08-04 11:58:31,961 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Garrix feat. Usher - Dont Look Down (Towel Boy) [Official Music Video YTMAs].mp3
+2025-08-04 11:58:31,981 - src.core.database - INFO - ✅ Canción añadida: Martin Garrix feat. Usher - Dont Look Down (Towel Boy) [Official Music Video YTMAs] (ID: 415)
+2025-08-04 11:58:31,982 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Garrix feat. Usher - Dont Look Down (Towel Boy) [Official Music Video YTMAs].mp3
+2025-08-04 11:58:31,982 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Solveig & GTA - Intoxicated (Official Music Video).mp3
+2025-08-04 11:58:31,999 - src.core.database - INFO - ✅ Canción añadida: Martin Solveig & GTA - Intoxicated (Official Music Video) (ID: 416)
+2025-08-04 11:58:31,999 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Solveig & GTA - Intoxicated (Official Music Video).mp3
+2025-08-04 11:58:32,000 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Solveig - Hello.mp3
+2025-08-04 11:58:32,023 - src.core.database - INFO - ✅ Canción añadida: Martin Solveig - Hello (ID: 417)
+2025-08-04 11:58:32,025 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Solveig - Hello.mp3
+2025-08-04 11:58:32,025 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Solveig, Roy Woods - Juliet & Romeo.mp3
+2025-08-04 11:58:32,051 - src.core.database - INFO - ✅ Canción añadida: Martin Solveig, Roy Woods - Juliet & Romeo (ID: 418)
+2025-08-04 11:58:32,052 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Solveig, Roy Woods - Juliet & Romeo.mp3
+2025-08-04 11:58:32,052 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Max Brhon - Cyberpunk [NCS Release].mp3
+2025-08-04 11:58:32,071 - src.core.database - INFO - ✅ Canción añadida: Max Brhon - Cyberpunk [NCS Release] (ID: 419)
+2025-08-04 11:58:32,072 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Max Brhon - Cyberpunk [NCS Release].mp3
+2025-08-04 11:58:32,073 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\MEDUZA, Becky Hill, Goodboys - Lose Control (Lyric Video).mp3
+2025-08-04 11:58:32,098 - src.core.database - INFO - ✅ Canción añadida: MEDUZA, Becky Hill, Goodboys - Lose Control (Lyric Video) (ID: 420)
+2025-08-04 11:58:32,099 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\MEDUZA, Becky Hill, Goodboys - Lose Control (Lyric Video).mp3
+2025-08-04 11:58:32,100 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\MEDUZA, Goodboys - Piece Of Your Heart (Visualizer).mp3
+2025-08-04 11:58:32,125 - src.core.database - INFO - ✅ Canción añadida: MEDUZA, Goodboys - Piece Of Your Heart (Visualizer) (ID: 421)
+2025-08-04 11:58:32,126 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\MEDUZA, Goodboys - Piece Of Your Heart (Visualizer).mp3
+2025-08-04 11:58:32,127 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Mi$HNRZ - Delorean (Official Music Video).mp3
+2025-08-04 11:58:32,132 - src.core.database - INFO - ✅ Canción añadida: Mi$HNRZ - Delorean (Official Music Video) (ID: 422)
+2025-08-04 11:58:32,134 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Mi$HNRZ - Delorean (Official Music Video).mp3
+2025-08-04 11:58:32,134 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3
+2025-08-04 11:58:32,153 - src.core.database - INFO - ✅ Canción añadida: Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit) (ID: 423)
+2025-08-04 11:58:32,154 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3
+2025-08-04 11:58:32,154 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Mind Hype.mp3
+2025-08-04 11:58:32,175 - src.core.database - INFO - ✅ Canción añadida: Mind Hype (ID: 424)
+2025-08-04 11:58:32,177 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Mind Hype.mp3
+2025-08-04 11:58:32,177 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Møme - Aloha (Official Music Video) ft. Merryn Jeann.mp3
+2025-08-04 11:58:32,203 - src.core.database - INFO - ✅ Canción añadida: Møme - Aloha (Official Music Video) ft. Merryn Jeann (ID: 425)
+2025-08-04 11:58:32,205 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Møme - Aloha (Official Music Video) ft. Merryn Jeann.mp3
+2025-08-04 11:58:32,205 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\NEIKED, Mae Muller, J Balvin - Better Days (Lyric Video) ft. Polo G.mp3
+2025-08-04 11:58:32,232 - src.core.database - INFO - ✅ Canción añadida: NEIKED, Mae Muller, J Balvin - Better Days (Lyric Video) ft. Polo G (ID: 426)
+2025-08-04 11:58:32,234 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\NEIKED, Mae Muller, J Balvin - Better Days (Lyric Video) ft. Polo G.mp3
+2025-08-04 11:58:32,234 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\NIVIRO - Memes (Original Mix).mp3
+2025-08-04 11:58:32,462 - src.core.database - INFO - ✅ Canción añadida: NIVIRO - Memes (Original Mix) (ID: 427)
+2025-08-04 11:58:32,463 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\NIVIRO - Memes (Original Mix).mp3
+2025-08-04 11:58:32,463 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\NIVIRO - Nandaka.mp3
+2025-08-04 11:58:32,493 - src.core.database - INFO - ✅ Canción añadida: NIVIRO - Nandaka (ID: 428)
+2025-08-04 11:58:32,494 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\NIVIRO - Nandaka.mp3
+2025-08-04 11:58:32,495 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\NTO - Gamma (Joyhauser Remix).mp3
+2025-08-04 11:58:32,528 - src.core.database - INFO - ✅ Canción añadida: NTO - Gamma (Joyhauser Remix) (ID: 429)
+2025-08-04 11:58:32,530 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\NTO - Gamma (Joyhauser Remix).mp3
+2025-08-04 11:58:32,531 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Ofenbach & Quarterhead - Head Shoulders Knees & Toes (feat. Norma Jean Martine) [Lyric Video].mp3
+2025-08-04 11:58:32,552 - src.core.database - INFO - ✅ Canción añadida: Ofenbach & Quarterhead - Head Shoulders Knees & Toes (feat. Norma Jean Martine) [Lyric Video] (ID: 430)
+2025-08-04 11:58:32,554 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Ofenbach & Quarterhead - Head Shoulders Knees & Toes (feat. Norma Jean Martine) [Lyric Video].mp3
+2025-08-04 11:58:32,555 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\OLIVER TREE & LITTLE BIG - TURN IT UP (FEAT. TOMMY CASH).mp3
+2025-08-04 11:58:32,578 - src.core.database - INFO - ✅ Canción añadida: OLIVER TREE & LITTLE BIG - TURN IT UP (FEAT. TOMMY CASH) (ID: 431)
+2025-08-04 11:58:32,579 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\OLIVER TREE & LITTLE BIG - TURN IT UP (FEAT. TOMMY CASH).mp3
+2025-08-04 11:58:32,580 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Pills (Deborah de Luca Remix).mp3
+2025-08-04 11:58:32,600 - src.core.database - INFO - ✅ Canción añadida: Pills (Deborah de Luca Remix) (ID: 432)
+2025-08-04 11:58:32,601 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Pills (Deborah de Luca Remix).mp3
+2025-08-04 11:58:32,601 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Project X Pursuit Of Happiness.mp3
+2025-08-04 11:58:32,618 - src.core.database - INFO - ✅ Canción añadida: Project X Pursuit Of Happiness (ID: 433)
+2025-08-04 11:58:32,618 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Project X Pursuit Of Happiness.mp3
+2025-08-04 11:58:32,619 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB & DEORRO - Flashlight (Official Music Video).mp3
+2025-08-04 11:58:32,639 - src.core.database - INFO - ✅ Canción añadida: R3HAB & DEORRO - Flashlight (Official Music Video) (ID: 434)
+2025-08-04 11:58:32,640 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB & DEORRO - Flashlight (Official Music Video).mp3
+2025-08-04 11:58:32,642 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3hab & Headhunterz - Wont Stop Rocking (Official Music Video).mp3
+2025-08-04 11:58:32,669 - src.core.database - INFO - ✅ Canción añadida: R3hab & Headhunterz - Wont Stop Rocking (Official Music Video) (ID: 435)
+2025-08-04 11:58:32,670 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3hab & Headhunterz - Wont Stop Rocking (Official Music Video).mp3
+2025-08-04 11:58:32,670 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB & VINAI - How We Party (Official Music Video).mp3
+2025-08-04 11:58:32,693 - src.core.database - INFO - ✅ Canción añadida: R3HAB & VINAI - How We Party (Official Music Video) (ID: 436)
+2025-08-04 11:58:32,694 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB & VINAI - How We Party (Official Music Video).mp3
+2025-08-04 11:58:32,694 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB - My Pony (Official Music Video).mp3
+2025-08-04 11:58:32,713 - src.core.database - INFO - ✅ Canción añadida: R3HAB - My Pony (Official Music Video) (ID: 437)
+2025-08-04 11:58:32,714 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB - My Pony (Official Music Video).mp3
+2025-08-04 11:58:32,715 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3hab - Samurai (Go Hard) [Official Video].mp3
+2025-08-04 11:58:32,735 - src.core.database - INFO - ✅ Canción añadida: R3hab - Samurai (Go Hard) [Official Video] (ID: 438)
+2025-08-04 11:58:32,735 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3hab - Samurai (Go Hard) [Official Video].mp3
+2025-08-04 11:58:32,736 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB x A Touch Of Class - All Around The World (La La La) (Official Video).mp3
+2025-08-04 11:58:32,762 - src.core.database - INFO - ✅ Canción añadida: R3HAB x A Touch Of Class - All Around The World (La La La) (Official Video) (ID: 439)
+2025-08-04 11:58:32,763 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB x A Touch Of Class - All Around The World (La La La) (Official Video).mp3
+2025-08-04 11:58:32,763 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB x Mike Williams - Lullaby (Official Video).mp3
+2025-08-04 11:58:32,789 - src.core.database - INFO - ✅ Canción añadida: R3HAB x Mike Williams - Lullaby (Official Video) (ID: 440)
+2025-08-04 11:58:32,790 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB x Mike Williams - Lullaby (Official Video).mp3
+2025-08-04 11:58:32,790 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB x Timmy Trumpet - 911 (Official Video).mp3
+2025-08-04 11:58:32,811 - src.core.database - INFO - ✅ Canción añadida: R3HAB x Timmy Trumpet - 911 (Official Video) (ID: 441)
+2025-08-04 11:58:32,812 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB x Timmy Trumpet - 911 (Official Video).mp3
+2025-08-04 11:58:32,812 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Robin Schulz - Sugar (feat. Francesco Yates) (OFFICIAL MUSIC VIDEO).mp3
+2025-08-04 11:58:32,840 - src.core.database - INFO - ✅ Canción añadida: Robin Schulz - Sugar (feat. Francesco Yates) (OFFICIAL MUSIC VIDEO) (ID: 442)
+2025-08-04 11:58:32,840 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Robin Schulz - Sugar (feat. Francesco Yates) (OFFICIAL MUSIC VIDEO).mp3
+2025-08-04 11:58:32,841 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\RÜFÜS DU SOL ●● Innerbloom (Official Video).mp3
+2025-08-04 11:58:32,865 - src.core.database - INFO - ✅ Canción añadida: RÜFÜS DU SOL ●● Innerbloom (Official Video) (ID: 443)
+2025-08-04 11:58:32,866 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\RÜFÜS DU SOL ●● Innerbloom (Official Video).mp3
+2025-08-04 11:58:32,866 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\SAINt JHN - Roses (Imanbek Remix) (Official Music Video).mp3
+2025-08-04 11:58:32,883 - src.core.database - INFO - ✅ Canción añadida: SAINt JHN - Roses (Imanbek Remix) (Official Music Video) (ID: 444)
+2025-08-04 11:58:32,885 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\SAINt JHN - Roses (Imanbek Remix) (Official Music Video).mp3
+2025-08-04 11:58:32,886 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\seekae - test & recognise (flume re-work); sub. español.mp3
+2025-08-04 11:58:32,907 - src.core.database - INFO - ✅ Canción añadida: seekae - test & recognise (flume re-work); sub. español (ID: 445)
+2025-08-04 11:58:32,908 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\seekae - test & recognise (flume re-work); sub. español.mp3
+2025-08-04 11:58:32,908 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Sexy Bitch (feat. Akon).mp3
+2025-08-04 11:58:32,927 - src.core.database - INFO - ✅ Canción añadida: Sexy Bitch (feat. Akon) (ID: 446)
+2025-08-04 11:58:32,928 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Sexy Bitch (feat. Akon).mp3
+2025-08-04 11:58:32,929 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\SIDEPIECE - Dont Keep Me Waiting (Official Lyric Video).mp3
+2025-08-04 11:58:32,951 - src.core.database - INFO - ✅ Canción añadida: SIDEPIECE - Dont Keep Me Waiting (Official Lyric Video) (ID: 447)
+2025-08-04 11:58:32,952 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\SIDEPIECE - Dont Keep Me Waiting (Official Lyric Video).mp3
+2025-08-04 11:58:32,953 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\SKRILLEX - Bangarang feat. Sirah [Official Music Video].mp3
+2025-08-04 11:58:32,977 - src.core.database - INFO - ✅ Canción añadida: SKRILLEX - Bangarang feat. Sirah [Official Music Video] (ID: 448)
+2025-08-04 11:58:32,978 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\SKRILLEX - Bangarang feat. Sirah [Official Music Video].mp3
+2025-08-04 11:58:32,979 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Space 92 - Colonia (Original Mix).mp3
+2025-08-04 11:58:33,004 - src.core.database - INFO - ✅ Canción añadida: Space 92 - Colonia (Original Mix) (ID: 449)
+2025-08-04 11:58:33,004 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Space 92 - Colonia (Original Mix).mp3
+2025-08-04 11:58:33,004 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Stromae - Alors On Danse (Official Music Video).mp3
+2025-08-04 11:58:33,021 - src.core.database - INFO - ✅ Canción añadida: Stromae - Alors On Danse (Official Music Video) (ID: 450)
+2025-08-04 11:58:33,022 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Stromae - Alors On Danse (Official Music Video).mp3
+2025-08-04 11:58:33,023 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Stromae - Papaoutai (Official Music Video).mp3
+2025-08-04 11:58:33,049 - src.core.database - INFO - ✅ Canción añadida: Stromae - Papaoutai (Official Music Video) (ID: 451)
+2025-08-04 11:58:33,051 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Stromae - Papaoutai (Official Music Video).mp3
+2025-08-04 11:58:33,052 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Swedish House Mafia ft. John Martin - Dont You Worry Child (Official Video).mp3
+2025-08-04 11:58:33,079 - src.core.database - INFO - ✅ Canción añadida: Swedish House Mafia ft. John Martin - Dont You Worry Child (Official Video) (ID: 452)
+2025-08-04 11:58:33,080 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Swedish House Mafia ft. John Martin - Dont You Worry Child (Official Video).mp3
+2025-08-04 11:58:33,081 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\The Business.mp3
+2025-08-04 11:58:33,109 - src.core.database - INFO - ✅ Canción añadida: The Business (ID: 453)
+2025-08-04 11:58:33,111 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\The Business.mp3
+2025-08-04 11:58:33,112 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Time.mp3
+2025-08-04 11:58:33,143 - src.core.database - INFO - ✅ Canción añadida: Time (ID: 454)
+2025-08-04 11:58:33,145 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Time.mp3
+2025-08-04 11:58:33,146 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & 7 Skies - My Frequency feat. RebMoe (Official Lyric Video).mp3
+2025-08-04 11:58:33,171 - src.core.database - INFO - ✅ Canción añadida: Tiësto & 7 Skies - My Frequency feat. RebMoe (Official Lyric Video) (ID: 455)
+2025-08-04 11:58:33,172 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & 7 Skies - My Frequency feat. RebMoe (Official Lyric Video).mp3
+2025-08-04 11:58:33,172 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & Black Eyed Peas - Pump It Louder (Official Video).mp3
+2025-08-04 11:58:33,200 - src.core.database - INFO - ✅ Canción añadida: Tiësto & Black Eyed Peas - Pump It Louder (Official Video) (ID: 456)
+2025-08-04 11:58:33,201 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & Black Eyed Peas - Pump It Louder (Official Video).mp3
+2025-08-04 11:58:33,201 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & Don Diablo - Chemicals (feat. Thomas Troelsen) [Official Music Video].mp3
+2025-08-04 11:58:33,223 - src.core.database - INFO - ✅ Canción añadida: Tiësto & Don Diablo - Chemicals (feat. Thomas Troelsen) [Official Music Video] (ID: 457)
+2025-08-04 11:58:33,225 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & Don Diablo - Chemicals (feat. Thomas Troelsen) [Official Music Video].mp3
+2025-08-04 11:58:33,225 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & Dzeko ft. Preme & Post Malone - Jackie Chan (Official Lyric Video).mp3
+2025-08-04 11:58:33,243 - src.core.database - INFO - ✅ Canción añadida: Tiësto & Dzeko ft. Preme & Post Malone - Jackie Chan (Official Lyric Video) (ID: 458)
+2025-08-04 11:58:33,245 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & Dzeko ft. Preme & Post Malone - Jackie Chan (Official Lyric Video).mp3
+2025-08-04 11:58:33,245 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto - Adagio For Strings.mp3
+2025-08-04 11:58:33,265 - src.core.database - INFO - ✅ Canción añadida: Tiësto - Adagio For Strings (ID: 459)
+2025-08-04 11:58:33,267 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto - Adagio For Strings.mp3
+2025-08-04 11:58:33,267 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto - Baila Conmigo (Official Lyric Video).mp3
+2025-08-04 11:58:33,289 - src.core.database - INFO - ✅ Canción añadida: Tiësto - Baila Conmigo (Official Lyric Video) (ID: 460)
+2025-08-04 11:58:33,290 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto - Baila Conmigo (Official Lyric Video).mp3
+2025-08-04 11:58:33,290 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto - Wasted ft. Matthew Koma (Official Music Video).mp3
+2025-08-04 11:58:33,312 - src.core.database - INFO - ✅ Canción añadida: Tiësto - Wasted ft. Matthew Koma (Official Music Video) (ID: 461)
+2025-08-04 11:58:33,313 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto - Wasted ft. Matthew Koma (Official Music Video).mp3
+2025-08-04 11:58:33,314 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto, Ava Max - The Motto (Lyrics).mp3
+2025-08-04 11:58:33,338 - src.core.database - INFO - ✅ Canción añadida: Tiësto, Ava Max - The Motto (Lyrics) (ID: 462)
+2025-08-04 11:58:33,339 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto, Ava Max - The Motto (Lyrics).mp3
+2025-08-04 11:58:33,339 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto, Jonas Blue & Rita Ora - Ritual (Official Video).mp3
+2025-08-04 11:58:33,357 - src.core.database - INFO - ✅ Canción añadida: Tiësto, Jonas Blue & Rita Ora - Ritual (Official Video) (ID: 463)
+2025-08-04 11:58:33,357 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto, Jonas Blue & Rita Ora - Ritual (Official Video).mp3
+2025-08-04 11:58:33,358 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto, Oliver Heldens - The Right Song (official video) ft. Natalie La Rose.mp3
+2025-08-04 11:58:33,373 - src.core.database - INFO - ✅ Canción añadida: Tiësto, Oliver Heldens - The Right Song (official video) ft. Natalie La Rose (ID: 464)
+2025-08-04 11:58:33,374 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto, Oliver Heldens - The Right Song (official video) ft. Natalie La Rose.mp3
+2025-08-04 11:58:33,374 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Turn off the Lights (Cages Remix).mp3
+2025-08-04 11:58:33,391 - src.core.database - INFO - ✅ Canción añadida: Turn off the Lights (Cages Remix) (ID: 465)
+2025-08-04 11:58:33,392 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Turn off the Lights (Cages Remix).mp3
+2025-08-04 11:58:33,392 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\U Got That  FULL VERSION [MMV].mp3
+2025-08-04 11:58:33,406 - src.core.database - INFO - ✅ Canción añadida: U Got That  FULL VERSION [MMV] (ID: 466)
+2025-08-04 11:58:33,406 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\U Got That  FULL VERSION [MMV].mp3
+2025-08-04 11:58:33,407 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Valence - Infinite [NCS Release].mp3
+2025-08-04 11:58:33,426 - src.core.database - INFO - ✅ Canción añadida: Valence - Infinite [NCS Release] (ID: 467)
+2025-08-04 11:58:33,426 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Valence - Infinite [NCS Release].mp3
+2025-08-04 11:58:33,427 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\VANTAGE - 5050.mp3
+2025-08-04 11:58:33,441 - src.core.database - INFO - ✅ Canción añadida: VANTAGE - 5050 (ID: 468)
+2025-08-04 11:58:33,442 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\VANTAGE - 5050.mp3
+2025-08-04 11:58:33,442 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\will.i.am - Scream & Shout ft. Britney Spears (Official Music Video).mp3
+2025-08-04 11:58:33,461 - src.core.database - INFO - ✅ Canción añadida: will.i.am - Scream & Shout ft. Britney Spears (Official Music Video) (ID: 469)
+2025-08-04 11:58:33,462 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\will.i.am - Scream & Shout ft. Britney Spears (Official Music Video).mp3
+2025-08-04 11:58:33,462 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\You.mp3
+2025-08-04 11:58:33,477 - src.core.database - INFO - ✅ Canción añadida: You (ID: 470)
+2025-08-04 11:58:33,478 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\You.mp3
+2025-08-04 11:58:33,478 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Your Love (9PM).mp3
+2025-08-04 11:58:33,495 - src.core.database - INFO - ✅ Canción añadida: Your Love (9PM) (ID: 471)
+2025-08-04 11:58:33,496 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Your Love (9PM).mp3
+2025-08-04 11:58:33,496 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Yung Bae - Wonder (feat. Channel Tres) (Official Video).mp3
+2025-08-04 11:58:33,512 - src.core.database - INFO - ✅ Canción añadida: Yung Bae - Wonder (feat. Channel Tres) (Official Video) (ID: 472)
+2025-08-04 11:58:33,513 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Yung Bae - Wonder (feat. Channel Tres) (Official Video).mp3
+2025-08-04 11:58:33,513 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Yung Bae feat. Marc E. Bassy - Revolving (Official Video).mp3
+2025-08-04 11:58:33,534 - src.core.database - INFO - ✅ Canción añadida: Yung Bae feat. Marc E. Bassy - Revolving (Official Video) (ID: 473)
+2025-08-04 11:58:33,535 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Yung Bae feat. Marc E. Bassy - Revolving (Official Video).mp3
+2025-08-04 11:58:33,535 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:58:33,536 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:58:33,537 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Acraze - Do It To It (Extended Mix).mp3
+2025-08-04 11:58:33,537 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Acraze - Do It To It (Extended Mix).mp3
+2025-08-04 11:58:33,538 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Afrojack - Ten Feet Tall (Official Lyric Video) ft. Wrabel.mp3
+2025-08-04 11:58:33,538 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Afrojack - Ten Feet Tall (Official Lyric Video) ft. Wrabel.mp3
+2025-08-04 11:58:33,539 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Alesso - Heroes (we could be) ft. Tove Lo.mp3
+2025-08-04 11:58:33,539 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Alesso - Heroes (we could be) ft. Tove Lo.mp3
+2025-08-04 11:58:33,539 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Alex Gaudino feat. Crystal Waters - Destination Calabria [Explicit Version] [Official Video].mp3
+2025-08-04 11:58:33,540 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Alex Gaudino feat. Crystal Waters - Destination Calabria [Explicit Version] [Official Video].mp3
+2025-08-04 11:58:33,541 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Archie - Back Again.mp3
+2025-08-04 11:58:33,541 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Archie - Back Again.mp3
+2025-08-04 11:58:33,541 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\AronChupa, Little Sis Nora - Im an Albatraoz  OFFICIAL VIDEO.mp3
+2025-08-04 11:58:33,542 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\AronChupa, Little Sis Nora - Im an Albatraoz  OFFICIAL VIDEO.mp3
+2025-08-04 11:58:33,542 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Ava Max - Million Dollar Baby (Official Video).mp3
+2025-08-04 11:58:33,543 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Ava Max - Million Dollar Baby (Official Video).mp3
+2025-08-04 11:58:33,543 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Avicii - Addicted To You.mp3
+2025-08-04 11:58:33,543 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Avicii - Addicted To You.mp3
+2025-08-04 11:58:33,545 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Avicii - Levels.mp3
+2025-08-04 11:58:33,545 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Avicii - Levels.mp3
+2025-08-04 11:58:33,546 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Avicii - Waiting For Love.mp3
+2025-08-04 11:58:33,546 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Avicii - Waiting For Love.mp3
+2025-08-04 11:58:33,547 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Bakermat - Baianá (Official Video).mp3
+2025-08-04 11:58:33,547 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Bakermat - Baianá (Official Video).mp3
+2025-08-04 11:58:33,548 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Belocca & Nusha - Serenity (Original Mix).mp3
+2025-08-04 11:58:33,548 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Belocca & Nusha - Serenity (Original Mix).mp3
+2025-08-04 11:58:33,549 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Benny Benassi - Satisfaction.mp3
+2025-08-04 11:58:33,549 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Benny Benassi - Satisfaction.mp3
+2025-08-04 11:58:33,550 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Big And Chunky.mp3
+2025-08-04 11:58:33,550 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Big And Chunky.mp3
+2025-08-04 11:58:33,550 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Black Eyed Peas, Shakira, David Guetta - DONT YOU WORRY (Official Music Video).mp3
+2025-08-04 11:58:33,551 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Black Eyed Peas, Shakira, David Guetta - DONT YOU WORRY (Official Music Video).mp3
+2025-08-04 11:58:33,551 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Blue Dreams - Mr. Pig, Bzars & Sapir Amar.mp3
+2025-08-04 11:58:33,552 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Blue Dreams - Mr. Pig, Bzars & Sapir Amar.mp3
+2025-08-04 11:58:33,552 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\BORGORE & SIKDOPE - Unicorn Zombie Apocalypse (Original Mix).mp3
+2025-08-04 11:58:33,553 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\BORGORE & SIKDOPE - Unicorn Zombie Apocalypse (Original Mix).mp3
+2025-08-04 11:58:33,553 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\BZARS - The Sun.mp3
+2025-08-04 11:58:33,554 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\BZARS - The Sun.mp3
+2025-08-04 11:58:33,554 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris & Alesso - Under Control (Official Video) ft. Hurts.mp3
+2025-08-04 11:58:33,555 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris & Alesso - Under Control (Official Video) ft. Hurts.mp3
+2025-08-04 11:58:33,555 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Blame ft. John Newman.mp3
+2025-08-04 11:58:33,556 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Blame ft. John Newman.mp3
+2025-08-04 11:58:33,556 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Outside (Official Video) ft. Ellie Goulding.mp3
+2025-08-04 11:58:33,557 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Outside (Official Video) ft. Ellie Goulding.mp3
+2025-08-04 11:58:33,557 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Summer (Official Video).mp3
+2025-08-04 11:58:33,558 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Summer (Official Video).mp3
+2025-08-04 11:58:33,558 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Sweet Nothing (Official Video) ft. Florence Welch.mp3
+2025-08-04 11:58:33,558 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris - Sweet Nothing (Official Video) ft. Florence Welch.mp3
+2025-08-04 11:58:33,559 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris, RagnBone Man - Giant (Official Video).mp3
+2025-08-04 11:58:33,559 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Calvin Harris, RagnBone Man - Giant (Official Video).mp3
+2025-08-04 11:58:33,560 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Catching Eyes.mp3
+2025-08-04 11:58:33,560 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Catching Eyes.mp3
+2025-08-04 11:58:33,560 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\CAZZETTE - She Wants Me Dead ft. The High (CAZZETTE vs. AronChupa) [Official Video].mp3
+2025-08-04 11:58:33,561 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\CAZZETTE - She Wants Me Dead ft. The High (CAZZETTE vs. AronChupa) [Official Video].mp3
+2025-08-04 11:58:33,561 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Charlotte de Witte - Apollo (Original Mix) [KNTXT017].mp3
+2025-08-04 11:58:33,562 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Charlotte de Witte - Apollo (Original Mix) [KNTXT017].mp3
+2025-08-04 11:58:33,562 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Chico Rose x 71 Digits – Somebody’s Watching Me (Official Lyric Video).mp3
+2025-08-04 11:58:33,563 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Chico Rose x 71 Digits – Somebody’s Watching Me (Official Lyric Video).mp3
+2025-08-04 11:58:33,563 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Clean Bandit - Rather Be ft. Jess Glynne [Official Video].mp3
+2025-08-04 11:58:33,563 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Clean Bandit - Rather Be ft. Jess Glynne [Official Video].mp3
+2025-08-04 11:58:33,564 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Contiez Feat. Treyy G - Trumpsta (Djuro Remix) [Safari Music].mp3
+2025-08-04 11:58:33,564 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Contiez Feat. Treyy G - Trumpsta (Djuro Remix) [Safari Music].mp3
+2025-08-04 11:58:33,565 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Cutting Shapes.mp3
+2025-08-04 11:58:33,565 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Cutting Shapes.mp3
+2025-08-04 11:58:33,565 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Daft Punk - One More Time (Official Video).mp3
+2025-08-04 11:58:33,566 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Daft Punk - One More Time (Official Video).mp3
+2025-08-04 11:58:33,566 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta & Bebe Rexha - Im Good (Blue) [Official Music Video].mp3
+2025-08-04 11:58:33,567 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta & Bebe Rexha - Im Good (Blue) [Official Music Video].mp3
+2025-08-04 11:58:33,568 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta & Showtek - Bad ft.Vassy (Lyrics Video).mp3
+2025-08-04 11:58:33,569 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta & Showtek - Bad ft.Vassy (Lyrics Video).mp3
+2025-08-04 11:58:33,569 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta - Play Hard ft. Ne-Yo, Akon (Official Video).mp3
+2025-08-04 11:58:33,570 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta - Play Hard ft. Ne-Yo, Akon (Official Video).mp3
+2025-08-04 11:58:33,570 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta - Shot Me Down ft. Skylar Grey (Lyric Video).mp3
+2025-08-04 11:58:33,571 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta - Shot Me Down ft. Skylar Grey (Lyric Video).mp3
+2025-08-04 11:58:33,571 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta Feat. Kid Cudi - Memories (Official Video).mp3
+2025-08-04 11:58:33,572 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\David Guetta Feat. Kid Cudi - Memories (Official Video).mp3
+2025-08-04 11:58:33,572 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\deadmau5 & Kaskade - I Remember (HQ).mp3
+2025-08-04 11:58:33,573 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\deadmau5 & Kaskade - I Remember (HQ).mp3
+2025-08-04 11:58:33,573 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Dimitri Vegas & Like Mike vs Hardwell - Unity (Official Music Video).mp3
+2025-08-04 11:58:33,573 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Dimitri Vegas & Like Mike vs Hardwell - Unity (Official Music Video).mp3
+2025-08-04 11:58:33,574 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Dimitri Vegas & Like Mike vs Ummet Ozcan - The Hum ( Official Music Video ).mp3
+2025-08-04 11:58:33,574 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Dimitri Vegas & Like Mike vs Ummet Ozcan - The Hum ( Official Music Video ).mp3
+2025-08-04 11:58:33,575 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Dimitri Vegas, Martin Garrix, Like Mike - Tremor (Official Music Video).mp3
+2025-08-04 11:58:33,576 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Dimitri Vegas, Martin Garrix, Like Mike - Tremor (Official Music Video).mp3
+2025-08-04 11:58:33,576 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Diplo & Miguel - Dont Forget My Love (Official Music Video).mp3
+2025-08-04 11:58:33,577 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Diplo & Miguel - Dont Forget My Love (Official Music Video).mp3
+2025-08-04 11:58:33,577 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Diplo & SIDEPIECE - On My Mind (Official Audio).mp3
+2025-08-04 11:58:33,578 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Diplo & SIDEPIECE - On My Mind (Official Audio).mp3
+2025-08-04 11:58:33,578 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - Momentum  Official Music Video.mp3
+2025-08-04 11:58:33,579 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - Momentum  Official Music Video.mp3
+2025-08-04 11:58:33,579 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - On My Mind (Official Music Video).mp3
+2025-08-04 11:58:33,580 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - On My Mind (Official Music Video).mp3
+2025-08-04 11:58:33,580 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - Save A Little Love  Official Music Video.mp3
+2025-08-04 11:58:33,581 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - Save A Little Love  Official Music Video.mp3
+2025-08-04 11:58:33,581 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - Survive (Lyric Video) ft. Emeli Sandé, Gucci Mane.mp3
+2025-08-04 11:58:33,582 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Diablo - Survive (Lyric Video) ft. Emeli Sandé, Gucci Mane.mp3
+2025-08-04 11:58:33,582 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Toliver - No Idea [Official Music Video].mp3
+2025-08-04 11:58:33,583 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Don Toliver - No Idea [Official Music Video].mp3
+2025-08-04 11:58:33,583 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\DownFlex - Connectivity.mp3
+2025-08-04 11:58:33,583 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\DownFlex - Connectivity.mp3
+2025-08-04 11:58:33,585 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\DVBBS - Pyramids (Fatho Remix).mp3
+2025-08-04 11:58:33,585 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\DVBBS - Pyramids (Fatho Remix).mp3
+2025-08-04 11:58:33,585 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Eliza Rose - B.O.T.A. (Baddest Of Them All) [Official Video].mp3
+2025-08-04 11:58:33,586 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Eliza Rose - B.O.T.A. (Baddest Of Them All) [Official Video].mp3
+2025-08-04 11:58:33,586 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Enrico Sangiuliano - The Sound Of Space (Original Mix) [NINETOZERO].mp3
+2025-08-04 11:58:33,587 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Enrico Sangiuliano - The Sound Of Space (Original Mix) [NINETOZERO].mp3
+2025-08-04 11:58:33,587 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Eva Shaw - Space Jungle (Showtek Edit) [Official Music Video].mp3
+2025-08-04 11:58:33,588 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Eva Shaw - Space Jungle (Showtek Edit) [Official Music Video].mp3
+2025-08-04 11:58:33,588 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\FISHER - Losing It.mp3
+2025-08-04 11:58:33,589 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\FISHER - Losing It.mp3
+2025-08-04 11:58:33,589 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\FJAAK - Plan Of Escape.mp3
+2025-08-04 11:58:33,590 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\FJAAK - Plan Of Escape.mp3
+2025-08-04 11:58:33,590 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Franck - Hear The Sound [RF1].mp3
+2025-08-04 11:58:33,591 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Franck - Hear The Sound [RF1].mp3
+2025-08-04 11:58:33,591 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Fred again.. - Jungle.mp3
+2025-08-04 11:58:33,592 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Fred again.. - Jungle.mp3
+2025-08-04 11:58:33,592 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\GAB ft. Jex - Endlessly.mp3
+2025-08-04 11:58:33,593 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\GAB ft. Jex - Endlessly.mp3
+2025-08-04 11:58:33,593 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Galantis - No Money (Official Video).mp3
+2025-08-04 11:58:33,594 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Galantis - No Money (Official Video).mp3
+2025-08-04 11:58:33,594 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Galantis - Runaway (U & I) (Official Video).mp3
+2025-08-04 11:58:33,595 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Galantis - Runaway (U & I) (Official Video).mp3
+2025-08-04 11:58:33,595 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Gigi DAgostino Bla Bla Bla.mp3
+2025-08-04 11:58:33,595 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Gigi DAgostino Bla Bla Bla.mp3
+2025-08-04 11:58:33,596 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Gotez - Talking Head.mp3
+2025-08-04 11:58:33,596 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Gotez - Talking Head.mp3
+2025-08-04 11:58:33,596 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\GRLS - DYSTOPIA (OFFICIAL MUSIC VIDEO).mp3
+2025-08-04 11:58:33,597 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\GRLS - DYSTOPIA (OFFICIAL MUSIC VIDEO).mp3
+2025-08-04 11:58:33,597 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Heads Will Roll (A-Trak Remix).mp3
+2025-08-04 11:58:33,598 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Heads Will Roll (A-Trak Remix).mp3
+2025-08-04 11:58:33,598 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\HIJCKD - The Captain.mp3
+2025-08-04 11:58:33,599 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\HIJCKD - The Captain.mp3
+2025-08-04 11:58:33,599 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\I Know (Extended Mix).mp3
+2025-08-04 11:58:33,600 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\I Know (Extended Mix).mp3
+2025-08-04 11:58:33,600 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Intelligency - August  Official Lyric Video.mp3
+2025-08-04 11:58:33,601 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Intelligency - August  Official Lyric Video.mp3
+2025-08-04 11:58:33,601 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Isabel LaRosa - HEAVEN.mp3
+2025-08-04 11:58:33,602 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Isabel LaRosa - HEAVEN.mp3
+2025-08-04 11:58:33,602 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Joel Corry x MNEK - Head & Heart [Official Video].mp3
+2025-08-04 11:58:33,603 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Joel Corry x MNEK - Head & Heart [Official Video].mp3
+2025-08-04 11:58:33,603 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Jonas Blue - Perfect Strangers ft. JP Cooper (Official Video).mp3
+2025-08-04 11:58:33,604 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Jonas Blue - Perfect Strangers ft. JP Cooper (Official Video).mp3
+2025-08-04 11:58:33,604 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Knife Party & Pegboard Nerds - Harpoon.mp3
+2025-08-04 11:58:33,605 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Knife Party & Pegboard Nerds - Harpoon.mp3
+2025-08-04 11:58:33,605 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Kobosil - Luzifer (Feat. UFO361) [RK5].mp3
+2025-08-04 11:58:33,606 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Kobosil - Luzifer (Feat. UFO361) [RK5].mp3
+2025-08-04 11:58:33,606 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Kungs - I FEEL SO BAD (Lyrics Video) ft. Ephemerals.mp3
+2025-08-04 11:58:33,607 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Kungs - I FEEL SO BAD (Lyrics Video) ft. Ephemerals.mp3
+2025-08-04 11:58:33,607 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Kungs vs Cookin’ on 3 Burners - This Girl (Official Music Video).mp3
+2025-08-04 11:58:33,607 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Kungs vs Cookin’ on 3 Burners - This Girl (Official Music Video).mp3
+2025-08-04 11:58:33,608 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\KVSH & Schillist - Sicko Drop.mp3
+2025-08-04 11:58:33,608 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\KVSH & Schillist - Sicko Drop.mp3
+2025-08-04 11:58:33,608 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Kygo - Stole The Show feat. Parson James [Official Music Video - YTMAs].mp3
+2025-08-04 11:58:33,609 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Kygo - Stole The Show feat. Parson James [Official Music Video - YTMAs].mp3
+2025-08-04 11:58:33,609 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Lilly Wood & The Prick and Robin Schulz - Prayer In C (Robin Schulz Remix) (Official).mp3
+2025-08-04 11:58:33,610 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Lilly Wood & The Prick and Robin Schulz - Prayer In C (Robin Schulz Remix) (Official).mp3
+2025-08-04 11:58:33,610 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\LMFAO - Sorry For Party Rocking.mp3
+2025-08-04 11:58:33,611 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\LMFAO - Sorry For Party Rocking.mp3
+2025-08-04 11:58:33,611 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\LMFAO ft. Lauren Bennett, GoonRock - Party Rock Anthem (Official Video).mp3
+2025-08-04 11:58:33,611 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\LMFAO ft. Lauren Bennett, GoonRock - Party Rock Anthem (Official Video).mp3
+2025-08-04 11:58:33,612 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Love Like That  Kaskade  Redux 004.mp3
+2025-08-04 11:58:33,612 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Love Like That  Kaskade  Redux 004.mp3
+2025-08-04 11:58:33,613 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Maddix - Heute Nacht (Big Room  Techno).mp3
+2025-08-04 11:58:33,613 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Maddix - Heute Nacht (Big Room  Techno).mp3
+2025-08-04 11:58:33,613 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Major Lazer & DJ Snake - Lean On (feat. MØ) (Official Music Video).mp3
+2025-08-04 11:58:33,614 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Major Lazer & DJ Snake - Lean On (feat. MØ) (Official Music Video).mp3
+2025-08-04 11:58:33,614 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Major Lazer – Light it Up Remix (feat. Nyla & Fuse ODG) (Music Video) by Method Studios.mp3
+2025-08-04 11:58:33,615 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Major Lazer – Light it Up Remix (feat. Nyla & Fuse ODG) (Music Video) by Method Studios.mp3
+2025-08-04 11:58:33,615 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Maone - Hold On.mp3
+2025-08-04 11:58:33,616 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Maone - Hold On.mp3
+2025-08-04 11:58:33,616 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Garrix & Tiësto - The Only Way Is Up (Official Music Video).mp3
+2025-08-04 11:58:33,617 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Garrix & Tiësto - The Only Way Is Up (Official Music Video).mp3
+2025-08-04 11:58:33,617 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Garrix - Animals (Official Video).mp3
+2025-08-04 11:58:33,618 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Garrix - Animals (Official Video).mp3
+2025-08-04 11:58:33,618 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Garrix feat. Usher - Dont Look Down (Towel Boy) [Official Music Video YTMAs].mp3
+2025-08-04 11:58:33,619 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Garrix feat. Usher - Dont Look Down (Towel Boy) [Official Music Video YTMAs].mp3
+2025-08-04 11:58:33,619 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Solveig & GTA - Intoxicated (Official Music Video).mp3
+2025-08-04 11:58:33,620 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Solveig & GTA - Intoxicated (Official Music Video).mp3
+2025-08-04 11:58:33,620 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Solveig - Hello.mp3
+2025-08-04 11:58:33,621 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Solveig - Hello.mp3
+2025-08-04 11:58:33,621 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Solveig, Roy Woods - Juliet & Romeo.mp3
+2025-08-04 11:58:33,622 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Martin Solveig, Roy Woods - Juliet & Romeo.mp3
+2025-08-04 11:58:33,622 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Max Brhon - Cyberpunk [NCS Release].mp3
+2025-08-04 11:58:33,623 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Max Brhon - Cyberpunk [NCS Release].mp3
+2025-08-04 11:58:33,623 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\MEDUZA, Becky Hill, Goodboys - Lose Control (Lyric Video).mp3
+2025-08-04 11:58:33,624 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\MEDUZA, Becky Hill, Goodboys - Lose Control (Lyric Video).mp3
+2025-08-04 11:58:33,624 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\MEDUZA, Goodboys - Piece Of Your Heart (Visualizer).mp3
+2025-08-04 11:58:33,624 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\MEDUZA, Goodboys - Piece Of Your Heart (Visualizer).mp3
+2025-08-04 11:58:33,624 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Mi$HNRZ - Delorean (Official Music Video).mp3
+2025-08-04 11:58:33,625 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Mi$HNRZ - Delorean (Official Music Video).mp3
+2025-08-04 11:58:33,625 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3
+2025-08-04 11:58:33,626 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3
+2025-08-04 11:58:33,626 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Mind Hype.mp3
+2025-08-04 11:58:33,627 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Mind Hype.mp3
+2025-08-04 11:58:33,627 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Møme - Aloha (Official Music Video) ft. Merryn Jeann.mp3
+2025-08-04 11:58:33,627 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Møme - Aloha (Official Music Video) ft. Merryn Jeann.mp3
+2025-08-04 11:58:33,628 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\NEIKED, Mae Muller, J Balvin - Better Days (Lyric Video) ft. Polo G.mp3
+2025-08-04 11:58:33,628 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\NEIKED, Mae Muller, J Balvin - Better Days (Lyric Video) ft. Polo G.mp3
+2025-08-04 11:58:33,629 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\NIVIRO - Memes (Original Mix).mp3
+2025-08-04 11:58:33,629 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\NIVIRO - Memes (Original Mix).mp3
+2025-08-04 11:58:33,630 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\NIVIRO - Nandaka.mp3
+2025-08-04 11:58:33,630 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\NIVIRO - Nandaka.mp3
+2025-08-04 11:58:33,630 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\NTO - Gamma (Joyhauser Remix).mp3
+2025-08-04 11:58:33,631 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\NTO - Gamma (Joyhauser Remix).mp3
+2025-08-04 11:58:33,631 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Ofenbach & Quarterhead - Head Shoulders Knees & Toes (feat. Norma Jean Martine) [Lyric Video].mp3
+2025-08-04 11:58:33,632 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Ofenbach & Quarterhead - Head Shoulders Knees & Toes (feat. Norma Jean Martine) [Lyric Video].mp3
+2025-08-04 11:58:33,632 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\OLIVER TREE & LITTLE BIG - TURN IT UP (FEAT. TOMMY CASH).mp3
+2025-08-04 11:58:33,633 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\OLIVER TREE & LITTLE BIG - TURN IT UP (FEAT. TOMMY CASH).mp3
+2025-08-04 11:58:33,633 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Pills (Deborah de Luca Remix).mp3
+2025-08-04 11:58:33,635 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Pills (Deborah de Luca Remix).mp3
+2025-08-04 11:58:33,635 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Project X Pursuit Of Happiness.mp3
+2025-08-04 11:58:33,635 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Project X Pursuit Of Happiness.mp3
+2025-08-04 11:58:33,636 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB & DEORRO - Flashlight (Official Music Video).mp3
+2025-08-04 11:58:33,636 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB & DEORRO - Flashlight (Official Music Video).mp3
+2025-08-04 11:58:33,636 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3hab & Headhunterz - Wont Stop Rocking (Official Music Video).mp3
+2025-08-04 11:58:33,637 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3hab & Headhunterz - Wont Stop Rocking (Official Music Video).mp3
+2025-08-04 11:58:33,637 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB & VINAI - How We Party (Official Music Video).mp3
+2025-08-04 11:58:33,638 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB & VINAI - How We Party (Official Music Video).mp3
+2025-08-04 11:58:33,638 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB - My Pony (Official Music Video).mp3
+2025-08-04 11:58:33,639 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB - My Pony (Official Music Video).mp3
+2025-08-04 11:58:33,639 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3hab - Samurai (Go Hard) [Official Video].mp3
+2025-08-04 11:58:33,640 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3hab - Samurai (Go Hard) [Official Video].mp3
+2025-08-04 11:58:33,640 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB x A Touch Of Class - All Around The World (La La La) (Official Video).mp3
+2025-08-04 11:58:33,640 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB x A Touch Of Class - All Around The World (La La La) (Official Video).mp3
+2025-08-04 11:58:33,640 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB x Mike Williams - Lullaby (Official Video).mp3
+2025-08-04 11:58:33,641 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB x Mike Williams - Lullaby (Official Video).mp3
+2025-08-04 11:58:33,641 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB x Timmy Trumpet - 911 (Official Video).mp3
+2025-08-04 11:58:33,642 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\R3HAB x Timmy Trumpet - 911 (Official Video).mp3
+2025-08-04 11:58:33,642 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Robin Schulz - Sugar (feat. Francesco Yates) (OFFICIAL MUSIC VIDEO).mp3
+2025-08-04 11:58:33,643 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Robin Schulz - Sugar (feat. Francesco Yates) (OFFICIAL MUSIC VIDEO).mp3
+2025-08-04 11:58:33,643 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\RÜFÜS DU SOL ●● Innerbloom (Official Video).mp3
+2025-08-04 11:58:33,644 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\RÜFÜS DU SOL ●● Innerbloom (Official Video).mp3
+2025-08-04 11:58:33,644 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\SAINt JHN - Roses (Imanbek Remix) (Official Music Video).mp3
+2025-08-04 11:58:33,645 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\SAINt JHN - Roses (Imanbek Remix) (Official Music Video).mp3
+2025-08-04 11:58:33,645 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\seekae - test & recognise (flume re-work); sub. español.mp3
+2025-08-04 11:58:33,646 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\seekae - test & recognise (flume re-work); sub. español.mp3
+2025-08-04 11:58:33,647 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Sexy Bitch (feat. Akon).mp3
+2025-08-04 11:58:33,647 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Sexy Bitch (feat. Akon).mp3
+2025-08-04 11:58:33,648 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\SIDEPIECE - Dont Keep Me Waiting (Official Lyric Video).mp3
+2025-08-04 11:58:33,648 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\SIDEPIECE - Dont Keep Me Waiting (Official Lyric Video).mp3
+2025-08-04 11:58:33,649 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\SKRILLEX - Bangarang feat. Sirah [Official Music Video].mp3
+2025-08-04 11:58:33,650 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\SKRILLEX - Bangarang feat. Sirah [Official Music Video].mp3
+2025-08-04 11:58:33,650 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Space 92 - Colonia (Original Mix).mp3
+2025-08-04 11:58:33,650 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Space 92 - Colonia (Original Mix).mp3
+2025-08-04 11:58:33,651 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Stromae - Alors On Danse (Official Music Video).mp3
+2025-08-04 11:58:33,651 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Stromae - Alors On Danse (Official Music Video).mp3
+2025-08-04 11:58:33,652 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Stromae - Papaoutai (Official Music Video).mp3
+2025-08-04 11:58:33,652 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Stromae - Papaoutai (Official Music Video).mp3
+2025-08-04 11:58:33,653 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Swedish House Mafia ft. John Martin - Dont You Worry Child (Official Video).mp3
+2025-08-04 11:58:33,653 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Swedish House Mafia ft. John Martin - Dont You Worry Child (Official Video).mp3
+2025-08-04 11:58:33,654 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\The Business.mp3
+2025-08-04 11:58:33,654 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\The Business.mp3
+2025-08-04 11:58:33,654 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Time.mp3
+2025-08-04 11:58:33,656 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Time.mp3
+2025-08-04 11:58:33,656 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & 7 Skies - My Frequency feat. RebMoe (Official Lyric Video).mp3
+2025-08-04 11:58:33,657 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & 7 Skies - My Frequency feat. RebMoe (Official Lyric Video).mp3
+2025-08-04 11:58:33,657 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & Black Eyed Peas - Pump It Louder (Official Video).mp3
+2025-08-04 11:58:33,658 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & Black Eyed Peas - Pump It Louder (Official Video).mp3
+2025-08-04 11:58:33,658 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & Don Diablo - Chemicals (feat. Thomas Troelsen) [Official Music Video].mp3
+2025-08-04 11:58:33,658 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & Don Diablo - Chemicals (feat. Thomas Troelsen) [Official Music Video].mp3
+2025-08-04 11:58:33,659 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & Dzeko ft. Preme & Post Malone - Jackie Chan (Official Lyric Video).mp3
+2025-08-04 11:58:33,659 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto & Dzeko ft. Preme & Post Malone - Jackie Chan (Official Lyric Video).mp3
+2025-08-04 11:58:33,660 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto - Adagio For Strings.mp3
+2025-08-04 11:58:33,661 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto - Adagio For Strings.mp3
+2025-08-04 11:58:33,661 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto - Baila Conmigo (Official Lyric Video).mp3
+2025-08-04 11:58:33,662 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto - Baila Conmigo (Official Lyric Video).mp3
+2025-08-04 11:58:33,662 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto - Wasted ft. Matthew Koma (Official Music Video).mp3
+2025-08-04 11:58:33,663 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto - Wasted ft. Matthew Koma (Official Music Video).mp3
+2025-08-04 11:58:33,663 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto, Ava Max - The Motto (Lyrics).mp3
+2025-08-04 11:58:33,664 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto, Ava Max - The Motto (Lyrics).mp3
+2025-08-04 11:58:33,664 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto, Jonas Blue & Rita Ora - Ritual (Official Video).mp3
+2025-08-04 11:58:33,664 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto, Jonas Blue & Rita Ora - Ritual (Official Video).mp3
+2025-08-04 11:58:33,665 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto, Oliver Heldens - The Right Song (official video) ft. Natalie La Rose.mp3
+2025-08-04 11:58:33,665 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Tiësto, Oliver Heldens - The Right Song (official video) ft. Natalie La Rose.mp3
+2025-08-04 11:58:33,666 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Turn off the Lights (Cages Remix).mp3
+2025-08-04 11:58:33,666 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Turn off the Lights (Cages Remix).mp3
+2025-08-04 11:58:33,666 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\U Got That  FULL VERSION [MMV].mp3
+2025-08-04 11:58:33,667 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\U Got That  FULL VERSION [MMV].mp3
+2025-08-04 11:58:33,667 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Valence - Infinite [NCS Release].mp3
+2025-08-04 11:58:33,668 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Valence - Infinite [NCS Release].mp3
+2025-08-04 11:58:33,668 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\VANTAGE - 5050.mp3
+2025-08-04 11:58:33,668 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\VANTAGE - 5050.mp3
+2025-08-04 11:58:33,669 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\will.i.am - Scream & Shout ft. Britney Spears (Official Music Video).mp3
+2025-08-04 11:58:33,670 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\will.i.am - Scream & Shout ft. Britney Spears (Official Music Video).mp3
+2025-08-04 11:58:33,670 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\You.mp3
+2025-08-04 11:58:33,671 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\You.mp3
+2025-08-04 11:58:33,672 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Your Love (9PM).mp3
+2025-08-04 11:58:33,672 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Your Love (9PM).mp3
+2025-08-04 11:58:33,673 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Yung Bae - Wonder (feat. Channel Tres) (Official Video).mp3
+2025-08-04 11:58:33,673 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Yung Bae - Wonder (feat. Channel Tres) (Official Video).mp3
+2025-08-04 11:58:33,675 - src.web.flask_app - INFO - 📁 Procesando: C:\Users\Steven\Pictures\prueba musica\Electronica\Yung Bae feat. Marc E. Bassy - Revolving (Official Video).mp3
+2025-08-04 11:58:33,676 - src.web.flask_app - INFO - ✅ Agregado: C:\Users\Steven\Pictures\prueba musica\Electronica\Yung Bae feat. Marc E. Bassy - Revolving (Official Video).mp3
+2025-08-04 11:58:33,676 - src.web.flask_app - INFO - 🔄 Recargando biblioteca musical...
+2025-08-04 11:58:33,679 - src.core.app - INFO - Cargando biblioteca musical...
+2025-08-04 11:58:33,689 - src.core.app - INFO - ✅ 146 pistas válidas cargadas
+2025-08-04 11:58:33,690 - src.web.flask_app - INFO - 📊 Canciones después: 146
+2025-08-04 11:58:33,692 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:33] "POST /api/library/add-folder HTTP/1.1" 200 -
+2025-08-04 11:58:34,701 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:34] "OPTIONS /api/library/songs HTTP/1.1" 200 -
+2025-08-04 11:58:34,706 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:34] "GET /api/library/songs HTTP/1.1" 200 -
+2025-08-04 11:58:47,733 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:47] "OPTIONS /api/library/play/1 HTTP/1.1" 200 -
+2025-08-04 11:58:47,738 - src.web.flask_app - INFO - Solicitando reproducción de pista ID: 1
+2025-08-04 11:58:47,738 - src.web.flask_app - INFO - Reproduciendo: ACRAZE - Believe ft. Goodboys
+2025-08-04 11:58:47,739 - src.web.flask_app - INFO - Iniciando reproducción de archivo: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:58:47,739 - src.web.flask_app - INFO - Hilo de reproducción iniciado
+2025-08-04 11:58:47,739 - src.web.flask_app - INFO - ✅ Reproducción iniciada en motor de audio
+2025-08-04 11:58:47,740 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:47] "GET /api/library/play/1 HTTP/1.1" 200 -
+2025-08-04 11:58:47,740 - src.core.app - INFO - Reproduciendo: Unknown Artist - ACRAZE - Believe ft. Goodboys
+2025-08-04 11:58:47,740 - src.core.app - INFO - 🔧 Estado actual: stopped
+2025-08-04 11:58:47,741 - src.core.app - INFO - 🎯 Estableciendo nueva pista como actual...
+2025-08-04 11:58:47,741 - src.core.app - INFO - 🔄 Cambiando estado a LOADING...
+2025-08-04 11:58:47,741 - src.core.app - INFO - 📡 Emitiendo evento de cambio de estado...
+2025-08-04 11:58:47,741 - src.core.app - INFO - ✅ Estado establecido correctamente
+2025-08-04 11:58:47,741 - src.core.app - INFO - 🔍 Verificando path: 'C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3'
+2025-08-04 11:58:47,742 - src.core.app - INFO - 📂 Cargando pista desde: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:58:47,800 - src.audio.vlc_engine - INFO - ✅ Pista cargada: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:58:47,802 - src.audio.vlc_engine - INFO - 🎵 Análisis de espectro iniciado
+2025-08-04 11:58:47,802 - src.audio.vlc_engine - INFO - ▶️ Reproducción iniciada
+2025-08-04 11:58:47,838 - src.audio.vlc_engine - INFO - 🎵 Cargando audio para análisis de espectro...
+2025-08-04 11:58:48,008 - src.core.app - INFO - 🕒 Duración obtenida: 188.9s
+2025-08-04 11:58:48,008 - src.effects.visual_manager - INFO - 🎨 Visualización iniciada
+2025-08-04 11:58:48,121 - src.core.app - INFO - 📊 Actualizando posición: 0.2s / 188.9s
+2025-08-04 11:58:48,473 - src.core.app - INFO - 📊 Actualizando posición: 0.5s / 188.9s
+2025-08-04 11:58:48,785 - src.core.app - INFO - 📊 Actualizando posición: 0.8s / 188.9s
+2025-08-04 11:58:48,971 - src.core.app - INFO - 📊 Actualizando posición: 1.1s / 188.9s
+2025-08-04 11:58:49,273 - src.core.app - INFO - 📊 Actualizando posición: 1.3s / 188.9s
+2025-08-04 11:58:49,576 - src.core.app - INFO - 📊 Actualizando posición: 1.6s / 188.9s
+2025-08-04 11:58:49,776 - src.core.app - INFO - 📊 Actualizando posición: 1.9s / 188.9s
+2025-08-04 11:58:50,081 - src.core.app - INFO - 📊 Actualizando posición: 2.2s / 188.9s
+2025-08-04 11:58:50,384 - src.core.app - INFO - 📊 Actualizando posición: 2.4s / 188.9s
+2025-08-04 11:58:50,591 - src.core.app - INFO - 📊 Actualizando posición: 2.7s / 188.9s
+2025-08-04 11:58:50,910 - src.core.app - INFO - 📊 Actualizando posición: 3.0s / 188.9s
+2025-08-04 11:58:51,197 - src.core.app - INFO - 📊 Actualizando posición: 3.3s / 188.9s
+2025-08-04 11:58:51,398 - src.core.app - INFO - 📊 Actualizando posición: 3.5s / 188.9s
+2025-08-04 11:58:51,680 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:51] "OPTIONS /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:58:51,684 - src.web.flask_app - INFO - Volumen establecido a: 83
+2025-08-04 11:58:51,686 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:51] "POST /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:58:51,687 - src.audio.vlc_engine - INFO - 🔊 Volumen: 83%
+2025-08-04 11:58:51,706 - src.core.app - INFO - 📊 Actualizando posición: 3.8s / 188.9s
+2025-08-04 11:58:51,828 - src.web.flask_app - INFO - Volumen establecido a: 84
+2025-08-04 11:58:51,830 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:51] "POST /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:58:51,832 - src.audio.vlc_engine - INFO - 🔊 Volumen: 84%
+2025-08-04 11:58:51,837 - src.web.flask_app - INFO - Volumen establecido a: 86
+2025-08-04 11:58:51,837 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:51] "POST /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:58:51,840 - src.audio.vlc_engine - INFO - 🔊 Volumen: 86%
+2025-08-04 11:58:51,844 - src.web.flask_app - INFO - Volumen establecido a: 88
+2025-08-04 11:58:51,845 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:51] "POST /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:58:51,847 - src.audio.vlc_engine - INFO - 🔊 Volumen: 88%
+2025-08-04 11:58:51,853 - src.web.flask_app - INFO - Volumen establecido a: 89
+2025-08-04 11:58:51,854 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:51] "POST /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:58:51,856 - src.audio.vlc_engine - INFO - 🔊 Volumen: 89%
+2025-08-04 11:58:51,859 - src.web.flask_app - INFO - Volumen establecido a: 91
+2025-08-04 11:58:51,859 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:51] "POST /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:58:51,865 - src.web.flask_app - INFO - Volumen establecido a: 92
+2025-08-04 11:58:51,866 - src.audio.vlc_engine - INFO - 🔊 Volumen: 91%
+2025-08-04 11:58:51,866 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:51] "POST /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:58:51,871 - src.audio.vlc_engine - INFO - 🔊 Volumen: 92%
+2025-08-04 11:58:51,928 - src.web.flask_app - INFO - Volumen establecido a: 97
+2025-08-04 11:58:51,930 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:51] "POST /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:58:51,932 - src.audio.vlc_engine - INFO - 🔊 Volumen: 97%
+2025-08-04 11:58:51,939 - src.web.flask_app - INFO - Volumen establecido a: 100
+2025-08-04 11:58:51,940 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:51] "POST /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:58:51,943 - src.web.flask_app - INFO - Volumen establecido a: 100
+2025-08-04 11:58:51,944 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:51] "POST /api/player/volume HTTP/1.1" 200 -
+2025-08-04 11:58:51,946 - src.audio.vlc_engine - INFO - 🔊 Volumen: 100%
+2025-08-04 11:58:51,950 - src.audio.vlc_engine - INFO - 🔊 Volumen: 100%
+2025-08-04 11:58:52,008 - src.core.app - INFO - 📊 Actualizando posición: 4.1s / 188.9s
+2025-08-04 11:58:52,210 - src.core.app - INFO - 📊 Actualizando posición: 4.3s / 188.9s
+2025-08-04 11:58:52,391 - concurrent.futures - ERROR - exception calling callback for <Future at 0x275737e9930 state=finished returned tuple>
+Traceback (most recent call last):
+  File "C:\Users\Steven\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 342, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\Steven\AppData\Local\Programs\Python\Python310\lib\asyncio\futures.py", line 399, in _call_set_state
+    dest_loop.call_soon_threadsafe(_set_state, destination, source)
+  File "C:\Users\Steven\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 795, in call_soon_threadsafe
+    self._check_closed()
+  File "C:\Users\Steven\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2025-08-04 11:58:52,512 - src.core.app - INFO - 📊 Actualizando posición: 4.6s / 188.9s
+2025-08-04 11:58:52,814 - src.core.app - INFO - 📊 Actualizando posición: 4.9s / 188.9s
+2025-08-04 11:58:53,017 - src.core.app - INFO - 📊 Actualizando posición: 5.1s / 188.9s
+2025-08-04 11:58:53,320 - src.core.app - INFO - 📊 Actualizando posición: 5.4s / 188.9s
+2025-08-04 11:58:53,622 - src.core.app - INFO - 📊 Actualizando posición: 5.7s / 188.9s
+2025-08-04 11:58:53,823 - src.core.app - INFO - 📊 Actualizando posición: 5.9s / 188.9s
+2025-08-04 11:58:54,126 - src.core.app - INFO - 📊 Actualizando posición: 6.2s / 188.9s
+2025-08-04 11:58:54,428 - src.core.app - INFO - 📊 Actualizando posición: 6.5s / 188.9s
+2025-08-04 11:58:54,629 - src.core.app - INFO - 📊 Actualizando posición: 6.8s / 188.9s
+2025-08-04 11:58:54,932 - src.core.app - INFO - 📊 Actualizando posición: 7.0s / 188.9s
+2025-08-04 11:58:55,234 - src.core.app - INFO - 📊 Actualizando posición: 7.3s / 188.9s
+2025-08-04 11:58:55,435 - src.core.app - INFO - 📊 Actualizando posición: 7.6s / 188.9s
+2025-08-04 11:58:55,738 - src.core.app - INFO - 📊 Actualizando posición: 7.8s / 188.9s
+2025-08-04 11:58:56,040 - src.core.app - INFO - 📊 Actualizando posición: 8.1s / 188.9s
+2025-08-04 11:58:56,242 - src.core.app - INFO - 📊 Actualizando posición: 8.4s / 188.9s
+2025-08-04 11:58:56,546 - src.core.app - INFO - 📊 Actualizando posición: 8.6s / 188.9s
+2025-08-04 11:58:56,848 - src.core.app - INFO - 📊 Actualizando posición: 8.9s / 188.9s
+2025-08-04 11:58:57,151 - src.core.app - INFO - 📊 Actualizando posición: 9.2s / 188.9s
+2025-08-04 11:58:57,352 - src.core.app - INFO - 📊 Actualizando posición: 9.4s / 188.9s
+2025-08-04 11:58:57,654 - src.core.app - INFO - 📊 Actualizando posición: 9.7s / 188.9s
+2025-08-04 11:58:57,955 - src.core.app - INFO - 📊 Actualizando posición: 10.0s / 188.9s
+2025-08-04 11:58:58,048 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:58] "OPTIONS /api/library/play/1 HTTP/1.1" 200 -
+2025-08-04 11:58:58,055 - src.web.flask_app - INFO - Solicitando reproducción de pista ID: 1
+2025-08-04 11:58:58,055 - src.web.flask_app - INFO - Reproduciendo: ACRAZE - Believe ft. Goodboys
+2025-08-04 11:58:58,055 - src.web.flask_app - INFO - Iniciando reproducción de archivo: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:58:58,056 - src.web.flask_app - INFO - Hilo de reproducción iniciado
+2025-08-04 11:58:58,056 - src.web.flask_app - INFO - ✅ Reproducción iniciada en motor de audio
+2025-08-04 11:58:58,058 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:58] "GET /api/library/play/1 HTTP/1.1" 200 -
+2025-08-04 11:58:58,059 - src.core.app - INFO - Reproduciendo: Unknown Artist - ACRAZE - Believe ft. Goodboys
+2025-08-04 11:58:58,059 - src.core.app - INFO - 🔧 Estado actual: playing
+2025-08-04 11:58:58,059 - src.core.app - INFO - ⏹️ Deteniendo pista anterior...
+2025-08-04 11:58:58,061 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-301' coro=<VLCAudioEngine._load_audio_for_analysis_background() running at C:\Users\Steven\Documents\GitHub\Reproductor-Musical-V1\Reproductor Web\src\audio\vlc_engine.py:280> wait_for=<Future cancelled> cb=[VLCAudioEngine._schedule_background_analysis.<locals>.minimal_callback() at C:\Users\Steven\Documents\GitHub\Reproductor-Musical-V1\Reproductor Web\src\audio\vlc_engine.py:228]>
+2025-08-04 11:58:58,080 - src.audio.vlc_engine - INFO - ⏹️ Reproducción detenida
+2025-08-04 11:58:58,133 - src.core.app - INFO - ✅ Pista anterior detenida
+2025-08-04 11:58:58,133 - src.core.app - INFO - 🎯 Estableciendo nueva pista como actual...
+2025-08-04 11:58:58,134 - src.core.app - INFO - 🔄 Cambiando estado a LOADING...
+2025-08-04 11:58:58,134 - src.core.app - INFO - 📡 Emitiendo evento de cambio de estado...
+2025-08-04 11:58:58,134 - src.core.app - INFO - ✅ Estado establecido correctamente
+2025-08-04 11:58:58,135 - src.core.app - INFO - 🔍 Verificando path: 'C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3'
+2025-08-04 11:58:58,136 - src.core.app - INFO - 📂 Cargando pista desde: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:58:58,146 - src.audio.vlc_engine - INFO - ✅ Pista cargada: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:58:58,148 - src.audio.vlc_engine - INFO - 🎵 Análisis de espectro iniciado
+2025-08-04 11:58:58,148 - src.audio.vlc_engine - INFO - ▶️ Reproducción iniciada
+2025-08-04 11:58:58,157 - src.core.app - INFO - 📊 Actualizando posición: 0.0s / 188.9s
+2025-08-04 11:58:58,199 - src.audio.vlc_engine - INFO - 🎵 Cargando audio para análisis de espectro...
+2025-08-04 11:58:58,308 - src.audio.vlc_engine - INFO - ✅ Audio real cargado (súper-rápido): 40000 samples a 8000Hz
+2025-08-04 11:58:58,308 - src.audio.vlc_engine - INFO - 🎵 Análisis real activado
+2025-08-04 11:58:58,354 - src.core.app - INFO - 🕒 Duración obtenida: 188.9s
+2025-08-04 11:58:58,354 - src.effects.visual_manager - INFO - 🎨 Visualización iniciada
+2025-08-04 11:58:58,459 - src.core.app - INFO - 📊 Actualizando posición: 0.2s / 188.9s
+2025-08-04 11:58:58,761 - src.core.app - INFO - 📊 Actualizando posición: 0.5s / 188.9s
+2025-08-04 11:58:59,065 - src.core.app - INFO - 📊 Actualizando posición: 0.8s / 188.9s
+2025-08-04 11:58:59,367 - src.core.app - INFO - 📊 Actualizando posición: 1.1s / 188.9s
+2025-08-04 11:58:59,454 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:59] "OPTIONS /api/library/play/2 HTTP/1.1" 200 -
+2025-08-04 11:58:59,459 - src.web.flask_app - INFO - Solicitando reproducción de pista ID: 2
+2025-08-04 11:58:59,459 - src.web.flask_app - INFO - Reproduciendo: Acraze - Do It To It (Extended Mix)
+2025-08-04 11:58:59,459 - src.web.flask_app - INFO - Iniciando reproducción de archivo: C:\Users\Steven\Pictures\prueba musica\Electronica\Acraze - Do It To It (Extended Mix).mp3
+2025-08-04 11:58:59,459 - src.web.flask_app - INFO - Hilo de reproducción iniciado
+2025-08-04 11:58:59,459 - src.web.flask_app - INFO - ✅ Reproducción iniciada en motor de audio
+2025-08-04 11:58:59,461 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:58:59] "GET /api/library/play/2 HTTP/1.1" 200 -
+2025-08-04 11:58:59,461 - src.core.app - INFO - Reproduciendo: Unknown Artist - Acraze - Do It To It (Extended Mix)
+2025-08-04 11:58:59,461 - src.core.app - INFO - 🔧 Estado actual: playing
+2025-08-04 11:58:59,461 - src.core.app - INFO - ⏹️ Deteniendo pista anterior...
+2025-08-04 11:58:59,521 - src.audio.vlc_engine - INFO - ⏹️ Reproducción detenida
+2025-08-04 11:58:59,568 - src.core.app - INFO - 📊 Actualizando posición: 0.0s / 188.9s
+2025-08-04 11:58:59,571 - src.core.app - INFO - ✅ Pista anterior detenida
+2025-08-04 11:58:59,571 - src.core.app - INFO - 🎯 Estableciendo nueva pista como actual...
+2025-08-04 11:58:59,571 - src.core.app - INFO - 🔄 Cambiando estado a LOADING...
+2025-08-04 11:58:59,571 - src.core.app - INFO - 📡 Emitiendo evento de cambio de estado...
+2025-08-04 11:58:59,571 - src.core.app - INFO - ✅ Estado establecido correctamente
+2025-08-04 11:58:59,572 - src.core.app - INFO - 🔍 Verificando path: 'C:\Users\Steven\Pictures\prueba musica\Electronica\Acraze - Do It To It (Extended Mix).mp3'
+2025-08-04 11:58:59,572 - src.core.app - INFO - 📂 Cargando pista desde: C:\Users\Steven\Pictures\prueba musica\Electronica\Acraze - Do It To It (Extended Mix).mp3
+2025-08-04 11:58:59,576 - src.audio.vlc_engine - INFO - ✅ Pista cargada: C:\Users\Steven\Pictures\prueba musica\Electronica\Acraze - Do It To It (Extended Mix).mp3
+2025-08-04 11:58:59,578 - src.audio.vlc_engine - INFO - 🎵 Análisis de espectro iniciado
+2025-08-04 11:58:59,578 - src.audio.vlc_engine - INFO - ▶️ Reproducción iniciada
+2025-08-04 11:58:59,630 - src.audio.vlc_engine - INFO - 🎵 Cargando audio para análisis de espectro...
+2025-08-04 11:58:59,694 - src.audio.vlc_engine - INFO - ✅ Audio real cargado (súper-rápido): 40000 samples a 8000Hz
+2025-08-04 11:58:59,695 - src.audio.vlc_engine - INFO - 🎵 Análisis real activado
+2025-08-04 11:58:59,772 - src.core.app - INFO - 🕒 Duración obtenida: 207.5s
+2025-08-04 11:58:59,772 - src.effects.visual_manager - INFO - 🎨 Visualización iniciada
+2025-08-04 11:58:59,870 - src.core.app - INFO - 📊 Actualizando posición: 0.2s / 207.5s
+2025-08-04 11:59:00,171 - src.core.app - INFO - 📊 Actualizando posición: 0.5s / 207.5s
+2025-08-04 11:59:00,318 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:00] "OPTIONS /api/player/state HTTP/1.1" 200 -
+2025-08-04 11:59:00,322 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:00] "GET /api/player/state HTTP/1.1" 200 -
+2025-08-04 11:59:00,328 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:00] "OPTIONS /api/player/play HTTP/1.1" 200 -
+2025-08-04 11:59:00,332 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:00] "POST /api/player/play HTTP/1.1" 200 -
+2025-08-04 11:59:00,334 - src.audio.vlc_engine - INFO - ⏸️ Reproducción pausada
+2025-08-04 11:59:00,336 - src.effects.visual_manager - INFO - 🎨 Visualización detenida
+2025-08-04 11:59:08,239 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:08] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-08-04 11:59:08,546 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:08] "[36mGET /static/css/components.css HTTP/1.1[0m" 304 -
+2025-08-04 11:59:08,548 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:08] "[36mGET /static/css/visualizer.css HTTP/1.1[0m" 304 -
+2025-08-04 11:59:08,552 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:08] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-08-04 11:59:24,325 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:24] "OPTIONS /api/player/state HTTP/1.1" 200 -
+2025-08-04 11:59:24,330 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:24] "GET /api/player/state HTTP/1.1" 200 -
+2025-08-04 11:59:24,337 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:24] "OPTIONS /api/player/play HTTP/1.1" 200 -
+2025-08-04 11:59:24,343 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:24] "POST /api/player/play HTTP/1.1" 200 -
+2025-08-04 11:59:24,345 - src.audio.vlc_engine - INFO - ▶️ Reproducción reanudada
+2025-08-04 11:59:24,347 - src.effects.visual_manager - INFO - 🎨 Visualización iniciada
+2025-08-04 11:59:24,441 - src.core.app - INFO - 📊 Actualizando posición: 0.7s / 207.5s
+2025-08-04 11:59:24,744 - src.core.app - INFO - 📊 Actualizando posición: 1.0s / 207.5s
+2025-08-04 11:59:24,947 - src.core.app - INFO - 📊 Actualizando posición: 1.3s / 207.5s
+2025-08-04 11:59:25,049 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:25] "GET /api/player/state HTTP/1.1" 200 -
+2025-08-04 11:59:25,054 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:25] "POST /api/player/play HTTP/1.1" 200 -
+2025-08-04 11:59:25,057 - src.audio.vlc_engine - INFO - ⏸️ Reproducción pausada
+2025-08-04 11:59:25,057 - src.effects.visual_manager - INFO - 🎨 Visualización detenida
+2025-08-04 11:59:26,690 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:26] "OPTIONS /api/library/play/1 HTTP/1.1" 200 -
+2025-08-04 11:59:26,695 - src.web.flask_app - INFO - Solicitando reproducción de pista ID: 1
+2025-08-04 11:59:26,695 - src.web.flask_app - INFO - Reproduciendo: ACRAZE - Believe ft. Goodboys
+2025-08-04 11:59:26,695 - src.web.flask_app - INFO - Iniciando reproducción de archivo: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:59:26,695 - src.web.flask_app - INFO - Hilo de reproducción iniciado
+2025-08-04 11:59:26,695 - src.web.flask_app - INFO - ✅ Reproducción iniciada en motor de audio
+2025-08-04 11:59:26,696 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:26] "GET /api/library/play/1 HTTP/1.1" 200 -
+2025-08-04 11:59:26,696 - src.core.app - INFO - Reproduciendo: Unknown Artist - ACRAZE - Believe ft. Goodboys
+2025-08-04 11:59:26,696 - src.core.app - INFO - 🔧 Estado actual: paused
+2025-08-04 11:59:26,696 - src.core.app - INFO - 🎯 Estableciendo nueva pista como actual...
+2025-08-04 11:59:26,696 - src.core.app - INFO - 🔄 Cambiando estado a LOADING...
+2025-08-04 11:59:26,698 - src.core.app - INFO - 📡 Emitiendo evento de cambio de estado...
+2025-08-04 11:59:26,698 - src.core.app - INFO - ✅ Estado establecido correctamente
+2025-08-04 11:59:26,698 - src.core.app - INFO - 🔍 Verificando path: 'C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3'
+2025-08-04 11:59:26,698 - src.core.app - INFO - 📂 Cargando pista desde: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:59:26,770 - src.audio.vlc_engine - INFO - ✅ Pista cargada: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:59:26,772 - src.audio.vlc_engine - INFO - 🎵 Análisis de espectro iniciado
+2025-08-04 11:59:26,772 - src.audio.vlc_engine - INFO - ▶️ Reproducción iniciada
+2025-08-04 11:59:26,823 - src.audio.vlc_engine - INFO - 🎵 Cargando audio para análisis de espectro...
+2025-08-04 11:59:26,891 - src.audio.vlc_engine - INFO - ✅ Audio real cargado (súper-rápido): 40000 samples a 8000Hz
+2025-08-04 11:59:26,892 - src.audio.vlc_engine - INFO - 🎵 Análisis real activado
+2025-08-04 11:59:26,985 - src.core.app - INFO - 🕒 Duración obtenida: 188.9s
+2025-08-04 11:59:26,985 - src.effects.visual_manager - INFO - 🎨 Visualización iniciada
+2025-08-04 11:59:27,059 - src.core.app - INFO - 📊 Actualizando posición: 0.2s / 188.9s
+2025-08-04 11:59:27,362 - src.core.app - INFO - 📊 Actualizando posición: 0.5s / 188.9s
+2025-08-04 11:59:27,663 - src.core.app - INFO - 📊 Actualizando posición: 0.8s / 188.9s
+2025-08-04 11:59:27,967 - src.core.app - INFO - 📊 Actualizando posición: 1.1s / 188.9s
+2025-08-04 11:59:28,168 - src.core.app - INFO - 📊 Actualizando posición: 1.3s / 188.9s
+2025-08-04 11:59:28,470 - src.core.app - INFO - 📊 Actualizando posición: 1.6s / 188.9s
+2025-08-04 11:59:28,771 - src.core.app - INFO - 📊 Actualizando posición: 1.9s / 188.9s
+2025-08-04 11:59:28,973 - src.core.app - INFO - 📊 Actualizando posición: 2.2s / 188.9s
+2025-08-04 11:59:29,276 - src.core.app - INFO - 📊 Actualizando posición: 2.4s / 188.9s
+2025-08-04 11:59:29,578 - src.core.app - INFO - 📊 Actualizando posición: 2.7s / 188.9s
+2025-08-04 11:59:29,779 - src.core.app - INFO - 📊 Actualizando posición: 3.0s / 188.9s
+2025-08-04 11:59:30,080 - src.core.app - INFO - 📊 Actualizando posición: 3.3s / 188.9s
+2025-08-04 11:59:30,383 - src.core.app - INFO - 📊 Actualizando posición: 3.5s / 188.9s
+2025-08-04 11:59:30,585 - src.core.app - INFO - 📊 Actualizando posición: 3.8s / 188.9s
+2025-08-04 11:59:30,887 - src.core.app - INFO - 📊 Actualizando posición: 4.1s / 188.9s
+2025-08-04 11:59:31,190 - src.core.app - INFO - 📊 Actualizando posición: 4.3s / 188.9s
+2025-08-04 11:59:31,392 - src.core.app - INFO - 📊 Actualizando posición: 4.6s / 188.9s
+2025-08-04 11:59:31,693 - src.core.app - INFO - 📊 Actualizando posición: 4.9s / 188.9s
+2025-08-04 11:59:31,998 - src.core.app - INFO - 📊 Actualizando posición: 5.1s / 188.9s
+2025-08-04 11:59:32,201 - src.core.app - INFO - 📊 Actualizando posición: 5.4s / 188.9s
+2025-08-04 11:59:32,503 - src.core.app - INFO - 📊 Actualizando posición: 5.7s / 188.9s
+2025-08-04 11:59:32,805 - src.core.app - INFO - 📊 Actualizando posición: 5.9s / 188.9s
+2025-08-04 11:59:33,006 - src.core.app - INFO - 📊 Actualizando posición: 6.2s / 188.9s
+2025-08-04 11:59:33,309 - src.core.app - INFO - 📊 Actualizando posición: 6.5s / 188.9s
+2025-08-04 11:59:33,611 - src.core.app - INFO - 📊 Actualizando posición: 6.8s / 188.9s
+2025-08-04 11:59:33,813 - src.core.app - INFO - 📊 Actualizando posición: 7.0s / 188.9s
+2025-08-04 11:59:34,115 - src.core.app - INFO - 📊 Actualizando posición: 7.3s / 188.9s
+2025-08-04 11:59:34,417 - src.core.app - INFO - 📊 Actualizando posición: 7.6s / 188.9s
+2025-08-04 11:59:34,720 - src.core.app - INFO - 📊 Actualizando posición: 7.8s / 188.9s
+2025-08-04 11:59:34,922 - src.core.app - INFO - 📊 Actualizando posición: 8.1s / 188.9s
+2025-08-04 11:59:35,223 - src.core.app - INFO - 📊 Actualizando posición: 8.4s / 188.9s
+2025-08-04 11:59:35,526 - src.core.app - INFO - 📊 Actualizando posición: 8.6s / 188.9s
+2025-08-04 11:59:35,727 - src.core.app - INFO - 📊 Actualizando posición: 8.9s / 188.9s
+2025-08-04 11:59:36,030 - src.core.app - INFO - 📊 Actualizando posición: 9.2s / 188.9s
+2025-08-04 11:59:36,331 - src.core.app - INFO - 📊 Actualizando posición: 9.4s / 188.9s
+2025-08-04 11:59:36,532 - src.core.app - INFO - 📊 Actualizando posición: 9.7s / 188.9s
+2025-08-04 11:59:36,833 - src.core.app - INFO - 📊 Actualizando posición: 10.0s / 188.9s
+2025-08-04 11:59:37,136 - src.core.app - INFO - 📊 Actualizando posición: 10.3s / 188.9s
+2025-08-04 11:59:37,337 - src.core.app - INFO - 📊 Actualizando posición: 10.5s / 188.9s
+2025-08-04 11:59:37,641 - src.core.app - INFO - 📊 Actualizando posición: 10.8s / 188.9s
+2025-08-04 11:59:37,943 - src.core.app - INFO - 📊 Actualizando posición: 11.1s / 188.9s
+2025-08-04 11:59:38,146 - src.core.app - INFO - 📊 Actualizando posición: 11.3s / 188.9s
+2025-08-04 11:59:38,447 - src.core.app - INFO - 📊 Actualizando posición: 11.6s / 188.9s
+2025-08-04 11:59:38,748 - src.core.app - INFO - 📊 Actualizando posición: 11.9s / 188.9s
+2025-08-04 11:59:38,950 - src.core.app - INFO - 📊 Actualizando posición: 12.1s / 188.9s
+2025-08-04 11:59:39,254 - src.core.app - INFO - 📊 Actualizando posición: 12.4s / 188.9s
+2025-08-04 11:59:39,547 - src.core.app - INFO - 📊 Actualizando posición: 12.7s / 188.9s
+2025-08-04 11:59:39,748 - src.core.app - INFO - 📊 Actualizando posición: 12.9s / 188.9s
+2025-08-04 11:59:40,050 - src.core.app - INFO - 📊 Actualizando posición: 13.2s / 188.9s
+2025-08-04 11:59:40,351 - src.core.app - INFO - 📊 Actualizando posición: 13.5s / 188.9s
+2025-08-04 11:59:40,554 - src.core.app - INFO - 📊 Actualizando posición: 13.8s / 188.9s
+2025-08-04 11:59:40,856 - src.core.app - INFO - 📊 Actualizando posición: 14.0s / 188.9s
+2025-08-04 11:59:41,158 - src.core.app - INFO - 📊 Actualizando posición: 14.3s / 188.9s
+2025-08-04 11:59:41,460 - src.core.app - INFO - 📊 Actualizando posición: 14.6s / 188.9s
+2025-08-04 11:59:41,663 - src.core.app - INFO - 📊 Actualizando posición: 14.8s / 188.9s
+2025-08-04 11:59:41,965 - src.core.app - INFO - 📊 Actualizando posición: 15.1s / 188.9s
+2025-08-04 11:59:42,268 - src.core.app - INFO - 📊 Actualizando posición: 15.4s / 188.9s
+2025-08-04 11:59:42,470 - src.core.app - INFO - 📊 Actualizando posición: 15.6s / 188.9s
+2025-08-04 11:59:42,771 - src.core.app - INFO - 📊 Actualizando posición: 15.9s / 188.9s
+2025-08-04 11:59:43,020 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:43] "OPTIONS /api/player/state HTTP/1.1" 200 -
+2025-08-04 11:59:43,024 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:43] "GET /api/player/state HTTP/1.1" 200 -
+2025-08-04 11:59:43,031 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:43] "OPTIONS /api/player/play HTTP/1.1" 200 -
+2025-08-04 11:59:43,037 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:43] "POST /api/player/play HTTP/1.1" 200 -
+2025-08-04 11:59:43,041 - src.audio.vlc_engine - INFO - ⏸️ Reproducción pausada
+2025-08-04 11:59:43,042 - src.effects.visual_manager - INFO - 🎨 Visualización detenida
+2025-08-04 11:59:46,430 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:46] "OPTIONS /api/library/play/1 HTTP/1.1" 200 -
+2025-08-04 11:59:46,435 - src.web.flask_app - INFO - Solicitando reproducción de pista ID: 1
+2025-08-04 11:59:46,435 - src.web.flask_app - INFO - Reproduciendo: ACRAZE - Believe ft. Goodboys
+2025-08-04 11:59:46,435 - src.web.flask_app - INFO - Iniciando reproducción de archivo: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:59:46,437 - src.web.flask_app - INFO - Hilo de reproducción iniciado
+2025-08-04 11:59:46,437 - src.web.flask_app - INFO - ✅ Reproducción iniciada en motor de audio
+2025-08-04 11:59:46,437 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:46] "GET /api/library/play/1 HTTP/1.1" 200 -
+2025-08-04 11:59:46,438 - src.core.app - INFO - Reproduciendo: Unknown Artist - ACRAZE - Believe ft. Goodboys
+2025-08-04 11:59:46,438 - src.core.app - INFO - 🔧 Estado actual: paused
+2025-08-04 11:59:46,438 - src.core.app - INFO - 🎯 Estableciendo nueva pista como actual...
+2025-08-04 11:59:46,438 - src.core.app - INFO - 🔄 Cambiando estado a LOADING...
+2025-08-04 11:59:46,439 - src.core.app - INFO - 📡 Emitiendo evento de cambio de estado...
+2025-08-04 11:59:46,439 - src.core.app - INFO - ✅ Estado establecido correctamente
+2025-08-04 11:59:46,439 - src.core.app - INFO - 🔍 Verificando path: 'C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3'
+2025-08-04 11:59:46,439 - src.core.app - INFO - 📂 Cargando pista desde: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:59:46,468 - src.audio.vlc_engine - INFO - ✅ Pista cargada: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:59:46,470 - src.audio.vlc_engine - INFO - 🎵 Análisis de espectro iniciado
+2025-08-04 11:59:46,470 - src.audio.vlc_engine - INFO - ▶️ Reproducción iniciada
+2025-08-04 11:59:46,492 - src.core.app - INFO - 📊 Actualizando posición: 16.2s / 188.9s
+2025-08-04 11:59:46,672 - src.core.app - INFO - 🕒 Duración obtenida: 188.9s
+2025-08-04 11:59:46,672 - src.effects.visual_manager - INFO - 🎨 Visualización iniciada
+2025-08-04 11:59:46,794 - src.core.app - INFO - 📊 Actualizando posición: 0.2s / 188.9s
+2025-08-04 11:59:47,095 - src.core.app - INFO - 📊 Actualizando posición: 0.5s / 188.9s
+2025-08-04 11:59:47,295 - src.core.app - INFO - 📊 Actualizando posición: 0.7s / 188.9s
+2025-08-04 11:59:47,497 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:47] "GET /api/player/state HTTP/1.1" 200 -
+2025-08-04 11:59:47,503 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:47] "POST /api/player/play HTTP/1.1" 200 -
+2025-08-04 11:59:47,505 - src.audio.vlc_engine - INFO - ⏸️ Reproducción pausada
+2025-08-04 11:59:47,506 - src.effects.visual_manager - INFO - 🎨 Visualización detenida
+2025-08-04 11:59:50,073 - src.web.flask_app - INFO - Solicitando reproducción de pista ID: 1
+2025-08-04 11:59:50,074 - src.web.flask_app - INFO - Reproduciendo: ACRAZE - Believe ft. Goodboys
+2025-08-04 11:59:50,074 - src.web.flask_app - INFO - Iniciando reproducción de archivo: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:59:50,076 - src.web.flask_app - INFO - Hilo de reproducción iniciado
+2025-08-04 11:59:50,076 - src.web.flask_app - INFO - ✅ Reproducción iniciada en motor de audio
+2025-08-04 11:59:50,077 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:50] "GET /api/library/play/1 HTTP/1.1" 200 -
+2025-08-04 11:59:50,078 - src.core.app - INFO - Reproduciendo: Unknown Artist - ACRAZE - Believe ft. Goodboys
+2025-08-04 11:59:50,078 - src.core.app - INFO - 🔧 Estado actual: paused
+2025-08-04 11:59:50,079 - src.core.app - INFO - 🎯 Estableciendo nueva pista como actual...
+2025-08-04 11:59:50,079 - src.core.app - INFO - 🔄 Cambiando estado a LOADING...
+2025-08-04 11:59:50,079 - src.core.app - INFO - 📡 Emitiendo evento de cambio de estado...
+2025-08-04 11:59:50,079 - src.core.app - INFO - ✅ Estado establecido correctamente
+2025-08-04 11:59:50,080 - src.core.app - INFO - 🔍 Verificando path: 'C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3'
+2025-08-04 11:59:50,080 - src.core.app - INFO - 📂 Cargando pista desde: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:59:50,167 - src.audio.vlc_engine - INFO - ✅ Pista cargada: C:\Users\Steven\Pictures\prueba musica\Electronica\ACRAZE - Believe ft. Goodboys.mp3
+2025-08-04 11:59:50,171 - src.audio.vlc_engine - INFO - 🎵 Análisis de espectro iniciado
+2025-08-04 11:59:50,172 - src.audio.vlc_engine - INFO - ▶️ Reproducción iniciada
+2025-08-04 11:59:50,374 - src.core.app - INFO - 🕒 Duración obtenida: 188.9s
+2025-08-04 11:59:50,374 - src.effects.visual_manager - INFO - 🎨 Visualización iniciada
+2025-08-04 11:59:50,513 - src.core.app - INFO - 📊 Actualizando posición: 0.2s / 188.9s
+2025-08-04 11:59:50,815 - src.core.app - INFO - 📊 Actualizando posición: 0.5s / 188.9s
+2025-08-04 11:59:51,120 - src.core.app - INFO - 📊 Actualizando posición: 0.8s / 188.9s
+2025-08-04 11:59:51,321 - src.core.app - INFO - 📊 Actualizando posición: 1.1s / 188.9s
+2025-08-04 11:59:51,623 - src.core.app - INFO - 📊 Actualizando posición: 1.3s / 188.9s
+2025-08-04 11:59:51,924 - src.core.app - INFO - 📊 Actualizando posición: 1.6s / 188.9s
+2025-08-04 11:59:52,125 - src.core.app - INFO - 📊 Actualizando posición: 1.9s / 188.9s
+2025-08-04 11:59:52,426 - src.core.app - INFO - 📊 Actualizando posición: 2.2s / 188.9s
+2025-08-04 11:59:52,727 - src.core.app - INFO - 📊 Actualizando posición: 2.4s / 188.9s
+2025-08-04 11:59:52,930 - src.core.app - INFO - 📊 Actualizando posición: 2.7s / 188.9s
+2025-08-04 11:59:53,233 - src.core.app - INFO - 📊 Actualizando posición: 3.0s / 188.9s
+2025-08-04 11:59:53,535 - src.core.app - INFO - 📊 Actualizando posición: 3.3s / 188.9s
+2025-08-04 11:59:53,735 - src.core.app - INFO - 📊 Actualizando posición: 3.5s / 188.9s
+2025-08-04 11:59:54,038 - src.core.app - INFO - 📊 Actualizando posición: 3.8s / 188.9s
+2025-08-04 11:59:54,169 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:54] "OPTIONS /api/player/state HTTP/1.1" 200 -
+2025-08-04 11:59:54,172 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:54] "GET /api/player/state HTTP/1.1" 200 -
+2025-08-04 11:59:54,177 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:54] "OPTIONS /api/player/play HTTP/1.1" 200 -
+2025-08-04 11:59:54,182 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:54] "POST /api/player/play HTTP/1.1" 200 -
+2025-08-04 11:59:54,184 - src.audio.vlc_engine - INFO - ⏸️ Reproducción pausada
+2025-08-04 11:59:54,185 - src.effects.visual_manager - INFO - 🎨 Visualización detenida
+2025-08-04 11:59:56,209 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:56] "OPTIONS /api/library/songs HTTP/1.1" 200 -
+2025-08-04 11:59:56,216 - werkzeug - INFO - 127.0.0.1 - - [04/Aug/2025 11:59:56] "GET /api/library/songs HTTP/1.1" 200 -

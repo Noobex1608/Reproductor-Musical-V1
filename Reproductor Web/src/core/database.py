@@ -851,6 +851,96 @@ class DatabaseManager:
         except Exception as e:
             logger.error(f"Error verificando estado de biblioteca: {e}")
             return {'songs': 0, 'playlists': 0, 'is_empty': True}
+    
+    async def cleanup_invalid_files(self) -> int:
+        """Limpia archivos que ya no existen del sistema de archivos"""
+        try:
+            logger.info("🔍 Verificando integridad de archivos en la biblioteca...")
+            
+            cursor = self.connection.cursor()
+            cursor.execute("SELECT id, file_path FROM songs")
+            all_songs = cursor.fetchall()
+            
+            invalid_ids = []
+            
+            for song in all_songs:
+                song_id, file_path = song
+                
+                # Verificar si el archivo existe
+                if not file_path or not Path(file_path).exists():
+                    invalid_ids.append(song_id)
+                    logger.debug(f"❌ Archivo inválido: {file_path}")
+            
+            if invalid_ids:
+                logger.info(f"🧹 Eliminando {len(invalid_ids)} archivos inválidos...")
+                
+                # Eliminar de todas las tablas relacionadas
+                for song_id in invalid_ids:
+                    cursor.execute("DELETE FROM songs WHERE id = ?", (song_id,))
+                    cursor.execute("DELETE FROM playlist_songs WHERE song_id = ?", (song_id,))
+                    cursor.execute("DELETE FROM play_history WHERE song_id = ?", (song_id,))
+                
+                self.connection.commit()
+                logger.info(f"✅ {len(invalid_ids)} archivos inválidos eliminados")
+            else:
+                logger.info("✅ Todos los archivos son válidos")
+            
+            cursor.close()
+            return len(invalid_ids)
+            
+        except Exception as e:
+            logger.error(f"Error limpiando archivos inválidos: {e}")
+            return 0
+    
+    async def get_library_health_report(self) -> Dict[str, Any]:
+        """Genera un reporte de salud de la biblioteca"""
+        try:
+            cursor = self.connection.cursor()
+            
+            # Estadísticas básicas
+            cursor.execute("SELECT COUNT(*) FROM songs")
+            total_songs = cursor.fetchone()[0]
+            
+            # Verificar archivos existentes
+            cursor.execute("SELECT id, file_path FROM songs")
+            all_songs = cursor.fetchall()
+            
+            valid_files = 0
+            invalid_files = 0
+            total_size = 0
+            
+            for song in all_songs:
+                song_id, file_path = song
+                if file_path and Path(file_path).exists():
+                    valid_files += 1
+                    try:
+                        total_size += Path(file_path).stat().st_size
+                    except:
+                        pass
+                else:
+                    invalid_files += 1
+            
+            cursor.close()
+            
+            return {
+                'total_songs': total_songs,
+                'valid_files': valid_files,
+                'invalid_files': invalid_files,
+                'integrity_percentage': (valid_files / total_songs * 100) if total_songs > 0 else 100,
+                'total_size_mb': total_size / (1024 * 1024),
+                'needs_cleanup': invalid_files > 0
+            }
+            
+        except Exception as e:
+            logger.error(f"Error generando reporte de salud: {e}")
+            return {
+                'total_songs': 0,
+                'valid_files': 0,
+                'invalid_files': 0,
+                'integrity_percentage': 0,
+                'total_size_mb': 0,
+                'needs_cleanup': False
+            }
 
 # Singleton para acceso global
 _db_manager_instance = None

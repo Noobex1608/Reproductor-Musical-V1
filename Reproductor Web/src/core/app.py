@@ -114,6 +114,18 @@ class MusicPlayerProApp:
             self.audio_engine.end_reached_callback = self._on_track_ended
             self.audio_engine.spectrum_callback = self._on_spectrum_update
             
+            # Verificar integridad de la biblioteca al inicio
+            logger.info("🔍 Verificando integridad de la biblioteca musical...")
+            health_report = await self.db_manager.get_library_health_report()
+            
+            if health_report['needs_cleanup']:
+                logger.info(f"⚠️ Se encontraron {health_report['invalid_files']} archivos inválidos")
+                logger.info("🧹 Realizando limpieza automática...")
+                cleaned_count = await self.db_manager.cleanup_invalid_files()
+                logger.info(f"✅ {cleaned_count} archivos inválidos eliminados automáticamente")
+            else:
+                logger.info("✅ Biblioteca musical en buen estado")
+            
             # Iniciar bucle de actualización
             self._update_task = asyncio.create_task(self._update_loop())
             
@@ -168,23 +180,47 @@ class MusicPlayerProApp:
             # Obtener todas las pistas de la base de datos
             tracks_data = await self.db_manager.get_all_tracks()
             
-            # Convertir a objetos Track
-            self.music_library = []
-            for track_data in tracks_data:
-                track = Track(
-                    id=track_data.get('id', ''),
-                    title=track_data.get('title', 'Desconocido'),
-                    artist=track_data.get('artist', 'Desconocido'),
-                    album=track_data.get('album', 'Desconocido'),
-                    path=track_data.get('path', ''),
-                    duration=track_data.get('duration', 0.0),
-                    genre=track_data.get('genre', ''),
-                    year=track_data.get('year', 0),
-                    track_number=track_data.get('track_number', 0)
-                )
-                self.music_library.append(track)
+            # Verificar archivos existentes y limpiar rutas inválidas
+            valid_tracks = []
+            invalid_track_ids = []
             
-            logger.info(f"✅ {len(self.music_library)} pistas cargadas")
+            for track_data in tracks_data:
+                file_path = track_data.get('path', '')
+                track_id = track_data.get('id', '')
+                
+                # Verificar si el archivo existe
+                if file_path and os.path.exists(file_path):
+                    # Archivo válido, agregar a la biblioteca
+                    track = Track(
+                        id=track_id,
+                        title=track_data.get('title', 'Desconocido'),
+                        artist=track_data.get('artist', 'Desconocido'),
+                        album=track_data.get('album', 'Desconocido'),
+                        path=file_path,
+                        duration=track_data.get('duration', 0.0),
+                        genre=track_data.get('genre', ''),
+                        year=track_data.get('year', 0),
+                        track_number=track_data.get('track_number', 0)
+                    )
+                    valid_tracks.append(track)
+                else:
+                    # Archivo no existe, marcar para eliminación
+                    if track_id:
+                        invalid_track_ids.append(track_id)
+                        logger.info(f"❌ Archivo no encontrado, será eliminado: {file_path}")
+            
+            # Eliminar entradas inválidas de la base de datos
+            if invalid_track_ids:
+                logger.info(f"🧹 Limpiando {len(invalid_track_ids)} entradas inválidas de la BD...")
+                await self._remove_invalid_tracks(invalid_track_ids)
+            
+            self.music_library = valid_tracks
+            
+            if len(valid_tracks) == 0 and len(tracks_data) > 0:
+                logger.warning("⚠️ Biblioteca vacía: todos los archivos fueron inválidos")
+                logger.info("💡 Sugerencia: Usa 'Agregar Carpeta' para añadir música nueva")
+            
+            logger.info(f"✅ {len(valid_tracks)} pistas válidas cargadas")
             
         except Exception as e:
             logger.error(f"Error cargando biblioteca musical: {e}")
@@ -194,6 +230,28 @@ class MusicPlayerProApp:
         """Método público para recargar la biblioteca musical"""
         await self._load_music_library()
         return len(self.music_library)
+    
+    async def _remove_invalid_tracks(self, track_ids: List[str]):
+        """Elimina pistas inválidas de la base de datos"""
+        try:
+            for track_id in track_ids:
+                # Eliminar de la tabla de canciones
+                cursor = self.db_manager.connection.cursor()
+                cursor.execute("DELETE FROM songs WHERE id = ?", (track_id,))
+                
+                # Eliminar de playlists relacionadas
+                cursor.execute("DELETE FROM playlist_songs WHERE song_id = ?", (track_id,))
+                
+                # Eliminar historial relacionado
+                cursor.execute("DELETE FROM play_history WHERE song_id = ?", (track_id,))
+                
+                cursor.close()
+                
+            self.db_manager.connection.commit()
+            logger.info(f"✅ {len(track_ids)} pistas inválidas eliminadas de la BD")
+            
+        except Exception as e:
+            logger.error(f"Error eliminando pistas inválidas: {e}")
     
     async def get_all_tracks(self):
         """Obtiene todas las pistas de la biblioteca"""

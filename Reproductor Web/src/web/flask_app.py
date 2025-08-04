@@ -288,6 +288,128 @@ class MusicPlayerWebApp:
                     'message': 'Error al procesar la carpeta'
                 }), 500
         
+        @self.app.route('/api/library/health')
+        def library_health():
+            """Obtener reporte de salud de la biblioteca"""
+            try:
+                def get_health_sync():
+                    try:
+                        loop = asyncio.new_event_loop()
+                        asyncio.set_event_loop(loop)
+                        health_report = loop.run_until_complete(
+                            self.music_app.db_manager.get_library_health_report()
+                        )
+                        loop.close()
+                        return health_report
+                    except Exception as e:
+                        logger.error(f"Error obteniendo reporte de salud: {e}")
+                        return {
+                            'total_songs': 0,
+                            'valid_files': 0,
+                            'invalid_files': 0,
+                            'integrity_percentage': 0,
+                            'total_size_mb': 0,
+                            'needs_cleanup': False
+                        }
+                
+                health_report = get_health_sync()
+                
+                return jsonify({
+                    'success': True,
+                    'health': health_report,
+                    'message': 'Reporte de salud generado correctamente'
+                })
+                
+            except Exception as e:
+                logger.error(f"Error en endpoint health: {e}")
+                return jsonify({
+                    'success': False,
+                    'error': str(e),
+                    'message': 'Error generando reporte de salud'
+                }), 500
+        
+        @self.app.route('/api/library/cleanup', methods=['POST'])
+        def cleanup_library():
+            """Limpiar archivos inválidos de la biblioteca"""
+            try:
+                logger.info("🧹 Iniciando limpieza manual de la biblioteca...")
+                
+                def cleanup_sync():
+                    try:
+                        loop = asyncio.new_event_loop()
+                        asyncio.set_event_loop(loop)
+                        cleaned_count = loop.run_until_complete(
+                            self.music_app.db_manager.cleanup_invalid_files()
+                        )
+                        # Recargar biblioteca después de la limpieza
+                        loop.run_until_complete(self.music_app.reload_library())
+                        loop.close()
+                        return cleaned_count
+                    except Exception as e:
+                        logger.error(f"Error en limpieza: {e}")
+                        return 0
+                
+                cleaned_count = cleanup_sync()
+                
+                return jsonify({
+                    'success': True,
+                    'cleaned_files': cleaned_count,
+                    'message': f'Limpieza completada: {cleaned_count} archivos inválidos eliminados',
+                    'library_size': len(self.music_app.music_library or [])
+                })
+                
+            except Exception as e:
+                logger.error(f"Error en endpoint cleanup: {e}")
+                return jsonify({
+                    'success': False,
+                    'error': str(e),
+                    'message': 'Error realizando limpieza'
+                }), 500
+        
+        @self.app.route('/api/library/clear', methods=['POST'])
+        def clear_library():
+            """Limpiar completamente la biblioteca (para desarrollo/testing)"""
+            try:
+                logger.info("🧹 Limpiando biblioteca musical completa...")
+                
+                def clear_sync():
+                    try:
+                        loop = asyncio.new_event_loop()
+                        asyncio.set_event_loop(loop)
+                        loop.run_until_complete(
+                            self.music_app.db_manager.clear_music_library()
+                        )
+                        # Recargar biblioteca después de limpiar
+                        loop.run_until_complete(self.music_app.reload_library())
+                        loop.close()
+                        return True
+                    except Exception as e:
+                        logger.error(f"Error limpiando biblioteca: {e}")
+                        return False
+                
+                success = clear_sync()
+                
+                if success:
+                    return jsonify({
+                        'success': True,
+                        'message': 'Biblioteca musical limpiada completamente',
+                        'library_size': 0
+                    })
+                else:
+                    return jsonify({
+                        'success': False,
+                        'error': 'Error limpiando biblioteca',
+                        'message': 'No se pudo limpiar la biblioteca'
+                    }), 500
+                
+            except Exception as e:
+                logger.error(f"Error en endpoint clear: {e}")
+                return jsonify({
+                    'success': False,
+                    'error': str(e),
+                    'message': 'Error limpiando biblioteca'
+                }), 500
+        
         @self.app.route('/api/library/play/<track_id>')
         def play_track(track_id):
             """Reproducir una pista específica"""

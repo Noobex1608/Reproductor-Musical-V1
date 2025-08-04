@@ -193,16 +193,11 @@ def run_app():
         logger.error(f"Error en la ejecucion: {e}")
         print(f"ERROR: {e}")
     finally:
-        # Limpieza de seguridad al cerrar
+        # Limpieza de seguridad al cerrar (solo recursos, no biblioteca)
         try:
-            print("🧹 Limpieza final de la biblioteca musical...")
-            from src.core.database import get_database_manager
-            db_manager = get_database_manager()
-            
-            # Limpieza síncrona de la biblioteca musical
-            if hasattr(db_manager, 'clear_music_library_sync'):
-                db_manager.clear_music_library_sync()
-                print("✅ Biblioteca musical limpiada al cerrar")
+            print("🧹 Cerrando recursos...")
+            print("✅ Aplicación cerrada correctamente")
+            # NOTA: La biblioteca musical se mantiene para preservar metadatos
                 
         except Exception as e:
             print(f"⚠️ Error en limpieza final: {e}")
