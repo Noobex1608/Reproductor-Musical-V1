@@ -65,6 +65,11 @@ class MusicPlayerWebApp:
             """Página principal"""
             return render_template('index.html')
         
+        @self.app.route('/test')
+        def test_shuffle_repeat():
+            """Página de test para shuffle y repeat"""
+            return render_template('test_shuffle_repeat.html')
+        
         @self.app.route('/library')
         def library():
             """Página de biblioteca completa"""
@@ -527,38 +532,41 @@ class MusicPlayerWebApp:
                         'message': 'Biblioteca vacía'
                     }), 400
                 
-                current_index = 0
+                # ¡IMPORTANTE! Usar el método del core app que maneja shuffle y repeat correctamente
+                logger.info("⏭️ Llamando next_track del core app...")
                 
-                # Encontrar índice actual
-                if hasattr(self.music_app, 'current_track') and self.music_app.current_track:
-                    for i, song in enumerate(self.music_app.music_library):
-                        if (hasattr(song, 'path') and hasattr(self.music_app.current_track, 'path') and 
-                            getattr(song, 'path', '') == getattr(self.music_app.current_track, 'path', '')):
-                            current_index = i
-                            break
+                def next_sync():
+                    try:
+                        loop = asyncio.new_event_loop()
+                        asyncio.set_event_loop(loop)
+                        loop.run_until_complete(self.music_app.next_track())
+                        loop.close()
+                        return True
+                    except Exception as e:
+                        logger.error(f"Error en next_track async: {e}")
+                        return False
                 
-                # Determinar próxima canción
-                if self._shuffle:
-                    # Modo aleatorio: seleccionar canción aleatoria
-                    import random
-                    next_index = random.randint(0, len(self.music_app.music_library) - 1)
+                success = next_sync()
+                
+                if success and self.music_app.current_track:
+                    track_info = self._serialize_track(self.music_app.current_track)
+                    logger.info(f"⏭️ Siguiente pista: {track_info.get('title', 'Unknown')}")
+                    
+                    return jsonify({
+                        'success': True, 
+                        'action': 'next',
+                        'track': track_info,
+                        'track_index': self.music_app.current_index + 1,
+                        'shuffle_enabled': self.music_app.shuffle_enabled,
+                        'repeat_mode': self.music_app.repeat_mode
+                    })
                 else:
-                    # Modo normal: siguiente canción
-                    next_index = (current_index + 1) % len(self.music_app.music_library)
-                
-                # Reproducir siguiente canción
-                next_track = self.music_app.music_library[next_index]
-                self._play_track_sync(next_track)
-                
-                track_info = self._serialize_track(next_track)
-                logger.info(f"⏭️ Reproduciendo siguiente: {track_info.get('title', 'Unknown')}")
-                
-                return jsonify({
-                    'success': True, 
-                    'action': 'next',
-                    'track': track_info,
-                    'track_index': next_index + 1
-                })
+                    return jsonify({
+                        'success': False,
+                        'error': 'No se pudo cambiar a la siguiente pista',
+                        'message': 'Error al avanzar'
+                    }), 500
+                    
             except Exception as e:
                 logger.error(f"Error en next: {e}")
                 return jsonify({'success': False, 'error': str(e)}), 500
@@ -574,38 +582,41 @@ class MusicPlayerWebApp:
                         'message': 'Biblioteca vacía'
                     }), 400
                 
-                current_index = 0
+                # ¡IMPORTANTE! Usar el método del core app que maneja shuffle y repeat correctamente
+                logger.info("⏮️ Llamando previous_track del core app...")
                 
-                # Encontrar índice actual
-                if hasattr(self.music_app, 'current_track') and self.music_app.current_track:
-                    for i, song in enumerate(self.music_app.music_library):
-                        if (hasattr(song, 'path') and hasattr(self.music_app.current_track, 'path') and 
-                            getattr(song, 'path', '') == getattr(self.music_app.current_track, 'path', '')):
-                            current_index = i
-                            break
+                def previous_sync():
+                    try:
+                        loop = asyncio.new_event_loop()
+                        asyncio.set_event_loop(loop)
+                        loop.run_until_complete(self.music_app.previous_track())
+                        loop.close()
+                        return True
+                    except Exception as e:
+                        logger.error(f"Error en previous_track async: {e}")
+                        return False
                 
-                # Determinar canción anterior
-                if self._shuffle:
-                    # Modo aleatorio: seleccionar canción aleatoria
-                    import random
-                    prev_index = random.randint(0, len(self.music_app.music_library) - 1)
+                success = previous_sync()
+                
+                if success and self.music_app.current_track:
+                    track_info = self._serialize_track(self.music_app.current_track)
+                    logger.info(f"⏮️ Pista anterior: {track_info.get('title', 'Unknown')}")
+                    
+                    return jsonify({
+                        'success': True, 
+                        'action': 'previous',
+                        'track': track_info,
+                        'track_index': self.music_app.current_index + 1,
+                        'shuffle_enabled': self.music_app.shuffle_enabled,
+                        'repeat_mode': self.music_app.repeat_mode
+                    })
                 else:
-                    # Modo normal: canción anterior
-                    prev_index = (current_index - 1) % len(self.music_app.music_library)
-                
-                # Reproducir canción anterior
-                prev_track = self.music_app.music_library[prev_index]
-                self._play_track_sync(prev_track)
-                
-                track_info = self._serialize_track(prev_track)
-                logger.info(f"⏮️ Reproduciendo anterior: {track_info.get('title', 'Unknown')}")
-                
-                return jsonify({
-                    'success': True, 
-                    'action': 'previous',
-                    'track': track_info,
-                    'track_index': prev_index + 1
-                })
+                    return jsonify({
+                        'success': False,
+                        'error': 'No se pudo cambiar a la pista anterior',
+                        'message': 'Error al retroceder'
+                    }), 500
+                    
             except Exception as e:
                 logger.error(f"Error en previous: {e}")
                 return jsonify({'success': False, 'error': str(e)}), 500
@@ -660,14 +671,32 @@ class MusicPlayerWebApp:
                 except Exception as track_error:
                     logger.warning(f"Error obteniendo información del track actual: {track_error}")
                 
+                # Sincronizar estados de shuffle y repeat con el core app
+                try:
+                    if hasattr(self.music_app, 'shuffle_enabled'):
+                        actual_shuffle = self.music_app.shuffle_enabled
+                        self._shuffle = actual_shuffle  # Sincronizar estado local
+                    else:
+                        actual_shuffle = self._shuffle
+                    
+                    if hasattr(self.music_app, 'repeat_mode'):
+                        actual_repeat = self.music_app.repeat_mode
+                        self._repeat = actual_repeat  # Sincronizar estado local
+                    else:
+                        actual_repeat = self._repeat
+                except Exception as sync_error:
+                    logger.warning(f"Error sincronizando estados: {sync_error}")
+                    actual_shuffle = self._shuffle
+                    actual_repeat = self._repeat
+                
                 return jsonify({
                     'success': True,
                     'state': actual_state,
                     'position': actual_position,
                     'duration': actual_duration,
                     'volume': actual_volume,
-                    'shuffle': self._shuffle,
-                    'repeat': self._repeat,
+                    'shuffle': actual_shuffle,
+                    'repeat': actual_repeat,
                     'current_track': current_track_info,
                     'current_track_index': current_track_index,
                     'has_current_track': current_track_info is not None
@@ -680,30 +709,26 @@ class MusicPlayerWebApp:
         def shuffle():
             """Toggle shuffle mode"""
             try:
-                # Toggle shuffle state
-                self._shuffle = not self._shuffle
+                # Debug: Verificar si music_app existe
+                logger.info(f"🔀 DEBUG: self.music_app = {self.music_app}")
+                logger.info(f"🔀 DEBUG: hasattr toggle_shuffle = {hasattr(self.music_app, 'toggle_shuffle') if self.music_app else 'music_app is None'}")
                 
-                logger.info(f"🔀 Shuffle {'activado' if self._shuffle else 'desactivado'}")
+                # ¡IMPORTANTE! Usar el método del core app en lugar de variable local
+                logger.info("🔀 Llamando toggle_shuffle del core app...")
                 
-                # Si shuffle se activa, mezclar la biblioteca
-                if self._shuffle and self.music_app.music_library:
-                    try:
-                        import random
-                        # Crear una copia mezclada de la biblioteca
-                        shuffled_library = self.music_app.music_library.copy()
-                        random.shuffle(shuffled_library)
-                        
-                        # Aplicar la biblioteca mezclada
-                        self.music_app.music_library = shuffled_library
-                        logger.info("🔀 Biblioteca musical mezclada")
-                    except Exception as shuffle_error:
-                        logger.error(f"Error mezclando biblioteca: {shuffle_error}")
+                # Llamar al método real del core app para alternar shuffle
+                new_shuffle_state = self.music_app.toggle_shuffle()
+                
+                # Sincronizar con el estado local (para compatibilidad)
+                self._shuffle = new_shuffle_state
+                
+                logger.info(f"🔀 Shuffle {'activado' if new_shuffle_state else 'desactivado'}")
                 
                 return jsonify({
                     'success': True, 
-                    'shuffle': self._shuffle,
-                    'shuffle_enabled': self._shuffle,
-                    'message': f"Shuffle {'activado' if self._shuffle else 'desactivado'}"
+                    'shuffle': new_shuffle_state,
+                    'shuffle_enabled': new_shuffle_state,
+                    'message': f"Shuffle {'activado' if new_shuffle_state else 'desactivado'}"
                 })
             except Exception as e:
                 logger.error(f"Error en shuffle: {e}")
@@ -713,13 +738,18 @@ class MusicPlayerWebApp:
         def repeat():
             """Toggle repeat mode"""
             try:
-                # Cycle through repeat modes: none -> one -> all -> none
-                if self._repeat == "none":
-                    self._repeat = "one"
-                elif self._repeat == "one":
-                    self._repeat = "all"
-                else:
-                    self._repeat = "none"
+                # Debug: Verificar si music_app existe
+                logger.info(f"🔁 DEBUG: self.music_app = {self.music_app}")
+                logger.info(f"🔁 DEBUG: hasattr cycle_repeat_mode = {hasattr(self.music_app, 'cycle_repeat_mode') if self.music_app else 'music_app is None'}")
+                
+                # ¡IMPORTANTE! Usar el método del core app en lugar de variable local
+                logger.info("🔁 Llamando cycle_repeat_mode del core app...")
+                
+                # Llamar al método real del core app para cambiar modo de repetición
+                new_repeat_mode = self.music_app.cycle_repeat_mode()
+                
+                # Sincronizar con el estado local (para compatibilidad)
+                self._repeat = new_repeat_mode
                 
                 repeat_messages = {
                     "none": "Repetición desactivada",
@@ -727,14 +757,14 @@ class MusicPlayerWebApp:
                     "all": "Repetir toda la biblioteca"
                 }
                 
-                logger.info(f"🔁 Modo repetición: {repeat_messages[self._repeat]}")
+                logger.info(f"🔁 Modo repetición: {repeat_messages[new_repeat_mode]}")
                 
                 return jsonify({
                     'success': True, 
                     'status': 'success',
-                    'repeat': self._repeat,
-                    'repeat_mode': self._repeat,
-                    'message': repeat_messages[self._repeat]
+                    'repeat': new_repeat_mode,
+                    'repeat_mode': new_repeat_mode,
+                    'message': repeat_messages[new_repeat_mode]
                 })
             except Exception as e:
                 logger.error(f"Error en repeat: {e}")

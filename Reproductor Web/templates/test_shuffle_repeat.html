@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Shuffle & Repeat</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        button { padding: 10px 20px; margin: 5px; font-size: 16px; cursor: pointer; }
+        .active { background-color: #4CAF50; color: white; }
+        .log { background: #f0f0f0; padding: 10px; margin: 10px 0; border-left: 4px solid #2196F3; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Test Shuffle & Repeat</h1>
+    
+    <div>
+        <button id="shuffle-btn" onclick="testShuffle()">🔀 Shuffle</button>
+        <button id="repeat-btn" onclick="testRepeat()">🔁 Repeat</button>
+        <button onclick="testState()">📊 Estado</button>
+        <button onclick="clearLogs()">🗑️ Limpiar</button>
+    </div>
+    
+    <div id="status">
+        <p><strong>Shuffle:</strong> <span id="shuffle-status">-</span></p>
+        <p><strong>Repeat:</strong> <span id="repeat-status">-</span></p>
+    </div>
+    
+    <div id="logs"></div>
+
+    <script>
+        // Función para agregar logs
+        function addLog(message, type = 'info') {
+            const logs = document.getElementById('logs');
+            const log = document.createElement('div');
+            log.className = 'log';
+            log.style.borderLeftColor = type === 'error' ? '#f44336' : type === 'success' ? '#4CAF50' : '#2196F3';
+            log.innerHTML = `<strong>${new Date().toLocaleTimeString()}</strong> - ${message}`;
+            logs.appendChild(log);
+            logs.scrollTop = logs.scrollHeight;
+        }
+
+        // Función para limpiar logs
+        function clearLogs() {
+            document.getElementById('logs').innerHTML = '';
+        }
+
+        // Test Shuffle
+        async function testShuffle() {
+            addLog('🔀 Iniciando test de shuffle...');
+            
+            try {
+                const response = await fetch('/api/player/shuffle', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                
+                const data = await response.json();
+                addLog(`🔀 Respuesta: ${JSON.stringify(data)}`, 'success');
+                
+                // Actualizar estado visual
+                const shuffleBtn = document.getElementById('shuffle-btn');
+                const shuffleStatus = document.getElementById('shuffle-status');
+                
+                if (data.success && (data.shuffle_enabled || data.shuffle)) {
+                    shuffleBtn.classList.add('active');
+                    shuffleStatus.textContent = 'ACTIVADO';
+                } else {
+                    shuffleBtn.classList.remove('active');
+                    shuffleStatus.textContent = 'DESACTIVADO';
+                }
+                
+            } catch (error) {
+                addLog(`🔀 ERROR: ${error.message}`, 'error');
+            }
+        }
+
+        // Test Repeat
+        async function testRepeat() {
+            addLog('🔁 Iniciando test de repeat...');
+            
+            try {
+                const response = await fetch('/api/player/repeat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                
+                const data = await response.json();
+                addLog(`🔁 Respuesta: ${JSON.stringify(data)}`, 'success');
+                
+                // Actualizar estado visual
+                const repeatStatus = document.getElementById('repeat-status');
+                repeatStatus.textContent = data.repeat_mode || data.repeat || 'none';
+                
+            } catch (error) {
+                addLog(`🔁 ERROR: ${error.message}`, 'error');
+            }
+        }
+
+        // Test Estado
+        async function testState() {
+            addLog('📊 Obteniendo estado...');
+            
+            try {
+                const response = await fetch('/api/player/state');
+                const data = await response.json();
+                
+                addLog(`📊 Estado completo: ${JSON.stringify(data, null, 2)}`, 'info');
+                
+                // Actualizar displays
+                const shuffleStatus = document.getElementById('shuffle-status');
+                const repeatStatus = document.getElementById('repeat-status');
+                const shuffleBtn = document.getElementById('shuffle-btn');
+                
+                shuffleStatus.textContent = data.shuffle ? 'ACTIVADO' : 'DESACTIVADO';
+                repeatStatus.textContent = data.repeat || 'none';
+                
+                if (data.shuffle) {
+                    shuffleBtn.classList.add('active');
+                } else {
+                    shuffleBtn.classList.remove('active');
+                }
+                
+            } catch (error) {
+                addLog(`📊 ERROR: ${error.message}`, 'error');
+            }
+        }
+
+        // Cargar estado inicial
+        window.addEventListener('load', () => {
+            addLog('🚀 Página cargada - Obteniendo estado inicial...');
+            testState();
+        });
+    </script>
+</body>
+</html>

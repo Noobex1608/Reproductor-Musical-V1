@@ -618,22 +618,46 @@ class MusicPlayerApp {
 
     async previousTrack() {
         try {
-            if (!this.state.playlist || this.state.playlist.length === 0) {
-                this.showToast('warning', 'Sin canciones', 'No hay canciones en la biblioteca');
-                return;
+            this.config.Utils.log('info', '⏮️ Navegando a pista anterior (usando API backend)...');
+            
+            // Llamar al endpoint del backend en lugar de lógica local
+            const response = await fetch('/api/player/previous', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
 
-            let newIndex = this.state.currentPlaylistIndex - 1;
-            if (newIndex < 0) {
-                newIndex = this.state.playlist.length - 1; // Ir a la última canción
+            const result = await response.json();
+            
+            this.config.Utils.log('info', '⏮️ Respuesta del backend previous:', result);
+            
+            if (result.success) {
+                this.config.Utils.log('info', '⏮️ Navegación a pista anterior exitosa');
+                
+                // El backend maneja shuffle/repeat automáticamente
+                // Solo necesitamos actualizar el estado local si el backend devuelve info
+                if (result.track) {
+                    // Actualizar inmediatamente con la información recibida
+                    this.state.currentTrack = result.track;
+                    this.displayCurrentSong(result.track, result.track_index || 1);
+                    this.config.Utils.log('info', `⏮️ Interfaz actualizada con: ${result.track.title || 'Sin título'}`);
+                    
+                    // Dar tiempo al backend para procesar el cambio y luego hacer actualización completa
+                    setTimeout(async () => {
+                        await this.updatePlayerState();
+                    }, 500);
+                } else {
+                    this.config.Utils.log('info', '⏮️ No hay pista anterior disponible');
+                }
+            } else {
+                throw new Error(result.error || 'Error desconocido');
             }
-
-            const prevSong = this.state.playlist[newIndex];
-            if (prevSong) {
-                this.state.currentPlaylistIndex = newIndex;
-                this.displayCurrentSong(prevSong, newIndex + 1);
-                await this.playTrack(prevSong.id);
-            }
+            
         } catch (error) {
             this.config.Utils.log('error', 'Error al ir a pista anterior:', error);
             this.showToast('error', 'Error', 'No se pudo cambiar a la pista anterior');
@@ -642,22 +666,46 @@ class MusicPlayerApp {
 
     async nextTrack() {
         try {
-            if (!this.state.playlist || this.state.playlist.length === 0) {
-                this.showToast('warning', 'Sin canciones', 'No hay canciones en la biblioteca');
-                return;
+            this.config.Utils.log('info', '⏭️ Navegando a siguiente pista (usando API backend)...');
+            
+            // Llamar al endpoint del backend en lugar de lógica local
+            const response = await fetch('/api/player/next', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
 
-            let newIndex = this.state.currentPlaylistIndex + 1;
-            if (newIndex >= this.state.playlist.length) {
-                newIndex = 0; // Volver a la primera canción
+            const result = await response.json();
+            
+            this.config.Utils.log('info', '⏭️ Respuesta del backend next:', result);
+            
+            if (result.success) {
+                this.config.Utils.log('info', '⏭️ Navegación a siguiente pista exitosa');
+                
+                // El backend maneja shuffle/repeat automáticamente
+                // Solo necesitamos actualizar el estado local si el backend devuelve info
+                if (result.track) {
+                    // Actualizar inmediatamente con la información recibida
+                    this.state.currentTrack = result.track;
+                    this.displayCurrentSong(result.track, result.track_index || 1);
+                    this.config.Utils.log('info', `⏭️ Interfaz actualizada con: ${result.track.title || 'Sin título'}`);
+                    
+                    // Dar tiempo al backend para procesar el cambio y luego hacer actualización completa
+                    setTimeout(async () => {
+                        await this.updatePlayerState();
+                    }, 500);
+                } else {
+                    this.config.Utils.log('info', '⏭️ No hay siguiente pista disponible');
+                }
+            } else {
+                throw new Error(result.error || 'Error desconocido');
             }
-
-            const nextSong = this.state.playlist[newIndex];
-            if (nextSong) {
-                this.state.currentPlaylistIndex = newIndex;
-                this.displayCurrentSong(nextSong, newIndex + 1);
-                await this.playTrack(nextSong.id);
-            }
+            
         } catch (error) {
             this.config.Utils.log('error', 'Error al ir a siguiente pista:', error);
             this.showToast('error', 'Error', 'No se pudo cambiar a la siguiente pista');
@@ -1239,6 +1287,50 @@ class MusicPlayerApp {
         }
     }
 
+    async updatePlayerState() {
+        try {
+            this.config.Utils.log('info', '🔄 Actualizando estado del reproductor...');
+            
+            // Consultar el estado actual del backend
+            const response = await fetch('/api/player/state');
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+
+            const state = await response.json();
+            
+            if (state.success && state.current_track) {
+                this.config.Utils.log('info', '🎵 Actualizando información de la canción actual');
+                
+                // Buscar la canción en la playlist local para obtener toda la información
+                let currentSong = null;
+                if (this.state.playlist && Array.isArray(this.state.playlist)) {
+                    currentSong = this.state.playlist.find(song => song.id === state.current_track.id);
+                }
+                
+                // Si no se encuentra en la playlist local, usar la información del backend
+                if (!currentSong) {
+                    currentSong = state.current_track;
+                }
+                
+                // Actualizar índice actual en el estado local
+                if (state.current_track_index !== undefined) {
+                    this.state.currentPlaylistIndex = state.current_track_index - 1; // API devuelve 1-indexed, convertir a 0-indexed
+                }
+                
+                // Actualizar la interfaz con la nueva canción
+                this.displayCurrentSong(currentSong, state.current_track_index || 1);
+                
+                this.config.Utils.log('info', `🎵 Interfaz actualizada con: ${currentSong.title || 'Sin título'}`);
+            } else {
+                this.config.Utils.log('info', '⏹️ No hay canción reproduciéndose actualmente');
+            }
+            
+        } catch (error) {
+            this.config.Utils.log('error', 'Error actualizando estado del reproductor:', error);
+        }
+    }
+
     async searchSongs(query) {
         try {
             const response = await this.api.searchSongs(query);
@@ -1263,6 +1355,9 @@ class MusicPlayerApp {
 
     handleStateUpdate(data) {
         if (!data) return;
+        
+        // Log para debugging
+        this.config.Utils.log('info', '🔄 WebSocket recibió actualización de estado:', data);
         
         // Actualizar estado interno
         this.state.isPlaying = data.state === 'playing';
@@ -1295,6 +1390,26 @@ class MusicPlayerApp {
         this.updateVolumeDisplay(this.state.volume);
         this.updateProgressBar();
         this.updateTrackInfo();
+        
+        // Actualizar el contenedor de "reproduciendo ahora" si cambió la canción
+        if (data.current_track && this.state.currentTrack) {
+            this.config.Utils.log('info', '🎵 Actualizando contenedor de reproduciendo ahora desde WebSocket');
+            
+            // Buscar información completa de la canción en la playlist local
+            let fullTrackInfo = this.state.currentTrack;
+            if (this.state.playlist && Array.isArray(this.state.playlist)) {
+                const foundTrack = this.state.playlist.find(song => song.id === this.state.currentTrack.id);
+                if (foundTrack) {
+                    fullTrackInfo = foundTrack;
+                }
+            }
+            
+            // Actualizar índice si está disponible
+            const trackIndex = data.current_track_index || (this.state.currentPlaylistIndex + 1);
+            
+            // Actualizar contenedor completo
+            this.displayCurrentSong(fullTrackInfo, trackIndex);
+        }
         
         this.config.Utils.log('debug', 'Estado actualizado:', data);
     }

@@ -281,6 +281,29 @@ class MusicPlayerProApp:
             
             logger.info(f"🎯 Estableciendo nueva pista como actual...")
             self.current_track = track
+            
+            # Sincronizar playlist actual y encontrar índice de la pista
+            if not self.current_playlist:
+                self.current_playlist = self.music_library.copy()
+                logger.info(f"📋 Playlist inicializada con {len(self.current_playlist)} pistas")
+            
+            # Encontrar el índice de la pista actual en la playlist
+            try:
+                for i, playlist_track in enumerate(self.current_playlist):
+                    if (hasattr(playlist_track, 'path') and hasattr(track, 'path') and 
+                        playlist_track.path == track.path):
+                        self.current_index = i
+                        logger.info(f"📍 Índice de pista encontrado: {i}")
+                        break
+                else:
+                    # Si no se encuentra, agregar al final y usar ese índice
+                    self.current_playlist.append(track)
+                    self.current_index = len(self.current_playlist) - 1
+                    logger.info(f"📍 Pista agregada al final, índice: {self.current_index}")
+            except Exception as e:
+                logger.warning(f"Error encontrando índice de pista: {e}")
+                self.current_index = 0
+            
             logger.info(f"🔄 Cambiando estado a LOADING...")
             self.playback_state = PlaybackState.LOADING
             logger.info(f"📡 Emitiendo evento de cambio de estado...")
@@ -369,19 +392,27 @@ class MusicPlayerProApp:
         try:
             logger.info("🔄 Intentando cambiar a siguiente pista...")
             
-            if not self.current_playlist:
-                logger.warning("⚠️ No hay playlist activa")
+            # Usar la biblioteca musical como playlist si no hay playlist específica
+            playlist = self.current_playlist if self.current_playlist else self.music_library
+            
+            if not playlist:
+                logger.warning("⚠️ No hay canciones disponibles")
                 return
                 
             if self.shuffle_enabled:
                 import random
-                self.current_index = random.randint(0, len(self.current_playlist) - 1)
+                # Generar índice aleatorio diferente al actual si es posible
+                if len(playlist) > 1:
+                    available_indices = [i for i in range(len(playlist)) if i != self.current_index]
+                    self.current_index = random.choice(available_indices)
+                else:
+                    self.current_index = 0
                 logger.info(f"🔀 Modo aleatorio: índice {self.current_index}")
             else:
                 self.current_index += 1
                 logger.info(f"➡️ Siguiente pista: índice {self.current_index}")
                 
-                if self.current_index >= len(self.current_playlist):
+                if self.current_index >= len(playlist):
                     if self.repeat_mode == "all":
                         self.current_index = 0
                         logger.info("🔁 Reiniciando playlist (repeat all)")
@@ -390,8 +421,13 @@ class MusicPlayerProApp:
                         await self.stop()
                         return
             
-            next_track = self.current_playlist[self.current_index]
+            next_track = playlist[self.current_index]
             logger.info(f"▶️ Cambiando a: {next_track.artist} - {next_track.title}")
+            
+            # Actualizar playlist actual si se está usando la biblioteca
+            if not self.current_playlist:
+                self.current_playlist = self.music_library.copy()
+            
             await self.play_track(next_track)
             
         except Exception as e:
@@ -404,13 +440,21 @@ class MusicPlayerProApp:
         try:
             logger.info("🔄 Intentando cambiar a pista anterior...")
             
-            if not self.current_playlist:
-                logger.warning("⚠️ No hay playlist activa")
+            # Usar la biblioteca musical como playlist si no hay playlist específica
+            playlist = self.current_playlist if self.current_playlist else self.music_library
+            
+            if not playlist:
+                logger.warning("⚠️ No hay canciones disponibles")
                 return
                 
             if self.shuffle_enabled:
                 import random
-                self.current_index = random.randint(0, len(self.current_playlist) - 1)
+                # Generar índice aleatorio diferente al actual si es posible
+                if len(playlist) > 1:
+                    available_indices = [i for i in range(len(playlist)) if i != self.current_index]
+                    self.current_index = random.choice(available_indices)
+                else:
+                    self.current_index = 0
                 logger.info(f"🔀 Modo aleatorio: índice {self.current_index}")
             else:
                 self.current_index -= 1
@@ -418,15 +462,20 @@ class MusicPlayerProApp:
                 
                 if self.current_index < 0:
                     if self.repeat_mode == "all":
-                        self.current_index = len(self.current_playlist) - 1
+                        self.current_index = len(playlist) - 1
                         logger.info("🔁 Yendo al final de playlist (repeat all)")
                     else:
                         self.current_index = 0
                         logger.info("⏹️ Ya en la primera pista")
                         return
             
-            prev_track = self.current_playlist[self.current_index]
+            prev_track = playlist[self.current_index]
             logger.info(f"▶️ Cambiando a: {prev_track.artist} - {prev_track.title}")
+            
+            # Actualizar playlist actual si se está usando la biblioteca
+            if not self.current_playlist:
+                self.current_playlist = self.music_library.copy()
+            
             await self.play_track(prev_track)
             
         except Exception as e:
@@ -475,14 +524,18 @@ class MusicPlayerProApp:
     
     def toggle_shuffle(self):
         """Alterna el modo aleatorio"""
+        print(f"🔀 CORE APP: toggle_shuffle llamado - shuffle anterior: {self.shuffle_enabled}")
         self.shuffle_enabled = not self.shuffle_enabled
+        print(f"🔀 CORE APP: shuffle nuevo: {self.shuffle_enabled}")
         return self.shuffle_enabled
     
     def cycle_repeat_mode(self):
         """Cambia entre modos de repetición"""
+        print(f"🔁 CORE APP: cycle_repeat_mode llamado - repeat anterior: {self.repeat_mode}")
         modes = ["none", "one", "all"]
         current_idx = modes.index(self.repeat_mode)
         self.repeat_mode = modes[(current_idx + 1) % len(modes)]
+        print(f"🔁 CORE APP: repeat nuevo: {self.repeat_mode}")
         return self.repeat_mode
     
     # EVENTOS DE AUDIO
@@ -502,29 +555,42 @@ class MusicPlayerProApp:
     def _on_track_ended(self):
         """Callback cuando termina una pista"""
         try:
+            logger.info(f"🔚 Pista terminada. Modo repeat: {self.repeat_mode}")
+            
             loop = asyncio.get_event_loop()
             if self.repeat_mode == "one":
                 # Repetir la misma pista
                 if self.current_track:
+                    logger.info("🔁 Repitiendo la misma pista (repeat one)")
                     loop.call_soon_threadsafe(
                         lambda: asyncio.create_task(self.play_track(self.current_track))
                     )
+                else:
+                    logger.warning("⚠️ No hay pista actual para repetir")
             else:
-                # Siguiente pista
+                # Ir a la siguiente pista (maneja repeat all internamente)
+                logger.info("➡️ Cambiando a siguiente pista")
                 loop.call_soon_threadsafe(
                     lambda: asyncio.create_task(self.next_track())
                 )
         except RuntimeError:
             # No hay loop activo, intentar crear la tarea de forma segura
+            logger.warning("⚠️ No hay loop activo, usando thread alternativo")
             import threading
             def run_next():
-                if self.repeat_mode == "one" and self.current_track:
-                    # Para repetir, reproducir la misma pista
-                    threading.Thread(target=lambda: asyncio.run(self.play_track(self.current_track))).start()
-                else:
-                    # Para siguiente pista
-                    threading.Thread(target=lambda: asyncio.run(self.next_track())).start()
-            run_next()
+                try:
+                    if self.repeat_mode == "one" and self.current_track:
+                        # Para repetir, reproducir la misma pista
+                        logger.info("🔁 Repitiendo la misma pista (thread)")
+                        asyncio.run(self.play_track(self.current_track))
+                    else:
+                        # Para siguiente pista
+                        logger.info("➡️ Siguiente pista (thread)")
+                        asyncio.run(self.next_track())
+                except Exception as e:
+                    logger.error(f"Error en thread de reproducción: {e}")
+            
+            threading.Thread(target=run_next, daemon=True).start()
     
     def _on_spectrum_update(self, spectrum_data):
         """Callback para datos de espectro"""
