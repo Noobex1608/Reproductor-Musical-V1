@@ -457,17 +457,7 @@ window.UIExtensions = {
                 </div>
 
                 <div class="settings-section">
-                    <h5>Interfaz</h5>
-                    
-                    <div class="setting-item">
-                        <label for="theme-select">Tema:</label>
-                        <select id="theme-select">
-                            <option value="DEFAULT">Cyberpunk Dark</option>
-                            <option value="NEON">Neon</option>
-                            <option value="RETRO">Retro Wave</option>
-                        </select>
-                    </div>
-                    
+                    <h5>Interfaz</h5>                    
                     <div class="setting-item">
                         <label>
                             <input type="checkbox" id="show-tooltips" ${settings.showTooltips !== false ? 'checked' : ''}>

@@ -17402,3 +17402,200 @@ task: <Task cancelling name='Task-8' coro=<VLCAudioEngine._load_audio_for_analys
 2025-08-04 17:33:37,955 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-04 17:33:37] "POST /api/player/play HTTP/1.1" 200 207 0.001003
 2025-08-04 17:33:37,957 - src.audio.vlc_engine - INFO - ⏸️ Reproducción pausada
 2025-08-04 17:33:37,957 - src.effects.visual_manager - INFO - 🎨 Visualización detenida
+2025-08-06 13:24:18,517 - __main__ - INFO - Inicializando componentes del sistema...
+2025-08-06 13:24:18,520 - src.core.config_manager - ERROR - Error guardando configuración: [Errno 2] No such file or directory: 'config\\app_config.json'
+2025-08-06 13:24:18,520 - src.core.config_manager - INFO - ✅ Configuración por defecto creada
+2025-08-06 13:24:18,520 - src.core.database - INFO - Inicializando base de datos musical...
+2025-08-06 13:24:18,625 - src.core.database - INFO - ✅ Base de datos inicializada correctamente
+2025-08-06 13:24:18,626 - src.audio.vlc_engine - INFO - Inicializando motor de audio VLC...
+2025-08-06 13:24:18,953 - src.audio.vlc_engine - INFO - ✅ Ecualizador inicializado
+2025-08-06 13:24:18,953 - src.audio.vlc_engine - INFO - ✅ Motor de audio VLC inicializado
+2025-08-06 13:24:18,953 - src.effects.visual_manager - INFO - Inicializando gestor de efectos visuales...
+2025-08-06 13:24:20,183 - src.effects.visual_manager - INFO - ✅ Gestor de efectos visuales inicializado
+2025-08-06 13:24:20,184 - src.ai.music_ai - INFO - Inicializando sistema de IA musical...
+2025-08-06 13:24:20,194 - src.ai.music_ai - INFO - ✅ Sistema de IA musical inicializado
+2025-08-06 13:24:20,195 - src.core.app - INFO - Aplicación MusicPlayerPro inicializada
+2025-08-06 13:24:20,850 - src.web.flask_app - INFO - Aplicación web Flask inicializada
+2025-08-06 13:24:20,850 - __main__ - INFO - Todos los componentes inicializados correctamente
+2025-08-06 13:24:20,852 - src.core.app - INFO - Iniciando aplicación MusicPlayerPro...
+2025-08-06 13:24:20,852 - src.core.app - INFO - 🔍 Verificando integridad de la biblioteca musical...
+2025-08-06 13:24:20,852 - src.web.flask_app - INFO - Iniciando servidor web en http://0.0.0.0:5000
+2025-08-06 13:24:20,853 - src.web.flask_app - INFO - Bucle de actualizaciones en segundo plano iniciado
+2025-08-06 13:24:20,856 - src.core.app - INFO - ✅ Biblioteca musical en buen estado
+2025-08-06 13:24:20,856 - src.core.app - INFO - Cargando biblioteca musical...
+2025-08-06 13:24:20,856 - src.core.app - INFO - ✅ 7 pistas válidas cargadas
+2025-08-06 13:24:20,856 - src.core.app - INFO - ✅ Aplicación iniciada correctamente
+2025-08-06 13:24:23,948 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:23] "GET / HTTP/1.1" 200 17327 0.055288
+2025-08-06 13:24:24,071 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /static/css/main.css HTTP/1.1" 200 33248 0.095532
+2025-08-06 13:24:24,084 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /static/css/components.css HTTP/1.1" 200 15773 0.010866
+2025-08-06 13:24:24,109 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /static/css/visualizer.css HTTP/1.1" 200 10083 0.019588
+2025-08-06 13:24:24,149 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /static/js/app.js HTTP/1.1" 200 74322 0.039059
+2025-08-06 13:24:24,181 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /static/js/api.js HTTP/1.1" 200 10089 0.028955
+2025-08-06 13:24:24,209 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /static/js/config.js HTTP/1.1" 200 7498 0.026548
+2025-08-06 13:24:24,237 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /static/js/websocket.js HTTP/1.1" 200 9256 0.028085
+2025-08-06 13:24:24,263 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /static/js/player-controls.js HTTP/1.1" 200 17230 0.026464
+2025-08-06 13:24:24,297 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /static/js/visualizer.js HTTP/1.1" 200 17827 0.031562
+2025-08-06 13:24:24,327 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /static/js/library.js HTTP/1.1" 200 15558 0.029382
+2025-08-06 13:24:24,331 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /static/js/ui.js HTTP/1.1" 200 33120 0.000000
+2025-08-06 13:24:24,358 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /favicon.ico HTTP/1.1" 404 397 0.000000
+2025-08-06 13:24:24,442 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "OPTIONS /health HTTP/1.1" 200 328 0.004336
+2025-08-06 13:24:24,443 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /health HTTP/1.1" 200 239 0.000000
+2025-08-06 13:24:24,451 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "OPTIONS /api/player/state HTTP/1.1" 200 328 0.001272
+2025-08-06 13:24:24,453 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /api/player/state HTTP/1.1" 200 358 0.000000
+2025-08-06 13:24:24,457 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "OPTIONS /api/library/songs HTTP/1.1" 200 328 0.000000
+2025-08-06 13:24:24,460 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "GET /api/library/songs HTTP/1.1" 200 1750 0.000000
+2025-08-06 13:24:24,466 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "OPTIONS /api/player/volume HTTP/1.1" 200 323 0.000000
+2025-08-06 13:24:24,470 - src.web.flask_app - INFO - Volumen establecido a: 100
+2025-08-06 13:24:24,470 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:24] "POST /api/player/volume HTTP/1.1" 200 204 0.001304
+2025-08-06 13:24:24,470 - src.audio.vlc_engine - INFO - 🔊 Volumen: 100%
+2025-08-06 13:24:25,348 - src.web.flask_app - INFO - Volumen establecido a: 100
+2025-08-06 13:24:25,350 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:24:25] "POST /api/player/volume HTTP/1.1" 200 204 0.003003
+2025-08-06 13:24:25,351 - src.audio.vlc_engine - INFO - 🔊 Volumen: 100%
+2025-08-06 13:25:02,967 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:25:02] "GET /static/css/main.css HTTP/1.1" 304 250 0.002000
+2025-08-06 13:25:02,970 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:25:02] "GET /static/css/components.css HTTP/1.1" 304 254 0.002000
+2025-08-06 13:25:02,974 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:25:02] "GET /static/css/visualizer.css HTTP/1.1" 304 254 0.003009
+2025-08-06 13:25:03,003 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:25:03] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 397 0.001356
+2025-08-06 13:28:13,489 - __main__ - INFO - Inicializando componentes del sistema...
+2025-08-06 13:28:13,489 - src.core.config_manager - ERROR - Error guardando configuración: [Errno 2] No such file or directory: 'config\\app_config.json'
+2025-08-06 13:28:13,490 - src.core.config_manager - INFO - ✅ Configuración por defecto creada
+2025-08-06 13:28:13,490 - src.core.database - INFO - Inicializando base de datos musical...
+2025-08-06 13:28:13,530 - src.core.database - INFO - ✅ Base de datos inicializada correctamente
+2025-08-06 13:28:13,531 - src.audio.vlc_engine - INFO - Inicializando motor de audio VLC...
+2025-08-06 13:28:13,575 - src.audio.vlc_engine - INFO - ✅ Ecualizador inicializado
+2025-08-06 13:28:13,575 - src.audio.vlc_engine - INFO - ✅ Motor de audio VLC inicializado
+2025-08-06 13:28:13,575 - src.effects.visual_manager - INFO - Inicializando gestor de efectos visuales...
+2025-08-06 13:28:13,871 - src.effects.visual_manager - INFO - ✅ Gestor de efectos visuales inicializado
+2025-08-06 13:28:13,872 - src.ai.music_ai - INFO - Inicializando sistema de IA musical...
+2025-08-06 13:28:13,872 - src.ai.music_ai - INFO - ✅ Sistema de IA musical inicializado
+2025-08-06 13:28:13,873 - src.core.app - INFO - Aplicación MusicPlayerPro inicializada
+2025-08-06 13:28:13,964 - src.web.flask_app - INFO - Aplicación web Flask inicializada
+2025-08-06 13:28:13,964 - __main__ - INFO - Todos los componentes inicializados correctamente
+2025-08-06 13:28:13,966 - src.core.app - INFO - Iniciando aplicación MusicPlayerPro...
+2025-08-06 13:28:13,966 - src.core.app - INFO - 🔍 Verificando integridad de la biblioteca musical...
+2025-08-06 13:28:13,966 - src.web.flask_app - INFO - Iniciando servidor web en http://0.0.0.0:5000
+2025-08-06 13:28:13,967 - src.web.flask_app - INFO - Bucle de actualizaciones en segundo plano iniciado
+2025-08-06 13:28:13,968 - src.core.app - INFO - ✅ Biblioteca musical en buen estado
+2025-08-06 13:28:13,968 - src.core.app - INFO - Cargando biblioteca musical...
+2025-08-06 13:28:13,969 - src.core.app - INFO - ✅ 7 pistas válidas cargadas
+2025-08-06 13:28:13,970 - src.core.app - INFO - ✅ Aplicación iniciada correctamente
+2025-08-06 13:28:17,048 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET / HTTP/1.1" 200 17327 0.012478
+2025-08-06 13:28:17,193 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET /static/css/main.css HTTP/1.1" 304 250 0.108204
+2025-08-06 13:28:17,196 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET /static/css/components.css HTTP/1.1" 304 254 0.002006
+2025-08-06 13:28:17,201 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET /static/css/visualizer.css HTTP/1.1" 304 254 0.003001
+2025-08-06 13:28:17,244 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET /static/js/config.js HTTP/1.1" 200 6748 0.041106
+2025-08-06 13:28:17,247 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET /static/js/app.js HTTP/1.1" 304 248 0.001999
+2025-08-06 13:28:17,251 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET /static/js/api.js HTTP/1.1" 304 247 0.002721
+2025-08-06 13:28:17,254 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET /static/js/websocket.js HTTP/1.1" 304 253 0.002002
+2025-08-06 13:28:17,256 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET /static/js/visualizer.js HTTP/1.1" 304 255 0.000985
+2025-08-06 13:28:17,261 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET /static/js/player-controls.js HTTP/1.1" 304 260 0.003000
+2025-08-06 13:28:17,264 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET /static/js/library.js HTTP/1.1" 304 252 0.001000
+2025-08-06 13:28:17,267 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET /static/js/ui.js HTTP/1.1" 304 246 0.002822
+2025-08-06 13:28:17,392 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "OPTIONS /health HTTP/1.1" 200 328 0.001019
+2025-08-06 13:28:17,394 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET /health HTTP/1.1" 200 239 0.000000
+2025-08-06 13:28:17,401 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "OPTIONS /api/player/state HTTP/1.1" 200 328 0.000999
+2025-08-06 13:28:17,404 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET /api/player/state HTTP/1.1" 200 358 0.001031
+2025-08-06 13:28:17,410 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "OPTIONS /api/library/songs HTTP/1.1" 200 328 0.001038
+2025-08-06 13:28:17,412 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "GET /api/library/songs HTTP/1.1" 200 1750 0.001151
+2025-08-06 13:28:17,419 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "OPTIONS /api/player/volume HTTP/1.1" 200 323 0.001004
+2025-08-06 13:28:17,423 - src.web.flask_app - INFO - Volumen establecido a: 100
+2025-08-06 13:28:17,425 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:17] "POST /api/player/volume HTTP/1.1" 200 204 0.004486
+2025-08-06 13:28:17,426 - src.audio.vlc_engine - INFO - 🔊 Volumen: 100%
+2025-08-06 13:28:18,299 - src.web.flask_app - INFO - Volumen establecido a: 100
+2025-08-06 13:28:18,301 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:28:18] "POST /api/player/volume HTTP/1.1" 200 204 0.003888
+2025-08-06 13:28:18,302 - src.audio.vlc_engine - INFO - 🔊 Volumen: 100%
+2025-08-06 13:30:15,506 - __main__ - INFO - Inicializando componentes del sistema...
+2025-08-06 13:30:15,506 - src.core.config_manager - ERROR - Error guardando configuración: [Errno 2] No such file or directory: 'config\\app_config.json'
+2025-08-06 13:30:15,506 - src.core.config_manager - INFO - ✅ Configuración por defecto creada
+2025-08-06 13:30:15,506 - src.core.database - INFO - Inicializando base de datos musical...
+2025-08-06 13:30:15,547 - src.core.database - INFO - ✅ Base de datos inicializada correctamente
+2025-08-06 13:30:15,548 - src.audio.vlc_engine - INFO - Inicializando motor de audio VLC...
+2025-08-06 13:30:15,589 - src.audio.vlc_engine - INFO - ✅ Ecualizador inicializado
+2025-08-06 13:30:15,589 - src.audio.vlc_engine - INFO - ✅ Motor de audio VLC inicializado
+2025-08-06 13:30:15,589 - src.effects.visual_manager - INFO - Inicializando gestor de efectos visuales...
+2025-08-06 13:30:15,889 - src.effects.visual_manager - INFO - ✅ Gestor de efectos visuales inicializado
+2025-08-06 13:30:15,889 - src.ai.music_ai - INFO - Inicializando sistema de IA musical...
+2025-08-06 13:30:15,889 - src.ai.music_ai - INFO - ✅ Sistema de IA musical inicializado
+2025-08-06 13:30:15,894 - src.core.app - INFO - Aplicación MusicPlayerPro inicializada
+2025-08-06 13:30:15,979 - src.web.flask_app - INFO - Aplicación web Flask inicializada
+2025-08-06 13:30:15,979 - __main__ - INFO - Todos los componentes inicializados correctamente
+2025-08-06 13:30:15,982 - src.core.app - INFO - Iniciando aplicación MusicPlayerPro...
+2025-08-06 13:30:15,982 - src.core.app - INFO - 🔍 Verificando integridad de la biblioteca musical...
+2025-08-06 13:30:15,982 - src.web.flask_app - INFO - Iniciando servidor web en http://0.0.0.0:5000
+2025-08-06 13:30:15,984 - src.web.flask_app - INFO - Bucle de actualizaciones en segundo plano iniciado
+2025-08-06 13:30:15,985 - src.core.app - INFO - ✅ Biblioteca musical en buen estado
+2025-08-06 13:30:15,985 - src.core.app - INFO - Cargando biblioteca musical...
+2025-08-06 13:30:15,985 - src.core.app - INFO - ✅ 7 pistas válidas cargadas
+2025-08-06 13:30:15,985 - src.core.app - INFO - ✅ Aplicación iniciada correctamente
+2025-08-06 13:30:19,002 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET / HTTP/1.1" 200 17327 0.008658
+2025-08-06 13:30:19,134 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET /static/css/main.css HTTP/1.1" 304 250 0.093079
+2025-08-06 13:30:19,136 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET /static/css/components.css HTTP/1.1" 304 254 0.000000
+2025-08-06 13:30:19,139 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET /static/css/visualizer.css HTTP/1.1" 304 254 0.000000
+2025-08-06 13:30:19,145 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET /static/js/config.js HTTP/1.1" 200 6596 0.006763
+2025-08-06 13:30:19,148 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET /static/js/app.js HTTP/1.1" 304 248 0.001523
+2025-08-06 13:30:19,152 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET /static/js/visualizer.js HTTP/1.1" 304 255 0.002093
+2025-08-06 13:30:19,155 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET /static/js/api.js HTTP/1.1" 304 247 0.000000
+2025-08-06 13:30:19,159 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET /static/js/library.js HTTP/1.1" 304 252 0.003949
+2025-08-06 13:30:19,163 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET /static/js/websocket.js HTTP/1.1" 304 253 0.002009
+2025-08-06 13:30:19,165 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET /static/js/player-controls.js HTTP/1.1" 304 260 0.002010
+2025-08-06 13:30:19,169 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET /static/js/ui.js HTTP/1.1" 304 246 0.002011
+2025-08-06 13:30:19,318 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "OPTIONS /health HTTP/1.1" 200 328 0.001503
+2025-08-06 13:30:19,321 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET /health HTTP/1.1" 200 238 0.001389
+2025-08-06 13:30:19,321 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "OPTIONS /api/player/state HTTP/1.1" 200 328 0.000000
+2025-08-06 13:30:19,328 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET /api/player/state HTTP/1.1" 200 358 0.000000
+2025-08-06 13:30:19,332 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "OPTIONS /api/library/songs HTTP/1.1" 200 328 0.000000
+2025-08-06 13:30:19,336 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "GET /api/library/songs HTTP/1.1" 200 1750 0.000000
+2025-08-06 13:30:19,344 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "OPTIONS /api/player/volume HTTP/1.1" 200 323 0.000000
+2025-08-06 13:30:19,350 - src.web.flask_app - INFO - Volumen establecido a: 100
+2025-08-06 13:30:19,350 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:19] "POST /api/player/volume HTTP/1.1" 200 204 0.002431
+2025-08-06 13:30:19,353 - src.audio.vlc_engine - INFO - 🔊 Volumen: 100%
+2025-08-06 13:30:20,218 - src.web.flask_app - INFO - Volumen establecido a: 100
+2025-08-06 13:30:20,218 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:30:20] "POST /api/player/volume HTTP/1.1" 200 204 0.000000
+2025-08-06 13:30:20,224 - src.audio.vlc_engine - INFO - 🔊 Volumen: 100%
+2025-08-06 13:32:05,552 - __main__ - INFO - Inicializando componentes del sistema...
+2025-08-06 13:32:05,553 - src.core.config_manager - ERROR - Error guardando configuración: [Errno 2] No such file or directory: 'config\\app_config.json'
+2025-08-06 13:32:05,554 - src.core.config_manager - INFO - ✅ Configuración por defecto creada
+2025-08-06 13:32:05,554 - src.core.database - INFO - Inicializando base de datos musical...
+2025-08-06 13:32:05,596 - src.core.database - INFO - ✅ Base de datos inicializada correctamente
+2025-08-06 13:32:05,597 - src.audio.vlc_engine - INFO - Inicializando motor de audio VLC...
+2025-08-06 13:32:05,631 - src.audio.vlc_engine - INFO - ✅ Ecualizador inicializado
+2025-08-06 13:32:05,632 - src.audio.vlc_engine - INFO - ✅ Motor de audio VLC inicializado
+2025-08-06 13:32:05,632 - src.effects.visual_manager - INFO - Inicializando gestor de efectos visuales...
+2025-08-06 13:32:05,951 - src.effects.visual_manager - INFO - ✅ Gestor de efectos visuales inicializado
+2025-08-06 13:32:05,951 - src.ai.music_ai - INFO - Inicializando sistema de IA musical...
+2025-08-06 13:32:05,952 - src.ai.music_ai - INFO - ✅ Sistema de IA musical inicializado
+2025-08-06 13:32:05,953 - src.core.app - INFO - Aplicación MusicPlayerPro inicializada
+2025-08-06 13:32:06,039 - src.web.flask_app - INFO - Aplicación web Flask inicializada
+2025-08-06 13:32:06,039 - __main__ - INFO - Todos los componentes inicializados correctamente
+2025-08-06 13:32:06,041 - src.core.app - INFO - Iniciando aplicación MusicPlayerPro...
+2025-08-06 13:32:06,041 - src.core.app - INFO - 🔍 Verificando integridad de la biblioteca musical...
+2025-08-06 13:32:06,042 - src.web.flask_app - INFO - Iniciando servidor web en http://0.0.0.0:5000
+2025-08-06 13:32:06,042 - src.web.flask_app - INFO - Bucle de actualizaciones en segundo plano iniciado
+2025-08-06 13:32:06,044 - src.core.app - INFO - ✅ Biblioteca musical en buen estado
+2025-08-06 13:32:06,044 - src.core.app - INFO - Cargando biblioteca musical...
+2025-08-06 13:32:06,045 - src.core.app - INFO - ✅ 7 pistas válidas cargadas
+2025-08-06 13:32:06,045 - src.core.app - INFO - ✅ Aplicación iniciada correctamente
+2025-08-06 13:32:09,007 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET / HTTP/1.1" 200 17327 0.015460
+2025-08-06 13:32:09,111 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET /static/css/main.css HTTP/1.1" 304 250 0.076587
+2025-08-06 13:32:09,115 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET /static/css/components.css HTTP/1.1" 304 254 0.002109
+2025-08-06 13:32:09,118 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET /static/css/visualizer.css HTTP/1.1" 304 254 0.002082
+2025-08-06 13:32:09,123 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET /static/js/app.js HTTP/1.1" 304 248 0.002000
+2025-08-06 13:32:09,126 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET /static/js/websocket.js HTTP/1.1" 304 253 0.001318
+2025-08-06 13:32:09,129 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET /static/js/api.js HTTP/1.1" 304 247 0.002016
+2025-08-06 13:32:09,136 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET /static/js/config.js HTTP/1.1" 304 250 0.006002
+2025-08-06 13:32:09,141 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET /static/js/library.js HTTP/1.1" 304 252 0.002963
+2025-08-06 13:32:09,144 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET /static/js/visualizer.js HTTP/1.1" 304 255 0.002001
+2025-08-06 13:32:09,206 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET /static/js/ui.js HTTP/1.1" 200 32657 0.060107
+2025-08-06 13:32:09,209 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET /static/js/player-controls.js HTTP/1.1" 304 260 0.001357
+2025-08-06 13:32:09,322 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "OPTIONS /health HTTP/1.1" 200 328 0.000998
+2025-08-06 13:32:09,325 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET /health HTTP/1.1" 200 238 0.000000
+2025-08-06 13:32:09,331 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "OPTIONS /api/player/state HTTP/1.1" 200 328 0.000000
+2025-08-06 13:32:09,333 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET /api/player/state HTTP/1.1" 200 358 0.000000
+2025-08-06 13:32:09,339 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "OPTIONS /api/library/songs HTTP/1.1" 200 328 0.001008
+2025-08-06 13:32:09,342 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "GET /api/library/songs HTTP/1.1" 200 1750 0.001014
+2025-08-06 13:32:09,349 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "OPTIONS /api/player/volume HTTP/1.1" 200 323 0.000986
+2025-08-06 13:32:09,354 - src.web.flask_app - INFO - Volumen establecido a: 100
+2025-08-06 13:32:09,355 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:09] "POST /api/player/volume HTTP/1.1" 200 204 0.003004
+2025-08-06 13:32:09,360 - src.audio.vlc_engine - INFO - 🔊 Volumen: 100%
+2025-08-06 13:32:10,238 - src.web.flask_app - INFO - Volumen establecido a: 100
+2025-08-06 13:32:10,239 - geventwebsocket.handler - INFO - 127.0.0.1 - - [2025-08-06 13:32:10] "POST /api/player/volume HTTP/1.1" 200 204 0.003470
+2025-08-06 13:32:10,243 - src.audio.vlc_engine - INFO - 🔊 Volumen: 100%

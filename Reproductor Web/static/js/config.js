@@ -66,34 +66,6 @@ window.MusicPlayerConfig = {
         }
     },
     
-    // Configuración de colores y temas
-    THEMES: {
-        DEFAULT: {
-            name: 'Cyberpunk Dark',
-            primary: '#ff6b6b',
-            secondary: '#4ecdc4',
-            background: '#0a0a0b',
-            surface: '#1a1a1d',
-            text: '#ffffff'
-        },
-        NEON: {
-            name: 'Neon',
-            primary: '#ff0080',
-            secondary: '#00ff80',
-            background: '#000000',
-            surface: '#111111',
-            text: '#ffffff'
-        },
-        RETRO: {
-            name: 'Retro Wave',
-            primary: '#ff6b35',
-            secondary: '#f7931e',
-            background: '#1a0a2e',
-            surface: '#16213e',
-            text: '#ffffff'
-        }
-    },
-    
     // Configuración de formato de tiempo
     TIME_FORMAT: {
         SHOW_HOURS: false,
@@ -189,17 +161,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cargar configuraciones guardadas
     const savedVolume = config.Utils.getStoredSetting('VOLUME', 70);
-    const savedTheme = config.Utils.getStoredSetting('THEME', 'DEFAULT');
     const savedVizMode = config.Utils.getStoredSetting('VISUALIZER_MODE', 'spectrum');
     
     // Aplicar configuraciones
     config.PLAYER.DEFAULT_VOLUME = savedVolume;
-    config.UI.CURRENT_THEME = savedTheme;
     config.VISUALIZER.DEFAULT_MODE = savedVizMode;
     
     config.Utils.log('info', 'Configuración cargada:', {
         volume: savedVolume,
-        theme: savedTheme,
         visualizerMode: savedVizMode
     });
 });
